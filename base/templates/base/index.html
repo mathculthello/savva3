@@ -1,16 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<ul>
-{% for tag in tags %}
-<li>
-  <a href="{%url 'tag' tag.name%}">{{tag.title}}</a>
-</li>
-{% endfor %}
-</ul>
+
+<form action="" method="get" class="filter_form">
+  {{ filter.form.as_p }}
+  <input type="submit" class="submit" value="Отфильтровать"/>
+</form>
+
 
 <table style="width:100%;">
-    {% for url in urls %}
+    {% for url in filter.qs %}
         <tr>
           <td><a target="_blank" href="{{ url.url }}/">{{ url.title }}</a></td>
           <td>{{url.url|truncatechars:50}}</td>
