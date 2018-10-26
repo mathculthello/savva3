@@ -1,3 +1,4 @@
 __pycache__
 .DS_*
 db.sqlite3
+savva3/settings.py
