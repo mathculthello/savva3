@@ -1,2 +1,3 @@
-Django
-django-filter
+Django==2.1.2
+django-filter==2.0.0
+pytz==2018.6
