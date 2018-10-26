@@ -16,7 +16,7 @@
         <tr>
           <td class="edit_column">
             {% if user.is_authenticated %}
-            <a href="{% url 'admin:base_url_change' obj.id %}">&#10002;</a>
+            <a target="_blank" href="{% url 'admin:base_url_change' obj.id %}">&#10002;</a>
             {% endif %}
           </td>
           <td class="title_column">{{ obj.title }}</td>
