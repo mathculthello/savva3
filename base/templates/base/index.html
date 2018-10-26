@@ -1,6 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<ul>
+{% for tag in tags %}
+<li>
+  <a href="{%url 'tag' tag.name%}">{{tag.title}}</a>
+</li>
+{% endfor %}
+</ul>
+
 <table style="width:100%;">
     {% for url in urls %}
         <tr>
