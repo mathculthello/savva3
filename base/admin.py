@@ -6,8 +6,7 @@ from django.utils.html import format_html
 
 
 class UrlAdmin(admin.ModelAdmin):
-    list_display = ('title', 'link', 'tag', 'tags',)
-    search_fields = ('tag',)
+    list_display = ('title', 'link', 'tags',)
     list_filter = ('many_tag','areas',)
     def link(self,obj):
         return format_html("<a target='_blank' href='{url}'>{url}</a>", url=obj.url)

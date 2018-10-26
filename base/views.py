@@ -10,7 +10,6 @@ class UrlFilter(FilterSet):
         fields = {
             'many_tag': ['exact'],
             'areas': ['exact'],
-            'tag': ['exact'],
             'title': ['contains']
         }
 
