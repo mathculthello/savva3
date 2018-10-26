@@ -1,7 +1,3 @@
-body {
-
-}
-
 table {
   width:100%;
 }
@@ -14,7 +10,6 @@ td {
 
 td:first-child {
   width:35%;
-
 }
 
 .regalia {
