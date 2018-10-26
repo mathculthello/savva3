@@ -15,7 +15,7 @@
     {% for url in filter.qs %}
         <tr>
           <td>{{ url.title }}</td>
-          <td><a target="_blank" href="{{ url.url }}/">{{url.url|truncatechars:50}}</a></td>
+          <td><a target="_blank" href="{{ url.url }}">{{url.url|truncatechars:50}}</a></td>
         </tr>
     {% endfor %}
 </table>
