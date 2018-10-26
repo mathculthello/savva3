@@ -4,7 +4,9 @@
 
 <form action="" method="get" class="filter_form">
   {{ filter.form.as_p }}
+  <br>
   <input type="submit" class="submit" value="Отфильтровать"/>
+  <a class="reset" href="/base/" title="Сбросить">&olarr;</a>
 </form>
 
 <p class="count">{{filter.qs.count}}</p>

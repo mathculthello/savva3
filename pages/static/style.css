@@ -3,7 +3,12 @@
 }
 
 .filter_form .submit {
-  display: block;
+  display: inline-block;
+}
+
+.filter_form .reset {
+  display: inline-block;
+  margin-left: .5em;
 }
 
 
