@@ -5,7 +5,8 @@
     {% for url in urls %}
         <tr>
           <td><a target="_blank" href="{{ url.url }}/">{{ url.title }}</a></td>
-          <td>{{url.url}}</td>
+          <td>{{url.url|truncatechars:50}}</td>
+          <td>{{url.tag}}</td>
         </tr>
     {% endfor %}
 </table>

@@ -5,11 +5,16 @@ body {
 table {
   width:100%;
 }
+
 td {
-  width:50%;
-  overflow: scroll;
+  overflow: hidden;
   background: #999;
   padding: 3px;
+}
+
+td:first-child {
+  width:35%;
+
 }
 
 .regalia {
