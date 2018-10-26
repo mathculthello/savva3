@@ -7,12 +7,13 @@
   <input type="submit" class="submit" value="Отфильтровать"/>
 </form>
 
+<p class="count">{{filter.qs.count}}</p>
 
 <table style="width:100%;">
     {% for url in filter.qs %}
         <tr>
-          <td><a target="_blank" href="{{ url.url }}/">{{ url.title }}</a></td>
-          <td>{{url.url|truncatechars:50}}</td>
+          <td>{{ url.title }}</td>
+          <td><a target="_blank" href="{{ url.url }}/">{{url.url|truncatechars:50}}</a></td>
         </tr>
     {% endfor %}
 </table>
