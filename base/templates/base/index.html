@@ -12,10 +12,15 @@
 <p class="count">{{filter.qs.count}}</p>
 
 <table style="width:100%;">
-    {% for url in filter.qs %}
+    {% for obj in filter.qs %}
         <tr>
-          <td>{{ url.title }}</td>
-          <td><a target="_blank" href="{{ url.url }}">{{url.url|truncatechars:50}}</a></td>
+          <td class="edit_column">
+            {% if user.is_authenticated %}
+            <a href="{% url 'admin:base_url_change' obj.id %}">&#10002;</a>
+            {% endif %}
+          </td>
+          <td class="title_column">{{ obj.title }}</td>
+          <td><a target="_blank" href="{{ obj.url }}">{{obj.url|truncatechars:50}}</a></td>
         </tr>
     {% endfor %}
 </table>
