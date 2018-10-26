@@ -1,0 +1,18 @@
+body {
+
+}
+
+table {
+  width:100%;
+}
+td {
+  width:50%;
+  overflow: scroll;
+  background: #999;
+  padding: 3px;
+}
+
+.regalia {
+  background:#ccc;
+  padding:30px;
+}

@@ -1,2 +1,3 @@
 __pycache__
+.DS_*
 db.sqlite3
