@@ -1,8 +1,12 @@
-<table>
+{% extends 'base.html' %}
+
+{% block content %}
+<table style="width:100%;">
     {% for url in urls %}
         <tr>
-          <td><a href="/polls/{{ url.id }}/">{{ url.title }}</a></td>
+          <td><a target="_blank" href="{{ url.url }}/">{{ url.title }}</a></td>
           <td>{{url.url}}</td>
         </tr>
     {% endfor %}
 </table>
+{% endblock %}
