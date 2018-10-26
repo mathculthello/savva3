@@ -1,0 +1,8 @@
+<table>
+    {% for url in urls %}
+        <tr>
+          <td><a href="/polls/{{ url.id }}/">{{ url.title }}</a></td>
+          <td>{{url.url}}</td>
+        </tr>
+    {% endfor %}
+</table>
