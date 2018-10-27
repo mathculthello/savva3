@@ -1,11 +1,12 @@
 # Развертывание для разработки
 
 ```
-git clone https://github.com/aeifn/savva3
-
 # Создаем виртуальное питон-окружение
 virtualenv -ppython3 venv
 . venv/bin/activate
+
+# Клонируем репозиторий
+git clone https://github.com/aeifn/savva3
 
 # Установка зависимостей
 cd savva3/
