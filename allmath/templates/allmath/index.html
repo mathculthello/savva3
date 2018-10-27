@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load embed_video_tags %}
+
+
+{% block content %}
+
+{% for item in videos %}
+<div class="video">
+  <h3>{{ item.title }}</h3>
+
+  <ul class="theme">
+
+    {% for theme in item.theme.all %}
+      <li>Тема: &laquo;{{theme}}&raquo;, зависит от:
+        <ul>
+          {% for depends in theme.depends.all %}
+            <li>
+              {{ depends.title }}
+            </li>
+          {% endfor %}
+        </ul>
+      </li>
+    {% endfor %}
+  </ul>
+
+  {% video item.video as my_video %}
+
+    {% video my_video %}
+
+
+  {% endvideo %}
+
+
+
+</div>
+{% endfor %}
+
+{% endblock %}

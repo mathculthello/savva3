@@ -1,7 +1,9 @@
 INSTALLED_APPS = [
     'pages',
     'base',
+    'allmath',
     'django_filters',
+    'embed_video',
     'django_extensions',
     'crispy_forms',
     'django.contrib.admin',
