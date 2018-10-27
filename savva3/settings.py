@@ -125,4 +125,4 @@ STATIC_URL = '/static/'
 #STATIC_ROOT = '/home/egor/savva3/static/'
 
 
-from .sensitive_settings import SECRET_KEY, DEBUG, ALLOWED_HOSTS, STATIC_ROOT
+from .env_settings import SECRET_KEY, DEBUG, ALLOWED_HOSTS, STATIC_ROOT
