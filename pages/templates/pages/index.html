@@ -2,6 +2,10 @@
 
 {% load static %}
 
+{% block header %}
+
+{% endblock %}
+
 {% block content %}
 <!-- SAVVATEEV -->
 <h1>Алексей Владимирович Савватеев</h1>
@@ -9,7 +13,7 @@
 	<img src="/img/savvateev.jpg">
 -->
 
-<img src="{% static "pages/savvateev.jpg" %}" alt="Алексей Савватеев">
+<img class="savvateev-photo" src="{% static "pages/savvateev.jpg" %}" alt="Алексей Савватеев">
 
 <ul class="regalia">
   <li>доктор физико-математических наук</li>
@@ -62,7 +66,7 @@
 </ul>
 
 <!-- /SAVVATEEV -->
-<h2>Реквизиты для пожертвований на просветительскую деятельность</h2>
+<h2>Дать денег на просветительскую деятельность</h2>
 <p>2202 2002 5814 7386 (карта &laquo;МИР&raquo; Сбербанка)
 <br>
 Яндекс-кошелёк:
