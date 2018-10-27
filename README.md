@@ -40,3 +40,5 @@ Jupyter notebook:
 ```
 ./manage.py shell_plus --notebook
 ```
+
+открыть файл playground.ipynb
