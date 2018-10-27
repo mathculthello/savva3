@@ -16,17 +16,11 @@ cp savva3/env_settings.py.example savva3/env_settings.py
 
 # Создание базы данных
 ./manage.py migrate
-```
 
-Создание пользователя:
-
-```
+#Создание пользователя:
 ./manage.py createsuperuser
-```
 
-Теперь сайт можно запустить:
-
-```
+#Теперь сайт можно запустить:
 ./manage.py runserver
 ```
 
