@@ -33,3 +33,10 @@ cp savva3/env_settings.py.example savva3/env_settings.py
 http://localhost/
 
 http://localhost/admin
+
+
+Jupyter notebook:
+
+```
+./manage.py shell_plus --notebook
+```
