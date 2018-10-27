@@ -4,7 +4,7 @@ from embed_video import fields as video_fields
 
 # Create your models here.
 class AllMathTheme(models.Model):
-    title = models.CharField(max_length=300, null=False, unique=True)
+    title = models.CharField(max_length=300, null=False)
     depends = models.ManyToManyField('self', blank=True)
     def __str__(self):
             return self.title

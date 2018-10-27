@@ -2,13 +2,13 @@ from django.db import models
 
 
 class Tag(models.Model):
-    name = models.CharField(max_length=100, null=False, unique=True)
+    name = models.CharField(max_length=100, null=False)
     title = models.CharField(max_length=100, null=False, default='')
     def __str__(self):
         return self.title
 
 class Area(models.Model):
-    name = models.CharField(max_length=500, unique=True, null=False)
+    name = models.CharField(max_length=500, null=False)
     title = models.CharField(max_length=500, null=True)
 
     def __str__(self):
