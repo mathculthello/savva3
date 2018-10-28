@@ -2,6 +2,11 @@
   color:green;
 }
 
+.joke_label {
+  color:red;
+  text-weight:bold;
+}
+
 
 .video {
   margin-top: 40px;

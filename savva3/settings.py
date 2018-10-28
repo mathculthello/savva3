@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 
-
+MARKDOWN_FILTER_WHITELIST_TAGS = ['p']
 
 # Application definition
 
@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'allmath',
     'jokes',
     'django_filters',
+    'markdown_filter',
     'embed_video',
     'django_extensions',
     'crispy_forms',
