@@ -1,11 +1,13 @@
 from django.shortcuts import render, redirect
 from .forms import JokeForm
+from .models import Joke
 from django.contrib import messages
 # Create your views here.
 
 def index(request):
     form=JokeForm()
-    return render (request, 'jokes/index.html', {'form': form})
+    jokes=Joke.objects.filter(published=True)
+    return render (request, 'jokes/index.html', {'form': form, 'jokes': jokes})
 
 
 def add(request):

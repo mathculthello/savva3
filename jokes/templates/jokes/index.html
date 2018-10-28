@@ -14,4 +14,13 @@
 {{form.as_p}}
 <input type="submit">
 </form>
+
+{% for joke in jokes %}
+<div class="joke">
+  <h3>{{joke.title}}</h3>
+  <pre>
+    {{ joke.text }}
+  </pre>
+</div>
+{% endfor %}
 {% endblock %}
