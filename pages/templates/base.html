@@ -5,13 +5,12 @@
 <html lang="en">
 <head>
     <title>{% block title %}Сайт Алексея Савватеева{% endblock %}</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
 
-
+<div class="container-fluid">
   {% block header %}
   <a href="/">Сайт Алексея Савватеева</a>
   {% endblock %}
@@ -32,5 +31,10 @@
       <img style="position: absolute; top: 0; right: 0; border: 0;"
       src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub">
     </a>
+
+</div>
+
+    <script src="{% static 'bundle.js' %}?{% now 'hs'%}"></script>
+
 </body>
 </html>

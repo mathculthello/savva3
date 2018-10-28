@@ -8,13 +8,17 @@
 
 {% block content %}
 <!-- SAVVATEEV -->
+
 <h1>Алексей Владимирович Савватеев</h1>
 <!--
 	<img src="/img/savvateev.jpg">
 -->
 
-<img class="savvateev-photo" src="{% static "pages/savvateev.jpg" %}" alt="Алексей Савватеев">
-
+<div class="row">
+<div class="col-md-2">
+<img class="img-fluid rounded" src="{{MEDIA}}savva.jpg" alt="Алексей Савватеев">
+</div>
+<div class="col">
 <ul class="regalia">
   <li>доктор физико-математических наук</li>
   <li>ректор Университета Дмитрия Пожарского</li>
@@ -25,7 +29,8 @@
   <li>ведущий научный сотрудник ЦЭМИ РАН</li>
   <li>популяризатор математики среди детей и взрослых</li>
 </ul>
-
+</div>
+</div>
 <h2>Ресурсы</h2>
 <ul class="resources">
   <li>

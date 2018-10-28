@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'embed_video',
     'django_extensions',
     'crispy_forms',
+    'bootstrapform',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

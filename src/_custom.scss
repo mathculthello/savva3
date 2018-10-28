@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Serif');
+
+$font-family-base: 'PT Serif', serif;
+$link-decoration: underline;
+
+
+.asteriskField {
+    display: none;
+}
+
+.joke_label {
+  color:red;
+  text-weight:bold;
+}
+
+td.edit_column {
+  width:20px;
+}
+
+td.title_column {
+  width:35%;
+}

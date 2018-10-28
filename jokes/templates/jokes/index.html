@@ -1,25 +1,42 @@
 {% extends 'base.html' %}
 {% load markdown_filter %}
+{% load bootstrap %}
+
 
 {% block content %}
-<p>Сборник математических анекдотов
-(<a href="{{MEDIA}}jokes.pdf">PDF</a>
-,
-<a href="{{MEDIA}}jokes.tex">TeX</a>).</p>
+<h1>Сборник математических анекдотов</h1>
+<p>Скачать одним файлом: <a href="{{MEDIA}}jokes.pdf">PDF</a>,
+<a href="{{MEDIA}}jokes.tex">TeX</a>.</p>
 
-<h2>Добавить новый анекдот</h2>
+<div class="row">
+
+  <div class="col-md-6 mb-3">
+  <img src="{{MEDIA}}joke.jpg" class="img-fluid rounded">
+    </div>
+
+<div class="col">
+<h5>Добавить новый анекдот</h5>
 <form action="{% url 'jokes:add' %}" method="post">
 {% csrf_token %}
-{{form.as_p}}
-<input type="submit">
+{{ form|bootstrap }}
+<button type="submit" class="btn btn-primary">Отправить</button>
 </form>
+</div>
+
+
+
+  </div>
+
+<div class="row mt-5">
 
 {% for joke in jokes %}
-<div class="joke">
+<div class="col-4 joke">
   <h3>{{joke.title}}</h3>
   <div>
     {{ joke.text|markdown_filter|safe }}
   </div>
 </div>
 {% endfor %}
+
+</div>
 {% endblock %}

@@ -3,7 +3,7 @@
 {% block content %}
 
 <form action="" method="get" class="filter_form">
-  {{ filter.form.as_p }}
+  {{ filter.form.as_table }}
   <br>
   <input type="submit" class="submit" value="Отфильтровать"/>
   <a class="reset" href="/base/" title="Сбросить">&olarr;</a>
@@ -11,7 +11,7 @@
 
 <p class="count">{{filter.qs.count}}</p>
 
-<table style="width:100%;">
+<table class="table table-striped">
     {% for obj in filter.qs %}
         <tr>
           <td class="edit_column">
@@ -19,8 +19,7 @@
             <a target="_blank" href="{% url 'admin:base_url_change' obj.id %}">&#10002;</a>
             {% endif %}
           </td>
-          <td class="title_column">{{ obj.title }}</td>
-          <td><a target="_blank" href="{{ obj.url }}">{{obj.url|truncatechars:50}}</a></td>
+          <td><a target="_blank" href="{{ obj.url }}">{{ obj.title|truncatechars:150 }}</a></td>
         </tr>
     {% endfor %}
 </table>
