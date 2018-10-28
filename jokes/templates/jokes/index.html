@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load markdown_filter %}
 
 {% block content %}
 
@@ -18,9 +18,9 @@
 {% for joke in jokes %}
 <div class="joke">
   <h3>{{joke.title}}</h3>
-  <pre>
-    {{ joke.text }}
-  </pre>
+  <div>
+    {{ joke.text|markdown_filter|safe }}
+  </div>
 </div>
 {% endfor %}
 {% endblock %}
