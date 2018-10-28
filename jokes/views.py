@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import JokeForm
 from .models import Joke
 from django.contrib import messages
+from django.core.mail import mail_managers
 # Create your views here.
 
 def index(request):
@@ -18,6 +19,7 @@ def index_all(request, jokes):
 
 def add(request):
     a=JokeForm(request.POST)
-    a.save()
+    obj=a.save()
+    mail_managers('Новый анекдот:'+obj.title,obj.text)
     messages.success(request, 'Спасибо, запись добавлена.')
     return redirect('jokes:index')
