@@ -2,7 +2,6 @@
 {% load markdown_filter %}
 
 {% block content %}
-
 <p>Сборник математических анекдотов
 (<a href="{{MEDIA}}jokes.pdf">PDF</a>
 ,
@@ -14,8 +13,6 @@
 {{form.as_p}}
 <input type="submit">
 </form>
-
-
 
 {% for joke in jokes %}
 <div class="joke">
