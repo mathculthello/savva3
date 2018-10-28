@@ -5,7 +5,7 @@ from django.contrib import messages
 # Create your views here.
 
 def index(request):
-    jokes=Joke.objects.filter(published=True)
+    jokes=Joke.objects.filter(published=True,adult=False)
     return index_all(request, jokes)
 
 def yo(request):
