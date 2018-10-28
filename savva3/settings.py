@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'pages',
     'base',
     'allmath',
+    'jokes',
     'django_filters',
     'embed_video',
     'django_extensions',

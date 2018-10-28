@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<p>Сборник математических анекдотов
+(<a href="/media/jokes.pdf">PDF</a>
+,
+<a href="/media/jokes.tex">TeX</a>).</p>
+
+<h2>Добавить новый анекдот</h2>
+<form action="{% url 'jokes:add' %}" method="post">
+{% csrf_token %}
+{{form.as_p}}
+<input type="submit">
+</form>
+{% endblock %}
