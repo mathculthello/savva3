@@ -5,4 +5,6 @@ def index(request):
     return render (request, 'pages/index.html')
 
 def page(request, page):
-    return render (request, 'pages/'+page+'.html')
+    template='pages/'+page+'.html'
+    
+    return render (request, template)
