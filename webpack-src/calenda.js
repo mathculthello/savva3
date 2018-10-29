@@ -1,7 +1,9 @@
+import './common.js';
+
 import $ from 'jquery';
 require('fullcalendar');
 
-import './scss/_calenda.scss';
+import './scss/calenda.scss';
 
 $(function() {
 
