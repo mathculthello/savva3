@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load markdown_filter %}
 {% load static %}
 
 {% block header %}
@@ -31,6 +31,30 @@
 </ul>
 </div>
 </div>
+
+<h2 class="mt-4">Мероприятия</h2>
+<table class="table">
+{% for event in events %}
+<tr>
+
+  <td>
+    {{ event.start }}
+  </td>
+  <td>
+    {{event.city}}
+  </td>
+  <td>
+    <strong>{{ event.title }}</strong>
+    {{ event.comment |markdown_filter|safe }}
+    {{ event.place }}
+    <br/>
+    {{ event.address }}
+  </td>
+</tr>
+{% endfor %}
+</table>
+
+
 <h2>Ресурсы</h2>
 <ul class="resources">
   <li>

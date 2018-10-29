@@ -10,7 +10,9 @@
 
 <body>
 
+{% block bundle %}
 <script src="{% static 'bundle.js' %}"></script>
+{% endblock %}
 
 <div class="container-fluid">
   {% block header %}
@@ -28,11 +30,12 @@
     <div id="footer">
       <p>Разработчик &mdash; <a href="mailto:egor@kuzmichev.design">Егор Кузьмичев</a></p>
     </div>
-
+    {% block forkme %}
     <a href="https://github.com/aeifn/savva3">
       <img style="position: absolute; top: 0; right: 0; border: 0;"
       src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub">
     </a>
+    {% endblock %}
 
 </div>
 

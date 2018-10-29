@@ -1,10 +1,14 @@
 const path = require('path');
 
 module.exports = {
-  entry: './frontend/index.js',
+  entry: {
+    main: './frontend/index.js',
+    calenda: './frontend/calenda.js',
+  },
+
   output: {
     path: path.resolve(__dirname,'pages/static'),
-    filename: 'bundle.js'
+    filename: '[name].js'
   },
   module: {
   rules: [

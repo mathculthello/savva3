@@ -18,6 +18,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+    )
+}
+
 
 MARKDOWN_FILTER_WHITELIST_TAGS = ['p','ul','li']
 
@@ -29,6 +35,9 @@ INSTALLED_APPS = [
     'base',
     'allmath',
     'jokes',
+    'calenda',
+
+    'rest_framework',
     'django_filters',
     'markdown_filter',
     'embed_video',
