@@ -10,9 +10,7 @@
 
 <body>
 
-{% block bundle %}
-<script src="{% static 'bundle.js' %}"></script>
-{% endblock %}
+
 
 <div class="container-fluid">
   {% block header %}
@@ -34,6 +32,9 @@
 
 </div>
 
+{% block style %}
+<script src="{% static 'webpack/common.js' %}"></script>
+{% endblock %}
 
 </body>
 </html>

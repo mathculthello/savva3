@@ -2,13 +2,15 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    main: './frontend/index.js',
-    calenda: './frontend/calenda.js',
+    common: './webpack-src/common.js',
+    index: './webpack-src/index.js',
+    calenda: './webpack-src/calenda.js',
   },
 
   output: {
-    path: path.resolve(__dirname,'pages/static'),
-    filename: '[name].js'
+    path: path.resolve(__dirname,'pages/static/webpack'),
+    filename: '[name].js',
+    publicPath: 'static/webpack/',
   },
   module: {
   rules: [

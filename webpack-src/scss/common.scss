@@ -1,6 +1,4 @@
 @import "custom";
-@import "jokes";
-@import "base";
 
 // Required
 @import "~bootstrap/scss/functions";
@@ -22,3 +20,10 @@
 
 
 //@import "~bootstrap/scss/bootstrap";
+
+@import 'forms';
+
+
+//Common Pages
+@import "base";
+@import "jokes";
