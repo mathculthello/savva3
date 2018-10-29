@@ -44,7 +44,7 @@
     {{event.city}}
   </td>
   <td>
-    <strong>{{ event.title }}</strong>
+    <strong>{{ event.title|default:"..." }}</strong>
     {{ event.comment |markdown_filter|safe }}
     {{ event.place }}
     <br/>
