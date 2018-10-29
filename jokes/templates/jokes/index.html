@@ -33,7 +33,7 @@
 <div class="row mt-5">
 
 {% for joke in jokes %}
-<div class="col-4 joke">
+<div class="col-md-4 joke">
   <h3>{{joke.title}}</h3>
   {{ joke.text|markdown_filter|safe }}
 
