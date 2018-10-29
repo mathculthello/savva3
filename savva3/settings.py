@@ -25,7 +25,7 @@ REST_FRAMEWORK = {
 }
 
 
-MARKDOWN_FILTER_WHITELIST_TAGS = ['p','ul','li']
+MARKDOWN_FILTER_WHITELIST_TAGS = ['p','ul','li','br']
 
 # Application definition
 
