@@ -3,3 +3,4 @@ __pycache__
 db.sqlite3
 savva3/env_settings.py
 node_modules
+bundle.js
