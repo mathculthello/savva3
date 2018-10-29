@@ -15,4 +15,4 @@ class Event(models.Model):
     comment = models.TextField(blank=True)
 
     def __str__(self):
-        return self.title
+        return self.city
