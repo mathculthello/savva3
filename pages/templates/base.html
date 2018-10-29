@@ -10,6 +10,8 @@
 
 <body>
 
+<script src="{% static 'bundle.js' %}"></script>
+
 <div class="container-fluid">
   {% block header %}
   <a href="/">Сайт Алексея Савватеева</a>
@@ -34,7 +36,6 @@
 
 </div>
 
-    <script src="{% static 'bundle.js' %}?{% now 'hs'%}"></script>
 
 </body>
 </html>
