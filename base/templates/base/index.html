@@ -1,13 +1,21 @@
 {% extends 'base.html' %}
 
+{% load bootstrap %}
+
+
 {% block content %}
 
+<div class="row mt-3">
+  <div class="col-md-2">
 <form action="" method="get" class="filter_form">
-  {{ filter.form.as_table }}
-  <br>
-  <input type="submit" class="submit" value="Отфильтровать"/>
-  <a class="reset" href="/base/" title="Сбросить">&olarr;</a>
+  {{ filter.form|bootstrap }}
+
+  <button type="submit" class="btn btn-primary">Отфильтровать</button>
+
+  <a class="reset btn btn-secondary" href="/base/" title="Сбросить">&olarr;</a>
 </form>
+</div>
+<div class="col-md">
 
 <p class="count">{{filter.qs.count}}</p>
 
@@ -23,4 +31,8 @@
         </tr>
     {% endfor %}
 </table>
+
+
+</div>
+</div>
 {% endblock %}
