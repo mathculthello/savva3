@@ -1,3 +1,3 @@
 import 'bootstrap';
 
-import css from './style.scss';
+import css from './scss/style.scss';

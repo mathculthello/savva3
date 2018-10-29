@@ -32,9 +32,9 @@
 {% for joke in jokes %}
 <div class="col-4 joke">
   <h3>{{joke.title}}</h3>
-  <div>
-    {{ joke.text|markdown_filter|safe }}
-  </div>
+  {{ joke.text|markdown_filter|safe }}
+
+  <p class="sender">Присылатель: {{joke.author|default:"Инкогнито"}}</p>
 </div>
 {% endfor %}
 
