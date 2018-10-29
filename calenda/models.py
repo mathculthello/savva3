@@ -5,7 +5,7 @@ from django.db import models
 
 
 class Event(models.Model):
-    title = models.CharField(max_length=500, null=True)
+    title = models.CharField(max_length=500, null=True, blank=True)
     start = models.DateTimeField()
     city = models.CharField(max_length=50, blank=True)
     address = models.CharField(max_length=300, blank=True)
