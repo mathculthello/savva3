@@ -15,6 +15,7 @@ def yo(request):
 
 def index_all(request, jokes):
     form=JokeForm()
+    jokes=jokes.order_by('-date_added')
     return render (request, 'jokes/index.html', {'form': form, 'jokes': jokes})
 
 def add(request):
