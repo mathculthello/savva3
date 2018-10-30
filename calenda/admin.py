@@ -2,4 +2,10 @@ from django.contrib import admin
 
 # Register your models here.
 from .models import Event
-admin.site.register(Event)
+
+
+class CalendAdmin(admin.ModelAdmin):
+    list_display = ['start', 'city', 'title']
+
+
+admin.site.register(Event, CalendAdmin)
