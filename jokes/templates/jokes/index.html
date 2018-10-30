@@ -37,7 +37,12 @@
   <h3>{{joke.title}}</h3>
   {{ joke.text|markdown_filter|safe }}
 
-  <p class="sender">Присылатель: {{joke.author|default:"Инкогнито"}}</p>
+  <p class="sender">Присылатель: {{joke.author|default:"Инкогнито"}}
+    {% if joke.already_in_book %}
+    | В сборнике
+    {% endif %}
+
+  </p>
 </div>
 {% endfor %}
 
