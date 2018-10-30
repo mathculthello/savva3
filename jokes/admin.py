@@ -3,7 +3,7 @@ from .models import Joke
 # Register your models here.
 
 class JokeAdmin(admin.ModelAdmin):
-    list_display = ['title','author','published','date_added']
+    list_display = ['title','published','author','date_added']
 
 
 admin.site.register(Joke, JokeAdmin)
