@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% load markdown_filter %}
+
+{% block content %}
+
+<h1>{{ event.title|default:"Пока без названия" }}</h1>
+<h2>
+  {{event.city}}, {{ event.start }}
+</h2>
+<p>
+  {{ event.place }}
+  <br>
+  {{ event.address }}
+</p>
+<div>
+    {{ event.comment |markdown_filter|safe }}
+</div>
+
+{% endblock %}

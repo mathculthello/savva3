@@ -52,11 +52,9 @@
     {{event.city}}
   </td>
   <td>
+    <a href="{% url 'calenda:detail' event.id %}">
     <strong>{{ event.title|default:"..." }}</strong>
-    {{ event.comment |markdown_filter|safe }}
-    {{ event.place }}
-    <br/>
-    {{ event.address }}
+    </a>
   </td>
 </tr>
 {% endfor %}

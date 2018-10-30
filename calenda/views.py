@@ -16,5 +16,12 @@ class EventViewSet(viewsets.ModelViewSet):
 
 from .models import Event
 # Create your views here.
+
+
 def index(request):
     return render(request, 'calenda/index.html')
+
+
+def detail(request, event_id):
+    event=Event.objects.get(id=event_id)
+    return render(request, 'calenda/detail.html', {'event':event})
