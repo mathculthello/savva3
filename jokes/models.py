@@ -10,6 +10,8 @@ class Joke(models.Model):
     date_added = models.DateTimeField(auto_now_add=True, blank=True)
 
     published = models.BooleanField(default=False)
+    already_in_book = models.BooleanField(default=False, verbose_name="Уже в книге")
+
     adult = models.BooleanField(default=False)
 
 
