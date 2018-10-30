@@ -6,7 +6,14 @@
 
 <h1>{{ event.title|default:"Пока без названия" }}</h1>
 <h2>
-  {{event.city}}, {{ event.start }}
+  {{event.city}},
+  {% with start=event.start time=event.start.time %}
+  {% if time.hour == 0 and time.minute == 0 %}
+    {{ start.date }}, точное время пока не определено
+  {% else %}
+    {{ start }}
+  {% endif %}
+  {% endwith %}
 </h2>
 <p>
   {{ event.place }}

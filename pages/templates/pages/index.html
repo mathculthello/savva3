@@ -46,7 +46,13 @@
 <tr>
 
   <td>
-    {{ event.start }}
+    {% with start=event.start time=event.start.time %}
+    {% if time.hour == 0 and time.minute == 0 %}
+      {{ start.date }}
+    {% else %}
+      {{ start }}
+    {% endif %}
+    {% endwith %}
   </td>
   <td>
     {{event.city}}
