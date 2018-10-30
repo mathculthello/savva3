@@ -2,7 +2,7 @@ from django.shortcuts import render
 from calenda.models import Event
 # Create your views here.
 def index(request):
-    events = Event.objects.order_by('start')
+    events = Event.future.order_by('start')
     return render (request, 'pages/index.html', {'events': events})
 
 def page(request, page):
