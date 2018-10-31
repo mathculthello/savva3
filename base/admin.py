@@ -6,7 +6,9 @@ from django.utils.html import format_html
 
 
 class UrlAdmin(admin.ModelAdmin):
+    readonly_fields=('title', 'status_code')
     list_display = ('title', 'link', 'tags','status_code')
+
     list_filter = ('many_tag','areas',)
     def link(self,obj):
         return format_html("<a target='_blank' href='{url}'>{url}</a>", url=obj.url)
@@ -15,8 +17,6 @@ class UrlAdmin(admin.ModelAdmin):
         for a in obj.many_tag.all():
             x = x + a.name
         return x
-
-
 
 
 admin.site.register(Url, UrlAdmin)
