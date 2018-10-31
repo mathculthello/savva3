@@ -1,7 +1,9 @@
 appnope==0.1.0
 backcall==0.1.0
+beautifulsoup4==4.6.3
 bleach==3.0.2
 certifi==2018.10.15
+cgettext==0.1.post1
 chardet==3.0.4
 decorator==4.3.0
 defusedxml==0.5.0
