@@ -21,5 +21,7 @@ class Url(models.Model):
     many_tag = models.ManyToManyField(Tag,blank=True, verbose_name='Тип')
     areas = models.ManyToManyField(Area,blank=True, verbose_name='Раздел')
 
+    status_code = models.IntegerField(null=True)
+
     def __str__(self):
         return self.title
