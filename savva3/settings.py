@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'allmath',
     'jokes',
     'calenda',
+    'events',
     'savva3',
 
     'rest_framework',
