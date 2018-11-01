@@ -18,8 +18,8 @@ from .models import Event
 # Create your views here.
 
 
-def index(request):
-    return render(request, 'events/index.html')
+def calendar(request):
+    return render(request, 'events/calendar.html')
 
 
 def detail(request, event_id):

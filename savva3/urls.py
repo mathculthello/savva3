@@ -22,7 +22,7 @@ from . import views
 
 ### ROUTER REST
 from rest_framework import routers
-from calenda.views import EventViewSet
+from events.views import EventViewSet
 
 router = routers.DefaultRouter()
 router.register(r'events', EventViewSet)
@@ -37,7 +37,6 @@ urlpatterns = [
     path('allmath/', include('allmath.urls')),
     path('jokes/', include('jokes.urls')),
     path('admin/', admin.site.urls),
-    path('calendar/', include('calenda.urls') ),
-    path('events/', include('events.urls')), 
+    path('events/', include('events.urls')),
     path('', include('django.contrib.flatpages.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

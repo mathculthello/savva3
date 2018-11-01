@@ -35,7 +35,6 @@ INSTALLED_APPS = [
     'base',
     'allmath',
     'jokes',
-    'calenda',
     'events',
     'savva3',
 

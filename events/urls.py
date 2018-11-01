@@ -5,6 +5,6 @@ from . import views
 app_name = 'events'
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('', views.calendar, name='calendar'),
     path('<int:event_id>/', views.detail, name='detail'),
 ]

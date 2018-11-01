@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from calenda.models import Event
+from events.models import Event
 # Create your views here.
 def index(request):
     events = Event.future.order_by('start')
