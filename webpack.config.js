@@ -8,7 +8,7 @@ module.exports = {
   },
 
   output: {
-    path: path.resolve(__dirname,'pages/static/webpack'),
+    path: path.resolve(__dirname,'savva3/static/webpack'),
     filename: '[name].js',
     publicPath: 'static/webpack/',
   },

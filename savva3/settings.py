@@ -32,7 +32,6 @@ MARKDOWN_FILTER_WHITELIST_TAGS = ['p','ul','li','br']
 SITE_ID = 1
 
 INSTALLED_APPS = [
-    'pages',
     'base',
     'allmath',
     'jokes',
