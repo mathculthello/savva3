@@ -13,7 +13,7 @@ $(function() {
 
 
     events: {
-      url: '/api/events',
+      url: '/api/events/',
       type: 'GET',
       data: {
         format: 'json',
