@@ -39,32 +39,10 @@
 </div>
 </div>
 
+
 <h2 class="mt-4">Выступления</h2>
 <p><a href="{% url 'events:calendar' %}">В календаре</a></p>
-<table class="table">
-{% for event in events %}
-<tr>
-
-  <td>
-    {% with start=event.start time=event.start.time %}
-    {% if time.hour == 0 and time.minute == 0 %}
-      {{ start.date }}
-    {% else %}
-      {{ start }}
-    {% endif %}
-    {% endwith %}
-  </td>
-  <td>
-    {{event.city}}
-  </td>
-  <td>
-    <a href="{% url 'events:detail' event.id %}">
-    <strong>{{ event.title|default:"..." }}</strong>
-    </a>
-  </td>
-</tr>
-{% endfor %}
-</table>
+{% include 'events/_table.html' %}
 
 
 <h2>Ресурсы</h2>

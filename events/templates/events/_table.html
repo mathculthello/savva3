@@ -1,0 +1,25 @@
+
+<table class="table">
+{% for event in events %}
+<tr>
+
+  <td>
+    {% with start=event.start time=event.start.time %}
+    {% if time.hour == 0 and time.minute == 0 %}
+      {{ start.date }}
+    {% else %}
+      {{ start }}
+    {% endif %}
+    {% endwith %}
+  </td>
+  <td>
+    {{event.city}}
+  </td>
+  <td>
+    <a href="{% url 'events:detail' event.id %}">
+    <strong>{{ event.title|default:"..." }}</strong>
+    </a>
+  </td>
+</tr>
+{% endfor %}
+</table>
