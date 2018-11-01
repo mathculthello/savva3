@@ -37,5 +37,6 @@ urlpatterns = [
     path('jokes/', include('jokes.urls')),
     path('admin/', admin.site.urls),
     path('calendar/', include('calenda.urls') ),
+    path('', include('django.contrib.flatpages.urls')),
     path('', include('pages.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

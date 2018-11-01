@@ -29,6 +29,7 @@ MARKDOWN_FILTER_WHITELIST_TAGS = ['p','ul','li','br']
 
 # Application definition
 
+SITE_ID = 1
 
 INSTALLED_APPS = [
     'pages',
@@ -36,6 +37,7 @@ INSTALLED_APPS = [
     'allmath',
     'jokes',
     'calenda',
+    'savva3',
 
     'rest_framework',
     'django_filters',
@@ -50,6 +52,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'django.contrib.flatpages'
 ]
 
 
