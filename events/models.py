@@ -6,7 +6,7 @@ import datetime
 # First, define the Manager subclass.
 class FutureManager(models.Manager):
     def get_queryset(self):
-        return super().get_queryset().filter(start__date__gt=datetime.date.today())
+        return super().get_queryset().filter(start__date__gte=datetime.date.today())
 
 class Event(models.Model):
     title = models.CharField(max_length=500, null=True, blank=True)
