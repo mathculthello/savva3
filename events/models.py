@@ -1,5 +1,7 @@
 from django.db import models
 import datetime
+
+from base.models import Url
 # Create your models here.
 
 
@@ -13,6 +15,8 @@ class Event(models.Model):
     start = models.DateTimeField()
     city = models.CharField(max_length=50, blank=True)
     address = models.CharField(max_length=300, blank=True)
+
+    video = models.ManyToManyField(Url,blank=True)
 
     place = models.CharField(max_length=300, blank=True)
 
