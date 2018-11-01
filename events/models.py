@@ -26,5 +26,7 @@ class Event(models.Model):
     objects = models.Manager()
     future = FutureManager()
 
+
+
     def __str__(self):
         return self.city
