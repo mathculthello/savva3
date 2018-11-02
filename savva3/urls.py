@@ -19,16 +19,12 @@ from django.conf import settings
 from django.conf.urls.static import static
 from . import views
 
-
 ### ROUTER REST
 from rest_framework import routers
-from events.views import EventViewSet
-
 router = routers.DefaultRouter()
+
+from events.rest.viewsets import EventViewSet
 router.register(r'events', EventViewSet)
-
-
-
 
 urlpatterns = [
     path('', views.index, name='index'),
