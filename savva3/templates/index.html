@@ -2,9 +2,8 @@
 {% load markdown_filter %}
 {% load static %}
 
-{% block header %}
-
-{% endblock %}
+{% block header %}{% endblock %}
+{% block menu %}{% endblock %}
 
 
 {% block style %}
@@ -39,27 +38,16 @@
 </div>
 </div>
 
+{% include "_menu.html" %}
 
-<h2 class="mt-4">Выступления</h2>
+<h2 class="mt-4">Ближайшие выступления</h2>
 <p><a href="{% url 'events:calendar' %}">В календаре</a></p>
 {% include 'events/_table.html' %}
 
 
-<h2>Ресурсы</h2>
-<ul class="resources">
-  <li>
-    <a href="{% url 'base:index' %}">База данных выступлений</a>
-  </li>
-  <li>
-    <a href="/books/">Рекомендуемые книги</a>
-  </li>
-  <li>
-    <span class="joke_label">FUN</span>
-    <a href="{% url 'jokes:index' %}">Математические шутки</a>
-  </li>
-</ul>
 
-<p>Алексей Савватеев &mdash; математик, доктор физико-математических наук,
+
+<p class="pt-4">Алексей Савватеев &mdash; математик, доктор физико-математических наук,
   ректор <a href="//usdp.ru/">Университета Дмитрия Пожарского</a>, профессор <a href="https://mipt.ru">МФТИ</a>, ведущий
   научный сотрудник <a href="//www.cemi.rssi.ru/
 ">Центрального экономико-математического института</a>,

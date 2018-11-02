@@ -12,10 +12,18 @@
 
 
 
+
 <div class="container-fluid">
   {% block header %}
-  <a href="/">Сайт Алексея Савватеева</a>
+    <a href="/">Сайт Алексея Савватеева</a>
   {% endblock %}
+</div>
+
+  {% block menu %}
+    {% include "_menu.html" %}
+  {% endblock %}
+
+<div class="container-fluid">
     <div id="content">
       {% for message in messages %}
       <p class="message">
