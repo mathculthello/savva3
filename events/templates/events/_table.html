@@ -20,7 +20,7 @@
   <div class="col">
 
     {% if event.place or event.address or event.comment %}
-    <a class="" data-toggle="collapse" href="#event{{event.id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
+    <a class="" data-toggle="collapse" href="#event{{event.id}}" role="button" aria-expanded="false" aria-controls="event{{event.id}}">
         <strong>{{ event.title|default:"..." }}</strong>
     </a>
     {% else %}
