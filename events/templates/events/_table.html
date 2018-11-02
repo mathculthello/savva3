@@ -1,9 +1,11 @@
 
-<table class="table">
-{% for event in events %}
-<tr>
+{% load markdown_filter %}
 
-  <td>
+
+{% for event in events %}
+<div class="row border-bottom pt-1 pb-2">
+
+  <div class="col-md-2 text-nowrap">
     {% with start=event.start time=event.start.time %}
     {% if time.hour == 0 and time.minute == 0 %}
       {{ start.date }}
@@ -11,15 +13,35 @@
       {{ start }}
     {% endif %}
     {% endwith %}
-  </td>
-  <td>
+  </div>
+  <div class="col-md-1">
     {{event.city}}
-  </td>
-  <td>
-    <a href="{% url 'events:detail' event.id %}">
-    <strong>{{ event.title|default:"..." }}</strong>
+  </div>
+  <div class="col">
+
+    {% if event.place or event.address or event.comment %}
+    <a class="" data-toggle="collapse" href="#event{{event.id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
+        <strong>{{ event.title|default:"..." }}</strong>
     </a>
-  </td>
-</tr>
+    {% else %}
+        <strong>{{ event.title|default:"..." }}</strong>
+    {% endif %}
+
+    <div class="collapse" id="event{{event.id}}">
+      <div class="card card-body">
+        <div>
+        {{event.place}}
+        </div>
+        <div>
+        {{event.address}}
+        </div>
+        <div>
+        {{event.comment |markdown_filter|safe}}
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div><!--/row-->
 {% endfor %}
-</table>
