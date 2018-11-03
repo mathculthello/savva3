@@ -1,8 +1,8 @@
 {% load bootstrap %}
-<h3>Задать вопрос</h3>
+<h3>Задать вопрос сообществу</h3>
 <form action="{% url 'questions:add' %}" method="post">
 {% csrf_token %}
 {{ question_form|bootstrap }}
 <button type="submit" class="btn btn-primary">Отправить</button>
 </form>
-<p>вопрос может быть опубликован, емейл не будет опубликован ни при каких условиях</p>
+<p>Вопрос будет опубликован, любой сможет на него ответить</p>
