@@ -39,6 +39,8 @@
 
 {% include "_menu.html" %}
 
+
+
 <h2 class="mt-4">Ближайшие выступления</h2>
 <p><a href="{% url 'events:calendar' %}">В календаре</a></p>
 {% include 'events/_table.html' %}
@@ -67,7 +69,11 @@
   Читает лекции по своей программе &laquo;100 уроков&raquo; для детей Филипповской
   школы в Москве, рассказывая детям про математику &mdash; большую и настоящую!
 </p>
-
+<div class="row">
+  <div class="col">
+{% include "questions/_form.html" %}
+</div>
+<div class="col">
 <h2>Ссылки</h2>
 <ul>
   <li><a href="https://vk.com/alexei_savvateev">Группа ВК</a></li>
@@ -75,19 +81,23 @@
   <li><a href="https://www.instagram.com/p/BpNPhaMhGiF/?taken-by=aleksey_savvateev">Инста</a></li>
 </ul>
 
+
+<h2>Контакты</h2>
+<p>
+  Электропочта: <a href="mailto:savvateev@usdp.ru">savvateev@usdp.ru</a>
+</p>
+</div>
+</div>
 {% include 'widgets/_comments.html' %}
 
 <!-- /SAVVATEEV -->
-<h2>Дать денег на просветительскую деятельность</h2>
+<h2 class="mt-4">Дать денег на просветительскую деятельность</h2>
 <p>2202 2002 5814 7386 (карта &laquo;МИР&raquo; Сбербанка)
 <br>
 Яндекс-кошелёк:
 4100 1126 1864 898
 </p>
 
-<h2>Контакты</h2>
-<p>
-  Электропочта: <a href="mailto:savvateev@usdp.ru">savvateev@usdp.ru</a>
-</p>
+
 
 {% endblock %}

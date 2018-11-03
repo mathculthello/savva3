@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'jokes',
     'events',
     'savva3',
+    'questions',
 
     'rest_framework',
     'django_filters',

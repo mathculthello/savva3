@@ -32,6 +32,7 @@ urlpatterns = [
     path('base/', include('base.urls')),
     path('allmath/', include('allmath.urls')),
     path('jokes/', include('jokes.urls')),
+    path('q/', include('questions.urls')),
     path('admin/', admin.site.urls),
     path('events/', include('events.urls')),
     path('', include('django.contrib.flatpages.urls')),
