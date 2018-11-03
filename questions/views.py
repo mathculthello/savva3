@@ -7,7 +7,11 @@ from django.core.mail import mail_managers
 
 def add(request):
     a=QuestionForm(request.POST)
-    obj=a.save()
-    mail_managers('Новый вопрос:'+obj.theme,obj.text)
-    messages.success(request, 'Спасибо, вопрос добавлен.')
+    try:
+        obj=a.save()
+        mail_managers('Новый вопрос:'+obj.theme,obj.text)
+        messages.success(request, 'Спасибо, вопрос добавлен.')
+    except:
+        messages.error(request, 'Ошибка добавления.')
+
     return redirect('index')
