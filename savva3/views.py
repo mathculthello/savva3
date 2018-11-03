@@ -8,7 +8,7 @@ def index(request):
     question_form=QuestionForm()
     events = Event.future.order_by('start')
     formulae_form=FormulaeForm()
-    formulae=Formulae.objects.order_by('?').first()
+    formulae=Formulae.objects.filter(published=True).order_by('?').first()
     context = {
     'events': events,
     'formulae': formulae,
