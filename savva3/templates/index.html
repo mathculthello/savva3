@@ -39,7 +39,14 @@
 
 {% include "_menu.html" %}
 
-$$e^{ix}  = \cos x + i \sin x$$
+<div class="row">
+  <div class="col">
+    {% include 'features/_formulae.html' %}
+  </div>
+  <div class="col-md-2">
+    {% include 'features/_formulae_form.html' %}
+  </div>
+</div>
 
 <h2 class="mt-4">Ближайшие выступления</h2>
 <p><a href="{% url 'events:calendar' %}">В календаре</a></p>

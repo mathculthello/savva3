@@ -1,0 +1,7 @@
+{% load bootstrap %}
+<p>Добавить свою любимую формулу ($\TeX$):</p>
+<form action="{% url 'features:formulae_add' %}" method="post">
+{% csrf_token %}
+{{ formulae_form.formulae|bootstrap }}
+<button type="submit" class="btn btn-primary">Отправить</button>
+</form>
