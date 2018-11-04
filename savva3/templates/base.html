@@ -1,6 +1,8 @@
 {% load static %}
 {% get_media_prefix as MEDIA %}
 
+{% load counter %}
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -14,7 +16,6 @@
 {% include 'counters/_metrika.html' %}
 </head>
 <body>
-
 
 
 
@@ -39,7 +40,9 @@
       {% block content %}{% endblock %}
     </div>
     <div id="footer">
+
       <hr/>
+      <p>Тираж: {% counter %} экз.</p>
       <p>Разработчик этого сайта &mdash; <a href="mailto:egor@kuzmichev.design">Егор Кузьмичев</a></p>
       <p><a href="https://github.com/aeifn/savva3">Репозиторий проекта</a></p>
     </div>
