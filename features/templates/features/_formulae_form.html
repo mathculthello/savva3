@@ -1,7 +1,16 @@
 {% load bootstrap %}
-<p>Добавить свою любимую формулу ($\TeX$):</p>
-<form action="{% url 'features:formulae_add' %}" method="post">
-{% csrf_token %}
-{{ formulae_form.formulae|bootstrap }}
-<button type="submit" class="btn btn-primary">Отправить</button>
-</form>
+
+<button class="btn btn-light" data-toggle="collapse" href="#collapseFormulaeForm" role="button" aria-expanded="false" aria-controls="collapseFormulaeForm">
+  Добавить свою любимую формулу ($\TeX$)
+</button>
+<div class="collapse col-md-6 offset-md-3" id="collapseFormulaeForm">
+  <div class="card card-body">
+
+    <form action="{% url 'features:formulae_add' %}" method="post">
+    {% csrf_token %}
+    {{ formulae_form.formulae|bootstrap }}
+    <button type="submit" class="btn btn-primary">Отправить</button>
+    </form>
+
+  </div>
+</div>

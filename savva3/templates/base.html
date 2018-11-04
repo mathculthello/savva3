@@ -32,9 +32,9 @@
 <div class="container-fluid">
     <div id="content">
       {% for message in messages %}
-      <p class="message">
+      <div class="alert alert-success mt-4">
         {{ message }}
-      </p>
+      </div>
       {% endfor %}
 
       {% block content %}{% endblock %}
