@@ -27,7 +27,7 @@
 
 
   <div class="container-fluid">
-    <div id="content">
+
       {% for message in messages %}
       <div class="alert alert-success mt-4">
         {{ message }}
@@ -35,7 +35,7 @@
       {% endfor %}
 
       {% block content %}{% endblock %}
-    </div>
+
     <hr />
 
   {% include '_footer.html' %}
