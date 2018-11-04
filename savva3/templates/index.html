@@ -111,11 +111,7 @@
 </p>
 </div>
 <div class="col-md-7">
-<div class="row">
-{% include 'jokes/_joke.html'  with col="12" %}
-</div>
-<p>(Случайный <a href="{% url "jokes:index" %}">анекдот</a>)</p>
-
+{% include 'jokes/_random_widget.html' %}
 </div>
 
 </div>
