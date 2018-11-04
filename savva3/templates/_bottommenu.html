@@ -1,6 +1,8 @@
 {% load menubuilder %}{% menu bottommenu %}
+<nav class="nav flex-column">
 {% for item in menuitems %}
-<a title="{{ item.title|escape }}" class="{% if item.current %}active{% endif %}" href="{{ item.url }}">
+<a title="{{ item.title|escape }}" class="nav-link {% if item.current %}active{% endif %}" href="{{ item.url }}">
   {{ item.title }}
 </a>
 {% endfor %}
+</nav>
