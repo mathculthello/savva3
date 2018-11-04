@@ -1,33 +1,32 @@
 {% load static %}
-{% get_media_prefix as MEDIA %}
 
-{% load counter %}
+
 
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
-    <title>{% block title %}Лекторий Алексея Савватеева{% endblock %}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Лекторий Алексея Савватеева{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-{% block scripts %}
-{% endblock %}
+  {% block scripts %}
+  {% endblock %}
 
-{% include 'counters/_metrika.html' %}
+  {% include 'counters/_metrika.html' %}
 </head>
+
 <body>
 
 
 
-<div class="container-fluid">
   {% block menu %}
-    {% include "_menu.html" %}
+  {% include "_menu.html" %}
   {% endblock %}
-</div>
 
 
 
-<div class="container-fluid">
+  <div class="container-fluid">
     <div id="content">
       {% for message in messages %}
       <div class="alert alert-success mt-4">
@@ -37,29 +36,18 @@
 
       {% block content %}{% endblock %}
     </div>
-          <hr/>
-    <div id="footer" class="row">
+    <hr />
 
-      <div class="col-md-7">
+  {% include '_footer.html' %}
 
-      <p>Тираж: {% counter %} экз.</p>
-      <p>Разработчик этого сайта &mdash; <a href="mailto:egor@kuzmichev.design">Егор Кузьмичев</a></p>
-      <p><a href="https://github.com/aeifn/savva3">Репозиторий проекта</a></p>
-      </div>
+  </div>
 
-      <div class="col-md-5">
-        {% include "_bottommenu.html" %}
-      </div>
-
-    </div>
-
-</div>
-
-{% block style %}
-<script src="{% static 'webpack/common.js' %}"></script>
-{% endblock %}
+  {% block style %}
+  <script src="{% static 'webpack/common.js' %}"></script>
+  {% endblock %}
 
 
 
 </body>
+
 </html>

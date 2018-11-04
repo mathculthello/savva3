@@ -1,0 +1,15 @@
+{% load counter %}
+<div id="footer" class="row">
+
+  <div class="col-md-7">
+
+    <p>Тираж: {% counter %} экз.</p>
+    <p>Разработчик этого сайта &mdash; <a href="mailto:egor@kuzmichev.design">Егор Кузьмичев</a></p>
+    <p><a href="https://github.com/aeifn/savva3">Репозиторий проекта</a></p>
+  </div>
+
+  <div class="col-md-5">
+    {% include "_bottommenu.html" %}
+  </div>
+
+</div>
