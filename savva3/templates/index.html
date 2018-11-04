@@ -41,17 +41,20 @@
 <p><a href="{% url 'events:calendar' %}">В календаре</a></p>
 {% include 'events/_table.html' %}
 
-{{intro.content|safe}}
 
 <div class="row mt-4">
-  <div class="col">
+  <div class="col-md-6 offset-md-3">
+    {% include 'jokes/_random_widget.html' %}
+  </div>
+</div>
+
+
+<div class="row mt-5">
+  <div class="col-md">
     {% include "questions/_form.html" %}
   </div>
-  <div class="col">
+  <div class="col-md-4">
     {% include '_social.html' %}
-
-    {% include 'jokes/_random_widget.html' %}
-
   </div>
 </div>
 
