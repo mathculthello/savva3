@@ -5,6 +5,8 @@ from features.forms import FormulaeForm
 from features.models import Formulae
 from jokes.models import Joke
 from base.models import Url
+from django.contrib.flatpages.models import FlatPage
+
 # Create your views here.
 def index(request):
     joke=Joke.objects.order_by('?').first()
@@ -13,7 +15,12 @@ def index(request):
     formulae_form=FormulaeForm()
     formulae=Formulae.objects.filter(published=True).order_by('?').first()
     video=Url.objects.filter(url__contains="youtube").filter(url__contains="watch").order_by("?").first()
+    try:
+        intro=FlatPage.objects.get(url="/intro/")
+    except:
+        intro=False
     context = {
+    'intro':intro,
     'video':video,
     'events': events,
     'formulae': formulae,
