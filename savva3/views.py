@@ -13,7 +13,7 @@ def index(request):
     question_form=QuestionForm()
     events = Event.future.order_by('start')
     formulae_form=FormulaeForm()
-    formulae=Formulae.objects.filter(published=True).order_by('?').first()
+    formulae=Formulae.objects.filter(published=True).filter(adult=False).order_by('?').first()
     video=Url.objects.filter(url__contains="youtube").filter(url__contains="watch").order_by("?").first()
     try:
         intro=FlatPage.objects.get(url="/intro/")
