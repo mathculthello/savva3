@@ -1,5 +1,6 @@
 from django.db import models
 import datetime
+from django.urls import reverse
 
 from base.models import Url
 # Create your models here.
@@ -27,7 +28,8 @@ class Event(models.Model):
     objects = models.Manager()
     future = FutureManager()
 
-
+    def url(self):
+        return reverse('events:details', kwargs={'event_id':self.id})
 
     def __str__(self):
         return self.city

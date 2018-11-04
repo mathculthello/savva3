@@ -23,7 +23,14 @@ $(function() {
       },
       color: 'yellow',   // a non-ajax option
       textColor: 'black' // a non-ajax option
-    }
+    },
+
+    eventClick: function(event) {
+      if (event.url) {
+        window.open(event.url);
+        return false;
+      }
+    },
 
 
 

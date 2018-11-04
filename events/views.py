@@ -14,6 +14,6 @@ def calendar(request):
     return render(request, 'events/calendar.html')
 
 
-def detail(request, event_id):
+def details(request, event_id):
     event=Event.objects.get(id=event_id)
-    return render(request, 'events/detail.html', {'event':event})
+    return render(request, 'events/details.html', {'event':event})
