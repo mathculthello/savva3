@@ -1,8 +1,10 @@
 .links {
   list-style: none;
+
   li {
     display: inline-block;
-    margin-left:20px;
+    margin-left: 20px;
+
     i {
       font-size: 3em;
     }
@@ -10,5 +12,11 @@
 }
 
 .jokes-widget {
-  background:#ffd461;
+  background: #ffd461;
+}
+
+#particles-js {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
 }
