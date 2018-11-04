@@ -7,16 +7,13 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
 
-      <a class="nav-item nav-link active" href="{% url 'base:index' %}">
-        Материалы
+      {% load menubuilder %}{% menu headernavigation %}
+      {% for item in menuitems %}
+      <a title="{{ item.title|escape }}" class="nav-item nav-link {% if item.current %}active{% endif %}" href="{{ item.url }}">
+        {{ item.title }}
       </a>
+      {% endfor %}
 
-      <a class="nav-item nav-link" href="/books/">
-        Книги
-      </a>
-      <a class="nav-item nav-link" href="{% url 'jokes:index' %}">
-        Анекдоты
-      </a>
     </div>
   </div>
 </nav>

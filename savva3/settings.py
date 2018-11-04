@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'questions',
     'features',
 
+    'menu',
     'rest_framework',
     'django_filters',
     'markdown_filter',
