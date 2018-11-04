@@ -97,13 +97,24 @@
 </div>
 {% include 'widgets/_comments.html' %}
 
-<!-- /SAVVATEEV -->
-<h2 class="mt-4">Дать денег на просветительскую деятельность</h2>
+<div class="row mt-4">
+<div class="col-md-5">
+<h2 class="">Дать денег на просветительскую деятельность</h2>
 <p>2202 2002 5814 7386 (карта &laquo;МИР&raquo; Сбербанка)
 <br>
 Яндекс-кошелёк:
 4100 1126 1864 898
 </p>
+</div>
+<div class="col-md-7">
+<div class="row">
+{% include 'jokes/_joke.html'  with col="12" %}
+</div>
+<p>(Случайный <a href="{% url "jokes:index" %}">анекдот</a>)</p>
+
+</div>
+
+</div>
 
 
 
