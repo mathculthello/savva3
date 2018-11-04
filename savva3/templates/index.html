@@ -49,7 +49,7 @@
 <p><a href="{% url 'events:calendar' %}">В календаре</a></p>
 {% include 'events/_table.html' %}
 
-{{intro.content}}
+{{intro.content|safe}}
 
 <div class="row">
   <div class="col">
