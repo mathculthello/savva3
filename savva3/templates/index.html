@@ -5,7 +5,7 @@
 {% block header %}{% endblock %}
 
 {% block style %}
-  <script src="{% static 'webpack/index.js' %}"></script>
+<script src="{% static 'webpack/index.js' %}"></script>
 {% endblock %}
 
 
@@ -13,39 +13,30 @@
 <div id="particles-js" style="width:100%; height:200px; position:absolute; z-index:1;"></div>
 <!-- SAVVATEEV -->
 
-<h1>Алексей Владимирович Савватеев</h1>
+
+
 <!--
 	<img src="/img/savvateev.jpg">
 -->
 
 <div class="row">
-<div class="col-md-2">
-<img class="img-fluid rounded" style="position:relative; z-index:2;" src="{{MEDIA}}savva.jpg" alt="Алексей Савватеев">
-</div>
-<div class="col">
-<ul class="regalia">
-  <li>доктор физико-математических наук</li>
-  <li>ректор Университета Дмитрия Пожарского</li>
-  <li>профессор Московского физико-технического института
-    <!-- и&nbsp;Института математики экономики и&nbsp;информатики Иркутского государственного университета.-->
-  </li>
-  <li>научный руководитель Кавказского Математического Центра</li>
-  <li>ведущий научный сотрудник ЦЭМИ РАН</li>
-  <li>популяризатор математики среди детей и взрослых</li>
-</ul>
-</div>
+  <div class="col-md-6">
+    {% include 'base/_video.html' %}
+  </div>
+  <div class="col-md-6">
+    {% include '_savva_card.html' %}
+  </div>
 </div>
 
-<div class="row">
+<div class="row mt-4">
   <div class="col text-center">
     {{formulae.formulae}}
-    <br/>
-
+    <br />
     {% include 'features/_formulae_form.html' %}
   </div>
 </div>
 
-<h2 class="mt-4">Ближайшие выступления</h2>
+<h2 class="mt-4">Открытые лекции</h2>
 <p><a href="{% url 'events:calendar' %}">В календаре</a></p>
 {% include 'events/_table.html' %}
 
@@ -53,30 +44,19 @@
 
 <div class="row mt-4">
   <div class="col">
-{% include "questions/_form.html" %}
-</div>
-<div class="col">
+    {% include "questions/_form.html" %}
+  </div>
+  <div class="col">
 
-<h4>{{ video.title }}</h4>
-<p class="mb-2">(случайное видео из <a href="{% url 'base:index' %}">базы</a>)</p>
-{% include 'base/_video.html' %}
+    {% include '_social.html' %}
+    {% include 'jokes/_random_widget.html' %}
 
-<h2 class="mt-4">Сети</h2>
-<ul class="links">
-  <li><a href="https://vk.com/alexei_savvateev"><i class="fab fa-vk"></i></a></li>
-  <li><a href="https://www.youtube.com/channel/UClTIrwj5npeOaBjH6_AkKyA"><i class="fab fa-youtube"></i></a></li>
-  <li><a href="https://www.instagram.com/p/BpNPhaMhGiF/?taken-by=aleksey_savvateev"><i class="fab fa-instagram"></i></a></li>
-</ul>
-
+  </div>
 </div>
-</div>
-{% include 'widgets/_comments.html' %}
 
 <div class="row mt-4">
-<div class="offset-md-3 col-md-6">
-{% include 'jokes/_random_widget.html' %}
-</div>
-
+  <div class="offset-md-3 col-md-6">
+  </div>
 </div>
 
 
