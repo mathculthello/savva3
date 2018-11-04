@@ -1,11 +1,22 @@
-<ul class="nav" style="z-index:100; position:relative;">
-  <li class="nav-item">
-    <a class="nav-link" href="{% url 'base:index' %}">Записи выступлений</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="/books/">Рекомендуемые книги</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="{% url 'jokes:index' %}">Математические анекдоты</a>
-  </li>
-</ul>
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+  <a class="navbar-brand" href="/">Сайт Савватеева</a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+
+      <a class="nav-item nav-link active" href="{% url 'base:index' %}">
+        Материалы
+      </a>
+
+      <a class="nav-item nav-link" href="/books/">
+        Книги
+      </a>
+      <a class="nav-item nav-link" href="{% url 'jokes:index' %}">
+        Анекдоты
+      </a>
+    </div>
+  </div>
+</nav>
