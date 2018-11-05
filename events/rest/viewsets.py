@@ -8,5 +8,5 @@ class EventViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
     """
-    queryset = Event.objects.order_by('start')
+    queryset = Event.future.order_by('start')
     serializer_class = EventSerializer
