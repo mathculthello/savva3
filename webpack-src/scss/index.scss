@@ -20,3 +20,10 @@
   height: 100%;
   z-index: 0;
 }
+
+.eventButton {
+  border-bottom:1px dashed;
+  display: inline;
+  color: $blue;
+  cursor: pointer;
+}

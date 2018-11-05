@@ -5,4 +5,4 @@ from rest_framework import serializers
 class EventSerializer(serializers.ModelSerializer):
     class Meta:
         model = Event
-        fields = ('title','start','url')
+        fields = ('id','title','city','start','place','comment','address','url')

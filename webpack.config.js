@@ -6,7 +6,7 @@ module.exports = {
     index: './webpack-src/index.js',
     calenda: './webpack-src/calenda.js',
   },
-
+  devtool: 'source-map',
   output: {
     path: path.resolve(__dirname,'savva3/static/webpack'),
     filename: '[name].js',
@@ -19,6 +19,11 @@ module.exports = {
       'css-loader',
       'sass-loader',
     ],
+    },
+    {
+          test: /\.(js|jsx)$/,
+          exclude: /node_modules/,
+          use: ['babel-loader']
     },
   ]
   }
