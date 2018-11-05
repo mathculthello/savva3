@@ -8,3 +8,5 @@ django-filter==2.0.0
 django-markdown-filter==0.0.1
 djangorestframework==3.9.0
 django-menu
+graphene
+graphene_django

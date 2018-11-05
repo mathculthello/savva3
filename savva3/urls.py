@@ -19,6 +19,10 @@ from django.conf import settings
 from django.conf.urls.static import static
 from . import views
 
+
+from graphene_django.views import GraphQLView
+
+
 ### ROUTER REST
 from rest_framework import routers
 router = routers.DefaultRouter()
@@ -28,6 +32,7 @@ router.register(r'events', EventViewSet)
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path(r'graphql', GraphQLView.as_view(graphiql=True)),
     path(r'api/', include(router.urls)),
     path('base/', include('base.urls')),
     path('allmath/', include('allmath.urls')),

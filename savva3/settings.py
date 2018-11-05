@@ -31,6 +31,11 @@ MARKDOWN_FILTER_WHITELIST_TAGS = ['p','ul','li','br']
 
 SITE_ID = 1
 
+
+GRAPHENE = {
+    'SCHEMA': 'savva3.schema.schema'
+}
+
 INSTALLED_APPS = [
     'base',
     'allmath',
@@ -40,6 +45,7 @@ INSTALLED_APPS = [
     'questions',
     'features',
 
+    'graphene_django',
     'menu',
     'rest_framework',
     'django_filters',
