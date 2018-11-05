@@ -99,7 +99,7 @@ class App extends React.Component {
     return (
       <div>
         {events.map(event=>
-          <Event id={event.id} start={event.start} city={event.city} title={event.title} place={event.place} comment={event.comment}/>
+          <Event id={event.id} start={event.start} city={event.city} title={event.title} place={event.place} address={event.address} comment={event.comment}/>
       )}
       </div>
     );
