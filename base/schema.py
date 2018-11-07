@@ -12,6 +12,10 @@ class UrlType(DjangoObjectType):
 
 class Query(object):
     all_urls = graphene.List(UrlType)
+    random_url = graphene.Field(UrlType)
 
     def resolve_all_urls(self, info, **kwargs):
         return Url.objects.all()
+
+    def resolve_random_url(serlf,info,**kwargs):
+        return Url.objects.filter(url__contains="youtube").filter(url__contains="watch").order_by("?").first()
