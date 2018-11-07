@@ -37,7 +37,7 @@ class Video extends React.Component {
   <Query
     query={gql`
       {randomUrl {
-        id, url
+        title, url
       }}
     `}
   >
@@ -46,6 +46,7 @@ class Video extends React.Component {
       if (error) return <p>Error :(</p>;
       return (
         <div>
+        <h4>{data.randomUrl.title}</h4>
           <YouTube
             videoId={YouTubeGetID(data.randomUrl.url)}
             onReady={loadParticles} />
