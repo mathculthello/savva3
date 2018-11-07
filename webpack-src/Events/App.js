@@ -4,6 +4,7 @@ import ReactDOM from "react-dom";
 import $ from 'jquery';
 import {Collapse, Button } from 'reactstrap';
 import moment from 'moment';
+const ReactMarkdown = require('react-markdown');
 moment.locale('ru');
 
 
@@ -42,7 +43,7 @@ class Event extends React.Component {
       <Collapse isOpen={this.state.collapse}>
       <div>{this.props.place}</div>
       <div>{this.props.address}</div>
-      <div>{this.props.comment}</div>
+      <ReactMarkdown source={this.props.comment} />
       </Collapse>
     )
   }
