@@ -19,6 +19,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 from . import views
 
+from django.views.decorators.csrf import csrf_exempt
+
 
 from graphene_django.views import GraphQLView
 
@@ -32,7 +34,7 @@ router.register(r'events', EventViewSet)
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path(r'graphql', GraphQLView.as_view(graphiql=True)),
+    path(r'graphql', csrf_exempt(GraphQLView.as_view(graphiql=True))),
     path(r'api/', include(router.urls)),
     path('base/', include('base.urls')),
     path('allmath/', include('allmath.urls')),

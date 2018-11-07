@@ -1,15 +1,20 @@
 import './common.js';
 
-import './particles.js';
-
 
 import React from "react";
 import ReactDOM from "react-dom";
-import App from './Events/App';
+import {default as Events} from './Events/App';
+import {default as Video} from './Base/App';
+
+
+ReactDOM.render(
+  <Video />,
+  document.getElementById('video'),
+);
 
 
 
 ReactDOM.render(
-  <App />,
+  <Events />,
   document.getElementById('events')
 );
