@@ -31,15 +31,15 @@ import Set from './components/Set';
 
 class App extends React.Component {
 
-constructor(props) {
+state = {'area':''}
+
+constructor(props){
   super(props);
-  this.state = {tag: null, area:null};
-  this.onAreaSelected=this.onAreaSelected.bind(this);
+  this.handleSelect=this.handleSelect.bind(this);
 }
 
-onAreaSelected({target}) {
-  console.log(target.id);
-  this.setState(()=>({area: target.id}))
+handleSelect(area){
+  this.setState({'area':area});
 }
 
 render() {
@@ -47,10 +47,10 @@ render() {
     <ApolloProvider client={client}>
       <div className="row">
         <div className="col-md-3">
-        <Areas area={this.state.area} change={this.onAreaSelected}/>
+          <Areas onSelect={this.handleSelect}/>
         </div>
         <div className="col-md-9">
-        <Set area={this.state.area} />
+          <Set area={this.state.area}/>
         </div>
       </div>
     </ApolloProvider>

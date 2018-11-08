@@ -1,19 +1,20 @@
 import AREAS_QUERY from "../graphql/areas.gql";
 import React from "react";
 import { Query } from "react-apollo";
+import { Button } from 'reactstrap';
 
 
 class Areas extends React.Component {
 
-  constructor(props){
-    super(props);
-    this.click=this.click.bind(this);
-  }
+  state = {'id': null}
 
+  handleSelect = (id) => {
+    this.setState((state)=>{
+      var new_id=(state.id==id)?null:id;
+      this.props.onSelect(new_id)
+      return ({'id':new_id});
+    });
 
-  click(e){
-    this.setState({'area': e.target.id})
-    this.props.change(e);
   }
 
   render() {
@@ -27,13 +28,11 @@ class Areas extends React.Component {
       return (
         <div>
         {data.allAreas.edges.map(item=>(
-          <div
-          key={item.node.id}
-          id={item.node.id}
-          onClick={this.click}
-          className="btn btn-light">
+
+          <Button className="mt-2 d-block" outline  active={(item.node.id==this.state.id)?true:false} key={item.node.id} onClick={this.handleSelect.bind(this,item.node.id)}>
           {item.node.title}
-          </div>
+          </Button>
+
         ))}
         </div>
       );

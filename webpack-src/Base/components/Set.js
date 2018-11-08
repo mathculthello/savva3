@@ -1,6 +1,7 @@
 import SET_QUERY from "../graphql/set.gql";
 import React from "react";
 import { Query } from "react-apollo";
+import { Table } from 'reactstrap';
 
 
 class Set extends React.Component {
@@ -18,18 +19,16 @@ class Set extends React.Component {
       if (loading) return <p>Loading...</p>;
       if (error) return <p>Error :(</p>;
 
-
-
       return (
-        <div>
+        <Table>
+        <tbody>
         {data.allUrls.edges.map(item=>(
-            <div key={item.node.id}>
-            <a href={item.node.url}>
-            {item.node.title}
-            </a>
-            </div>
+          <tr key={item.node.id}>
+          <td><a href={item.node.url}>{item.node.title}</a></td>
+          </tr>
           ))}
-        </div>
+        </tbody>
+        </Table>
       );
     }}
   </Query>
