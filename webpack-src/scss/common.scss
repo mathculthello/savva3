@@ -38,3 +38,14 @@
 //Common Pages
 @import "base";
 @import "jokes";
+
+
+
+
+
+
+.pseudoLink {
+  border-bottom:1px dashed;
+  color: $blue;
+  cursor: pointer;
+}

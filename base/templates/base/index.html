@@ -1,35 +1,17 @@
 {% extends 'base.html' %}
 
 {% load bootstrap %}
+{% load static %}
 
+{% block style %}
+<script src="{% static 'webpack/base.js' %}"></script>
+{% endblock %}
 
 {% block content %}
 <h1>База знаний</h1>
 
-<div class="row mt-3">
-  <div class="col-md-2">
-<form action="" method="get" class="filter_form">
-  {{ filter.form }}
-</form>
-</div>
-<div class="col-md">
 
-<p class="count">{{filter.qs.count}}</p>
-
-<table class="table table-striped">
-    {% for obj in filter.qs %}
-        <tr>
-          <td class="edit_column">
-            {% if user.is_authenticated %}
-            <a target="_blank" href="{% url 'admin:base_url_change' obj.id %}">&#10002;</a>
-            {% endif %}
-          </td>
-          <td><a target="_blank" href="{{ obj.url }}">{{ obj.title|truncatechars:150 }}</a></td>
-        </tr>
-    {% endfor %}
-</table>
+<div id="base"></div>
 
 
-</div>
-</div>
 {% endblock %}

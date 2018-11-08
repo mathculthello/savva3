@@ -46,6 +46,8 @@ class Query(object):
     tag = graphene.relay.Node.Field(TagNode)
     all_tags = DjangoFilterConnectionField(TagNode)
 
+    area = graphene.relay.Node.Field(AreaNode)
+    all_areas = DjangoFilterConnectionField(AreaNode)
 
     random_url = graphene.Field(UrlType)
 

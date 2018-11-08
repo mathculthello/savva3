@@ -5,6 +5,7 @@ module.exports = {
     common: './webpack-src/common.js',
     index: './webpack-src/index.js',
     calenda: './webpack-src/calenda.js',
+    base: './webpack-src/base.js',
   },
   devtool: 'source-map',
   output: {
