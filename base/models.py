@@ -21,8 +21,8 @@ class Area(models.Model):
 class Url(models.Model):
     url = models.URLField(max_length=500)
     title = models.CharField(max_length=500, null=True)
-    many_tag = models.ManyToManyField(Tag,blank=True, verbose_name='Тип')
-    areas = models.ManyToManyField(Area,blank=True, verbose_name='Раздел')
+    many_tag = models.ManyToManyField(Tag,blank=True, verbose_name='Тип', related_name="urls")
+    areas = models.ManyToManyField(Area,blank=True, verbose_name='Раздел', related_name="urls")
 
     status_code = models.IntegerField(null=True)
 
