@@ -1,0 +1,11 @@
+query myQuery ($areas: [ID]) {
+  allUrls (areas: $areas){
+    edges {
+      node {
+        id
+        url
+        title
+      }
+    }
+  }
+}
