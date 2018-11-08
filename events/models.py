@@ -24,12 +24,19 @@ class Event(models.Model):
 
     comment = models.TextField(blank=True)
 
+    pub_date = models.DateTimeField(default=datetime.datetime.now, blank=True)
+
+
     #managers
     objects = models.Manager()
     future = FutureManager()
 
     def url(self):
+        return get_absolute_url(self)
+
+    def get_absolute_url(self):
         return reverse('events:details', kwargs={'event_id':self.id})
+
 
     def __str__(self):
         return self.city

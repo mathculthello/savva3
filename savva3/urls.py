@@ -24,6 +24,10 @@ from django.views.decorators.csrf import csrf_exempt
 
 from graphene_django.views import GraphQLView
 
+### sitemap
+
+from django.contrib.sitemaps.views import sitemap
+from .sitemaps import sitemaps
 
 ### ROUTER REST
 from rest_framework import routers
@@ -33,6 +37,8 @@ from events.rest.viewsets import EventViewSet
 router.register(r'events', EventViewSet)
 
 urlpatterns = [
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
+     name='django.contrib.sitemaps.views.sitemap'),
     path('', views.index, name='index'),
     path(r'graphql', csrf_exempt(GraphQLView.as_view(graphiql=True))),
     path(r'api/', include(router.urls)),
