@@ -22,25 +22,19 @@ import { ApolloProvider } from 'react-apollo';
 import YouTube from 'react-youtube';
 
 
-
+const QUERY = gql`
+  {randomUrl {
+    title, url
+  }}
+`;
 
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
 
-class Video extends React.Component {
+const Video = () => (
 
 
-  render() {
-    return(
-
-
-  <Query
-    query={gql`
-      {randomUrl {
-        title, url
-      }}
-    `}
-  >
+  <Query query={QUERY}>
     {({ loading, error, data }) => {
       if (loading) return <p>Loading...</p>;
       if (error) return <p>Error :(</p>;
@@ -54,14 +48,7 @@ class Video extends React.Component {
       );
     }}
   </Query>
-)}
-
-
-componentDidMount() {
-//  setTimeout(loadParticles, 3000);
-}
-
-};
+);
 
 
 function loadParticles(){
@@ -74,20 +61,9 @@ function loadParticles(){
 
 const App = () => (
   <ApolloProvider client={client}>
-    <div>
       <Video />
-    </div>
   </ApolloProvider>
 );
-
-
-
-
-
-
-
-
-
 
 
 export default App
