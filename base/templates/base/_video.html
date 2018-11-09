@@ -1,0 +1,6 @@
+{% load embed_video_tags %}
+
+<h4>{{ video.title|safe }}</h4>
+<p class="mb-2">(случайное видео из <a href="{% url 'base:index' %}">базы</a>)</p>
+
+{% video video.url '100% x 365' %}
