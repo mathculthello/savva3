@@ -3,6 +3,7 @@ import React from "react";
 import { Query } from "react-apollo";
 import { Table } from 'reactstrap';
 
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class Set extends React.Component {
 
@@ -23,11 +24,13 @@ class Set extends React.Component {
         <Table>
         <tbody>
         {data.allUrls.edges.map(item=>{
-          var link, icon;
+          let icon, link, url
           link=<a href={item.node.url} target="_blank">{item.node.title}</a>;
 
         if(item.node.url.includes('youtube')){
           icon=<i className="fab fa-youtube pr-2 youtube"></i>;
+          url="/base/"+item.node.id;
+          link=<Link to={url}>{item.node.title}</Link>
         }
         return(<tr key={item.node.id}>
           <td>{icon}{link}</td>

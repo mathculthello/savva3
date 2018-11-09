@@ -3,21 +3,10 @@ import 'particles.js';
 
 import React from "react";
 import ReactDOM from "react-dom";
-import { ApolloClient } from 'apollo-client';
-import { HttpLink } from 'apollo-link-http';
-import { InMemoryCache } from 'apollo-cache-inmemory';
-import { ApolloProvider } from 'react-apollo';
-import YouTube from 'react-youtube';
+
 import { Query } from "react-apollo";
 
-const client = new ApolloClient({
-  // By default, this client will send queries to the
-  //  `/graphql` endpoint on the same host
-  // Pass the configuration option { uri: YOUR_GRAPHQL_API_URL } to the `HttpLink` to connect
-  // to a different host
-  link: new HttpLink(),
-  cache: new InMemoryCache(),
-});
+
 
 // Запросы к GraphQL
 
@@ -45,7 +34,6 @@ handleSelect(area){
 
 render() {
   return(
-    <ApolloProvider client={client}>
       <Row>
         <Col md="3">
           <Areas onSelect={this.handleSelect}/>
@@ -54,7 +42,6 @@ render() {
           <Set area={this.state.area}/>
         </Col>
       </Row>
-    </ApolloProvider>
   )
 }
 };

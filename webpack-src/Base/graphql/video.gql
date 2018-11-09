@@ -1,0 +1,5 @@
+query myQuery ($id: ID!) {
+  url(id:$id) {
+    url
+    title
+}}
