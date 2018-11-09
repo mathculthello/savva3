@@ -29,7 +29,7 @@ class Areas extends React.Component {
         <div>
         {data.allAreas.edges.map(item=>(
 
-          <Button className="mt-2 d-block" outline  active={(item.node.id==this.state.id)?true:false} key={item.node.id} onClick={this.handleSelect.bind(this,item.node.id)}>
+          <Button className="mt-1 mr-1" outline  active={(item.node.id==this.state.id)?true:false} key={item.node.id} onClick={this.handleSelect.bind(this,item.node.id)}>
           {item.node.title}
           </Button>
 
