@@ -8,18 +8,13 @@ import { ApolloClient } from 'apollo-client';
 import { HttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
-const client = new ApolloClient({
-  // By default, this client will send queries to the
-  //  `/graphql` endpoint on the same host
-  // Pass the configuration option { uri: YOUR_GRAPHQL_API_URL } to the `HttpLink` to connect
-  // to a different host
-  link: new HttpLink(),
-  cache: new InMemoryCache(),
-});
+
+import client from './client';
 import { ApolloProvider } from 'react-apollo';
 
 
 import YouTube from 'react-youtube';
+import Loader from 'react-spinners/PacmanLoader';
 
 
 const QUERY = gql`
@@ -36,15 +31,15 @@ const Video = () => (
 
   <Query query={QUERY}>
     {({ loading, error, data }) => {
-      if (loading) return <p>Loading...</p>;
+      if (loading) return <Loader />;
       if (error) return <p>Error :(</p>;
       return (
-        <div>
+        <>
         <h4>{data.randomUrl.title}</h4>
           <YouTube
             videoId={YouTubeGetID(data.randomUrl.url)}
             onReady={loadParticles} />
-        </div>
+        </>
       );
     }}
   </Query>
