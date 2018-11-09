@@ -5,6 +5,9 @@ import { Table } from 'reactstrap';
 
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
+import {FaYoutube} from 'react-icons/fa';
+
+
 class Set extends React.Component {
 
 
@@ -29,7 +32,7 @@ class Set extends React.Component {
           link=<a href={url} target="_blank">{item.node.title}</a>;
 
         if(item.node.url.includes('youtube')){
-          icon=<i className="fab fa-youtube pr-2 youtube"></i>;
+          icon=<FaYoutube color="red" className="m-1"/>;
           url="/base/video/"+item.node.id;
           //link=<Link to={url}>{item.node.title}</Link>
           link=<Link to={url}>{item.node.title}</Link>
