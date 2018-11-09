@@ -23,8 +23,14 @@ class Set extends React.Component {
         <Table>
         <tbody>
         {data.allUrls.edges.map(item=>{
+          var link, icon;
+          link=<a href={item.node.url} target="_blank">{item.node.title}</a>;
+
+        if(item.node.url.includes('youtube')){
+          icon=<i className="fab fa-youtube pr-2 youtube"></i>;
+        }
         return(<tr key={item.node.id}>
-          <td><a href={item.node.url}>{item.node.title}</a></td>
+          <td>{icon}{link}</td>
           </tr>);
         })}
         </tbody>
