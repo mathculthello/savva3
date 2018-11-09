@@ -25,8 +25,8 @@ class AreaNode(DjangoObjectType):
 class UrlNode(DjangoObjectType):
     get_absolute_url = graphene.String()
 
-    def resolve_property(self, _args, *_kwargs):
-        return self.property
+    def resolve_get_absolute_url(self, _args, *_kwargs):
+        return self.get_absolute_url()
 
     class Meta:
         model = Url
