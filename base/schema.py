@@ -23,6 +23,11 @@ class AreaNode(DjangoObjectType):
 
 
 class UrlNode(DjangoObjectType):
+    get_absolute_url = graphene.String()
+
+    def resolve_property(self, _args, *_kwargs):
+        return self.property
+
     class Meta:
         model = Url
         filter_fields = {
@@ -31,7 +36,7 @@ class UrlNode(DjangoObjectType):
         'title': ['contains'],
         'areas': ['exact'],
         'many_tag': ['exact'],
-        'many_tag__name': ['exact']
+        'many_tag__name': ['exact'],
         }
         interfaces = (graphene.relay.Node, )
 

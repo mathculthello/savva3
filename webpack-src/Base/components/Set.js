@@ -25,12 +25,14 @@ class Set extends React.Component {
         <tbody>
         {data.allUrls.edges.map(item=>{
           let icon, link, url
-          link=<a href={item.node.url} target="_blank">{item.node.title}</a>;
+          url = item.node.getAbsoluteUrl;
+          link=<a href={url} target="_blank">{item.node.title}</a>;
 
         if(item.node.url.includes('youtube')){
           icon=<i className="fab fa-youtube pr-2 youtube"></i>;
-          url="/base/"+item.node.id;
-          link=<Link to={url}>{item.node.title}</Link>
+          //url="/base/"+item.node.id;
+          //link=<Link to={url}>{item.node.title}</Link>
+          link=<a href={url}>{item.node.title}</a>
         }
         return(<tr key={item.node.id}>
           <td>{icon}{link}</td>
