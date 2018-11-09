@@ -5,6 +5,7 @@ from . import views
 app_name = 'base'
 
 urlpatterns = [
-    path(r'', views.index, name='index'),
+    path('', views.app, name='index'),
+    path('video/<str:video_id>', views.app, name="viewer"),
     path('<int:url_id>/', views.details, name='details'),
 ]

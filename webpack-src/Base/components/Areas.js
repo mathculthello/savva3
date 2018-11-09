@@ -2,23 +2,10 @@ import AREAS_QUERY from "../graphql/areas.gql";
 import React from "react";
 import { Query } from "react-apollo";
 import { Button } from 'reactstrap';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 
-class Areas extends React.Component {
-
-  state = {'id': null}
-
-  handleSelect = (id) => {
-    this.setState((state)=>{
-      var new_id=(state.id==id)?null:id;
-      this.props.onSelect(new_id)
-      return ({'id':new_id});
-    });
-
-  }
-
-  render() {
-    return(
+const Areas = (props) => (
 
   <Query query={AREAS_QUERY}>
     {({ loading, error, data }) => {
@@ -28,11 +15,9 @@ class Areas extends React.Component {
       return (
         <div>
         {data.allAreas.edges.map(item=>(
-
-          <Button className="mt-1 mr-1" outline  active={(item.node.id==this.state.id)?true:false} key={item.node.id} onClick={this.handleSelect.bind(this,item.node.id)}>
-          {item.node.title}
-          </Button>
-
+          <Link key={item.node.id} className={(item.node.id==props.area)?"mt-1 mr-1 btn btn-outline-secondary active":"mt-1 mr-1 btn btn-outline-secondary"} to={{ pathname: "/base/", search: "?area="+item.node.id }}>
+            {item.node.title}
+          </Link>
         ))}
         </div>
       );
@@ -41,9 +26,7 @@ class Areas extends React.Component {
 
 
 
-)}
-
-};
+);
 
 
 export default Areas;

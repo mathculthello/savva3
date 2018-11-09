@@ -5,7 +5,7 @@ from .models import *
 from .models import Url
 
 # Create your views here.
-def index(request):
+def app(request, **args):
     #f = UrlFilter(request.GET)
     #context = {'filter': f}
     return render (request, 'base/index.html')

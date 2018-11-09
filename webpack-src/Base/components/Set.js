@@ -30,9 +30,9 @@ class Set extends React.Component {
 
         if(item.node.url.includes('youtube')){
           icon=<i className="fab fa-youtube pr-2 youtube"></i>;
-          //url="/base/"+item.node.id;
+          url="/base/video/"+item.node.id;
           //link=<Link to={url}>{item.node.title}</Link>
-          link=<a href={url}>{item.node.title}</a>
+          link=<Link to={url}>{item.node.title}</Link>
         }
         return(<tr key={item.node.id}>
           <td>{icon}{link}</td>
