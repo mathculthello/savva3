@@ -2,6 +2,7 @@ from django.db import models
 from .utils import get_title
 from django.core import exceptions
 from django.urls import reverse
+import datetime
 
 
 
@@ -28,6 +29,8 @@ class Url(models.Model):
     description = models.TextField(blank=True)
 
     status_code = models.IntegerField(null=True)
+
+    updated_at=models.DateTimeField(default=datetime.datetime.now, blank=True)
 
     def save(self, *args, **kwargs):
         title=get_title(self.url)
