@@ -32,9 +32,9 @@ class Event(models.Model):
     future = FutureManager()
 
     def url(self):
-        return get_absolute_url(self)
+        return self.get_absolute_url(self)
 
-    def get_absolute_url(self):
+    def get_absolute_url(self, *args):
         return reverse('events:details', kwargs={'event_id':self.id})
 
 
