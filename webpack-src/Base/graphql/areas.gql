@@ -1,0 +1,10 @@
+{
+  allAreas {
+    edges {
+      node {
+        id
+        title
+      }
+    }
+  }
+}
