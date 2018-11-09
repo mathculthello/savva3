@@ -22,11 +22,11 @@ class Set extends React.Component {
       return (
         <Table>
         <tbody>
-        {data.allUrls.edges.map(item=>(
-          <tr key={item.node.id}>
+        {data.allUrls.edges.map(item=>{
+        return(<tr key={item.node.id}>
           <td><a href={item.node.url}>{item.node.title}</a></td>
-          </tr>
-          ))}
+          </tr>);
+        })}
         </tbody>
         </Table>
       );

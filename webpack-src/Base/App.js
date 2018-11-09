@@ -24,6 +24,7 @@ const client = new ApolloClient({
 import Areas from './components/Areas';
 import Set from './components/Set';
 
+import { Container, Row, Col } from 'reactstrap';
 
 
 
@@ -45,14 +46,14 @@ handleSelect(area){
 render() {
   return(
     <ApolloProvider client={client}>
-      <div className="row">
-        <div className="col-md-3">
+      <Row>
+        <Col md="3">
           <Areas onSelect={this.handleSelect}/>
-        </div>
-        <div className="col-md-9">
+        </Col>
+        <Col md="9">
           <Set area={this.state.area}/>
-        </div>
-      </div>
+        </Col>
+      </Row>
     </ApolloProvider>
   )
 }
