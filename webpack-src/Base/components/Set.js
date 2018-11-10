@@ -3,10 +3,8 @@ import React from "react";
 import { Query } from "react-apollo";
 import { Table } from 'reactstrap';
 
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-import {FaYoutube} from 'react-icons/fa';
-
+import SetLink from './SetLink';
 
 class Set extends React.Component {
 
@@ -26,21 +24,7 @@ class Set extends React.Component {
       return (
         <Table>
         <tbody>
-        {data.allUrls.edges.map(item=>{
-          let icon, link, url
-          url = item.node.getAbsoluteUrl;
-          link=<a href={url} target="_blank">{item.node.title}</a>;
-
-        if(item.node.url.includes('youtube')){
-          icon=<FaYoutube color="red" className="m-1"/>;
-          url="/base/video/"+item.node.id;
-          //link=<Link to={url}>{item.node.title}</Link>
-          link=<Link to={url}>{item.node.title}</Link>
-        }
-        return(<tr key={item.node.id}>
-          <td>{icon}{link}</td>
-          </tr>);
-        })}
+        {data.allUrls.edges.map(item=>(<SetLink item={item} key={item.node.id} />))}
         </tbody>
         </Table>
       );
@@ -53,5 +37,9 @@ class Set extends React.Component {
 
 
 };
+
+
+
+
 
 export default Set;

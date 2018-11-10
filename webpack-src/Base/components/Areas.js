@@ -13,13 +13,17 @@ const Areas = (props) => (
       if (error) return <p>Error :(</p>;
 
       return (
-        <div>
+        <>
         {data.allAreas.edges.map(item=>(
-          <Link key={item.node.id} className={(item.node.id==props.area)?"mt-1 mr-1 btn btn-outline-secondary active":"mt-1 mr-1 btn btn-outline-secondary"} to={{ pathname: "/base/", search: "?area="+item.node.id }}>
+          <Link
+          key={item.node.id}
+          className={(item.node.id==props.area)?"mt-1 mr-1 btn btn-outline-secondary active":"mt-1 mr-1 btn btn-outline-secondary"}
+          to={{ pathname: "/base/", search: "?area="+item.node.id }}
+          >
             {item.node.title}
           </Link>
         ))}
-        </div>
+        </>
       );
     }}
   </Query>
