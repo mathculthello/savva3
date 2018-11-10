@@ -15,7 +15,7 @@ def index(request):
     formulae=Formulae.objects.filter(published=True).order_by('?').first()
     video=Url.objects.filter(url__contains="youtube").filter(url__contains="watch").order_by("?").first()
     try:
-        intro = FlatPage.objects.get(url='/intro')
+        intro = FlatPage.objects.get(url='/intro/')
     except:
         intro = False
     context = {
