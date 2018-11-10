@@ -3,6 +3,7 @@ from .utils import get_title
 from django.core import exceptions
 from django.urls import reverse
 import datetime
+from meta.models import ModelMeta
 
 
 
@@ -21,7 +22,7 @@ class Area(models.Model):
 
 
 # Create your models here.
-class Url(models.Model):
+class Url(ModelMeta, models.Model):
     url = models.URLField(max_length=500)
     title = models.CharField(max_length=500, null=True)
     many_tag = models.ManyToManyField(Tag,blank=True, verbose_name='Тип', related_name="urls")
@@ -31,6 +32,21 @@ class Url(models.Model):
     status_code = models.IntegerField(null=True)
 
     updated_at=models.DateTimeField(default=datetime.datetime.now, blank=True)
+
+    keywords_string = models.CharField(max_length=500, blank=True)
+
+    _metadata = {
+        'title': 'title',
+        'description': 'description',
+        'keywords': 'keywords'
+    }
+
+    def keywords(self):
+        string=self.keywords_string
+        if len(string)==0:
+            return []
+        return [x.strip() for x in string.split(",")]
+
 
     def save(self, *args, **kwargs):
         title=get_title(self.url)

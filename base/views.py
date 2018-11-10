@@ -13,7 +13,10 @@ def app(request, **args):
 def details(request,url_id):
     url = Url.objects.get(id=url_id)
     if 'youtube' in url.url:
-        context={'url':url}
+        context={
+        'url':url,
+        'meta':url.as_meta()
+        }
         return render (request, 'base/details.html',context)
     else:
         return redirect(url.url)
