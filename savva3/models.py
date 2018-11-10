@@ -9,3 +9,6 @@ class Meta(models.Model):
         string=self.keywords_string
 
         return [x.strip() for x in string.split(",")]
+
+    def __str__(self):
+        return self.slug
