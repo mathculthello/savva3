@@ -3,6 +3,7 @@ import React from "react";
 import { Query } from "react-apollo";
 import { Table } from 'reactstrap';
 
+import Loader from 'react-spinners/PacmanLoader';
 
 import SetLink from './SetLink';
 
@@ -18,7 +19,7 @@ class Set extends React.Component {
     variables={ {"areas": this.props.area} }
   >
     {({ loading, error, data }) => {
-      if (loading) return <p>Loading...</p>;
+      if (loading) return <Loader/>;
       if (error) return <p>Error :(</p>;
 
       return (
