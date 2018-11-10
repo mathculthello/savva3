@@ -11,3 +11,4 @@ django-menu
 graphene
 graphene_django
 django-meta
+django-sitetree
