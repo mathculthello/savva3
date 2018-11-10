@@ -1,0 +1,41 @@
+{% load sitetree %}
+
+
+
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+  <a href="/"><h1 class="navbar-brand mb-0">Лекторий Савватеева</h1></a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <ul class="navbar-nav mr-auto">
+        {% for item in sitetree_items %}
+            <li class="nav-item {% if item.has_children %}dropdown{% endif %}">
+
+                {% if not item.is_current %}
+                <a href="{% if item.has_children %}#{% else %}{% sitetree_url for item %}{% endif %}"
+                class="nav-link {% if item.is_current or item.in_current_branch %}active{% endif %} {% if item.has_children %}dropdown-toggle"
+                aria-haspopup="true" id="navitem-{{ item.id }}"
+                data-toggle="dropdown{% endif %}"
+                {% if item.rel %}rel="{{item.rel}}"{% endif %}>
+
+                    {{ item.title_resolved }}
+
+                </a>
+                {% else %}
+                <span class="nav-link active">
+                {{ item.title_resolved }}
+                </span>
+                {% endif %}
+
+
+                {% if item.has_children %}
+                    {% sitetree_children of item for menu template "sitetree/menu_bootstrap4_dropdown.html" %}
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+
+  </div>
+</nav>
