@@ -6,7 +6,8 @@ from features.models import Formulae
 from jokes.models import Joke
 from base.models import Url
 from django.contrib.flatpages.models import FlatPage
-
+from meta.views import Meta
+from .models import Meta as ModelMeta
 # Create your views here.
 def index(request):
     joke=Joke.objects.filter(published=True).filter(adult=False).order_by('?').first()
@@ -18,7 +19,14 @@ def index(request):
         intro = FlatPage.objects.get(url='/intro/')
     except:
         intro = False
+
+    try:
+        meta = ModelMeta.objects.get(slug='/intro/')
+    except:
+        meta = False
+
     context = {
+    'meta':meta,
     'intro':intro,
     'video':video,
     'formulae': formulae,
