@@ -18,7 +18,8 @@
                 class="nav-link {% if item.is_current or item.in_current_branch %}active{% endif %} {% if item.has_children %}dropdown-toggle"
                 aria-haspopup="true" id="navitem-{{ item.id }}"
                 data-toggle="dropdown{% endif %}"
-                {% if item.rel %}rel="{{item.rel}}"{% endif %}>
+                {% if item.rel %}rel="{{item.rel}}"{% endif %}
+                {% if item.hint %}title="{{item.hint}}"{% endif %}>
 
                     {{ item.title_resolved }}
 
