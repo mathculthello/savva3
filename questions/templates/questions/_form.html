@@ -1,5 +1,5 @@
 {% load bootstrap %}
-<h3>Задать вопрос сообществу</h3>
+<p class="h2">Задать вопрос сообществу</p>
 <form action="{% url 'questions:add' %}" method="post">
 {% csrf_token %}
 {{ question_form|bootstrap }}
