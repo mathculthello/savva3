@@ -2,17 +2,20 @@
 {% load static %}
 <div id="footer" class="row">
 
-  <div class="col-md-7">
+  <div class="col-md-4">
 
-    <p>Тираж: {% counter %} экз.</p>
     <p>
-      <a href="https://github.com/aeifn/savva3" target="_blank">
+      <a href="https://github.com/aeifn/savva3"
+        title="Сделать вклад в проект"
+        target="_blank">
         <img src="{% static 'github.png' %}"
-          title="Сделать вклад в проект"
           alt="Репозиторий проекта">
       </a>
-  </p>
+    </p>
 
+  </div>
+  <div class="col-md-3">
+    <p>Тираж: {% counter %} экз.</p>
   </div>
 
   <div class="col-md-5">
