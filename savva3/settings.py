@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'questions',
     'features',
 
+    'meta',
     'graphene_django',
     'menu',
     'rest_framework',

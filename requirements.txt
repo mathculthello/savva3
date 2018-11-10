@@ -10,3 +10,4 @@ djangorestframework==3.9.0
 django-menu
 graphene
 graphene_django
+django-meta
