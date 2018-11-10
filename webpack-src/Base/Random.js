@@ -35,7 +35,7 @@ const Video = () => (
       if (error) return <p>Error :(</p>;
       return (
         <>
-        <h4>{data.randomUrl.title}</h4>
+        <p className="h4">{data.randomUrl.title}</p>
           <YouTube
             videoId={YouTubeGetID(data.randomUrl.url)}
             onReady={loadParticles} />
