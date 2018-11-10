@@ -1,5 +1,5 @@
 {% load static %}
-
+{% load sitetree %}
 
 
 <!DOCTYPE html>
@@ -14,7 +14,7 @@
   <meta name="yandex-verification" content="63fb82378255162f" />
 
   {% include 'meta/meta.html' %}
-  
+
   {% block scripts %}
   {% endblock %}
 
@@ -25,7 +25,7 @@
 
 
   {% block menu %}
-  {% include "_menu.html" %}
+    {% sitetree_menu from "topmenu" include "trunk,topmenu" template "savva_menu/topmenu.html" %}
   {% endblock %}
 
 

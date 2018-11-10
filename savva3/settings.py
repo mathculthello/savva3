@@ -25,6 +25,10 @@ REST_FRAMEWORK = {
 }
 
 
+SITETREE_MODEL_TREE_ITEM = 'savva_menu.MyTreeItem'
+
+
+
 MARKDOWN_FILTER_WHITELIST_TAGS = ['p','ul','li','br']
 
 # Application definition
@@ -44,7 +48,10 @@ INSTALLED_APPS = [
     'savva3',
     'questions',
     'features',
+    'savva_menu',
 
+
+    'sitetree',
     'meta',
     'graphene_django',
     'menu',
