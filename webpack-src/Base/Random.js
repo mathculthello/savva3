@@ -26,6 +26,11 @@ const QUERY = gql`
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
 
+
+const opts = {
+  width: '100%',
+}
+
 const Video = () => (
 
 
@@ -38,7 +43,8 @@ const Video = () => (
         <p className="h4">{data.randomUrl.title}</p>
           <YouTube
             videoId={YouTubeGetID(data.randomUrl.url)}
-            onReady={loadParticles} />
+            onReady={loadParticles}
+            opts={opts} />
         </>
       );
     }}
