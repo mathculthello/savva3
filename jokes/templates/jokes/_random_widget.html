@@ -1,6 +1,6 @@
 {% load markdown_filter %}
 {% load i18n %}
-<div class="row rounded mt-4 pt-3 jokes-widget">
+<div class="row rounded mt-1 pt-3 jokes-widget">
   <div class="col-md-12 joke">
     <p class="h3">{{joke.title}}</p>
     {{ joke.text|markdown_filter|safe }}

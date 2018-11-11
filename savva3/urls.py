@@ -46,7 +46,6 @@ urlpatterns = [
     path(r'graphql', csrf_exempt(GraphQLView.as_view(graphiql=True))),
     path(r'api/', include(router.urls)),
     path('base/', include('base.urls')),
-    path('allmath/', include('allmath.urls')),
     path('jokes/', include('jokes.urls')),
     path('q/', include('questions.urls')),
     path('admin/', admin.site.urls),
