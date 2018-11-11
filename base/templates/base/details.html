@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
-
+{% load i18n %}
 
 {% block content %}
 <div class="row">
   <div class="col-md-12">
-    {% include './_video.html' with video=url %}
+    {% include './video.html' with video=url %}
     <div class="description">
       {{ url.description }}
     </div>
@@ -13,10 +13,10 @@
 
 <div class="row">
 <div class="col-md-1">
-<a href="{% url "base:index" %}">&larr; Назад</a>
+<a href="{% url "base:index" %}">&larr; {% trans "Back" %}</a>
 </div>
 <div class="col-md-2 offset-md-9">
-  <a href="{{url.url}}" target="_blank">Смотреть на Ютюбе &rarr;</a>
+  <a href="{{url.url}}" target="_blank">{% trans "Look at YouTube" %} &rarr;</a>
 </div>
 </div>
 
