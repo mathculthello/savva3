@@ -36,6 +36,10 @@ router = routers.DefaultRouter()
 from events.rest.viewsets import EventViewSet
 router.register(r'events', EventViewSet)
 
+
+from django.views.generic import TemplateView
+
+
 urlpatterns = [
     #path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
     path('', views.index, name='index'),
@@ -48,5 +52,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('events/', include('events.urls')),
     path('features/', include('features.urls')),
+    path('404/', TemplateView.as_view(template_name='404.html')),
     path('', include('django.contrib.flatpages.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
