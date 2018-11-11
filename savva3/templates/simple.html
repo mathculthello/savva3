@@ -26,10 +26,6 @@
 
 <body>
 
-
-
-  <div class="container-fluid">
-
       {% for message in messages %}
       <div class="alert alert-success mt-4">
         {{ message }}
@@ -39,13 +35,9 @@
       {% block body %}{% endblock %}
 
 
-
-
-
   {% block style %}
   <script src="{% static 'webpack/common.js' %}"></script>
   {% endblock %}
-
 
 
 </body>
