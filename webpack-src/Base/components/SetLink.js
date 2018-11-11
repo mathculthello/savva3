@@ -10,9 +10,10 @@ const SetLink = (props) => {
   link=<a href={url} target="_blank">{item.node.title}</a>;
 if(item.node.url.includes('youtube')){
   icon=<FaYoutube color="red" className="m-1"/>;
-  url="/base/video/"+item.node.id;
+  //url="/base/video/"+item.node.id;
+  link=<a href={url}>{item.node.title}</a>;
   //link=<Link to={url}>{item.node.title}</Link>
-  link=<Link to={url}>{item.node.title}</Link>
+  //link=<Link to={url}>{item.node.title}</Link>
 }
 return(<tr key={item.node.id}>
   <td>{icon}{link}</td>
