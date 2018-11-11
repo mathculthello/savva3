@@ -1,7 +1,7 @@
 import './common.js';
 
 import $ from 'jquery';
-require('fullcalendar');
+import 'fullcalendar';
 
 import './scss/calenda.scss';
 
@@ -10,7 +10,7 @@ $(function() {
   // page is now ready, initialize the calendar...
 
   $('#calendar').fullCalendar({
-
+    locale: 'ru',
 
     events: {
       url: '/api/events/',
