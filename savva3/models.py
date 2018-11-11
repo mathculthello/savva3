@@ -12,3 +12,11 @@ class Meta(models.Model):
 
     def __str__(self):
         return self.slug
+
+
+class Setting(models.Model):
+    key = models.CharField(max_length=50, unique=True)
+    value = models.TextField()
+
+    def __str__(self):
+        return self.key
