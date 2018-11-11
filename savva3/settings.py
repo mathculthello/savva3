@@ -42,7 +42,6 @@ GRAPHENE = {
 
 INSTALLED_APPS = [
     'base',
-    'allmath',
     'jokes',
     'events',
     'savva3',
