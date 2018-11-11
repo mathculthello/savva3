@@ -1,0 +1,28 @@
+{% extends 'simple.html' %}
+{% load sitetree %}
+
+{% block body %}
+<style>
+.savv a {
+  color:#f0f;
+}
+
+
+</style>
+<div class="container">
+<div class="row mt-5">
+  <div class="col-md-3">
+    <h1 class="savv"><a href="/">Лекторий Савватеева</a></h1>
+  </div>
+<div class="col-md">
+<h1>$4\cdot10^2+4 = $ страница не найдена!</h1>
+<p>Не беда, у нас есть другие интересные страницы:</p>
+
+{% sitetree_tree from "topmenu" %}
+
+<br/>
+... а также
+{% include "_bottommenu.html" %}
+</div>
+</div>
+{% endblock %}

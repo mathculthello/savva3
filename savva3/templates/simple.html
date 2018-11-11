@@ -1,0 +1,47 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  {% include 'counters/_metrika.html' %}
+
+  <title>{% block title %}Лекторий Алексея Савватеева{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+  {% include 'meta/meta.html' %}
+
+  {% block scripts %}
+  {% endblock %}
+
+</head>
+
+<body>
+
+
+
+  <div class="container-fluid">
+
+      {% for message in messages %}
+      <div class="alert alert-success mt-4">
+        {{ message }}
+      </div>
+      {% endfor %}
+
+      {% block body %}{% endblock %}
+
+
+
+
+
+  {% block style %}
+  <script src="{% static 'webpack/common.js' %}"></script>
+  {% endblock %}
+
+
+
+</body>
+
+</html>
