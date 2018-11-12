@@ -1,6 +1,11 @@
 {% extends 'simple.html' %}
 {% load sitetree %}
 
+{% block robots %}
+<meta name="robots" content="noindex, follow">
+{% endblock %}
+
+
 {% block body %}
 <style>
 .savv a {

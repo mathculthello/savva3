@@ -11,9 +11,15 @@
 
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
+
+  <meta name="author" content="Алексей Савватеев">
   {% include 'meta/meta.html' %}
 
   {% block scripts %}
+  {% endblock %}
+
+  {% block robots %}
+  <meta name="robots" content="index, follow">
   {% endblock %}
 
 </head>

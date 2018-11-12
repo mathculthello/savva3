@@ -12,7 +12,7 @@ git clone https://github.com/aeifn/savva3
 cd savva3/
 pip install -r requirements.txt
 
-# Тестовые настроки
+# Тестовые настройки
 cp savva3/env_settings.py.example savva3/env_settings.py
 
 # Создание базы данных
@@ -41,34 +41,30 @@ Jupyter notebook:
 ./manage.py shell_plus --notebook
 ```
 
-открыть файл playground.ipynb
-
-
-
 
 # Фронтенд
 
-чтобы собрать фронтенд: yarn add; webpack
+Чтобы собрать фронтенд:
+```
+yarn
+webpack
+```
 
-
-
-
-
-# Дополнительно (как что работает)
+# Что где находится
 
 шаблоны в папках templates
 
-стили в папке webpack/scss
+стили в папке webpack-src/scss
 
 yarn ставит JS зависимости в директорию node_modules
 
-(они описаны в файлах package.json и yarn.lock)
+(зависимости описаны в файлах package.json и yarn.lock)
 
-webpack из разрозненных файлов в директории webpacksrc генерирует единый файл со стилями и JS, который подключается к HTML
+webpack из разрозненных файлов в директории webpack-src генерирует единый файл со стилями и JS, который подключается к шаблонам
 
 настройки webpack находятся в файле webpack.config.js
 
-директории allmath base events  features jokes questions содержат приложения (это условно говоря, код разных разедлов сайта)
+директории allmath base events features jokes questions содержат приложения (это условно говоря, код разных разедлов сайта)
 
 директория  savva3  - это основное (связующее) приложение. там хранятся все настройки проекта и конфигурация адресов страниц
 

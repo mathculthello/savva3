@@ -1,59 +1,20 @@
+{% extends 'simple.html' %}
 {% load static %}
 {% load sitetree %}
 
 
-<!DOCTYPE html>
-<html lang="ru">
+{% block body %}
 
-<head>
-  {% include 'counters/_metrika.html' %}
+{% block menu %}
+  {% sitetree_menu from "topmenu" include "trunk,topmenu" template "savva_menu/topmenu.html" %}
+{% endblock %}
 
-  <title>{% block title %}Лекторий Алексея Савватеева{% endblock %}</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-
-  <meta name="yandex-verification" content="63fb82378255162f" />
-
-  {% include 'meta/meta.html' %}
-
-  {% block scripts %}
+<div class="container-fluid">
+  {% block content %}{% endblock %}
+  <hr />
+  {% block footer %}
+    {% include '_footer.html' %}
   {% endblock %}
+</div>
 
-</head>
-
-<body>
-
-
-
-  {% block menu %}
-    {% sitetree_menu from "topmenu" include "trunk,topmenu" template "savva_menu/topmenu.html" %}
-  {% endblock %}
-
-
-
-  <div class="container-fluid">
-
-      {% for message in messages %}
-      <div class="alert alert-success mt-4">
-        {{ message }}
-      </div>
-      {% endfor %}
-
-      {% block content %}{% endblock %}
-
-    <hr />
-
-  {% include '_footer.html' %}
-
-  </div>
-
-  {% block style %}
-  <script src="{% static 'webpack/common.js' %}"></script>
-  {% endblock %}
-
-
-
-</body>
-
-</html>
+{% endblock %}{# body #}
