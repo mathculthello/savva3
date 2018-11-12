@@ -5,6 +5,8 @@ from django.urls import reverse
 import datetime
 from meta.models import ModelMeta
 
+from django.utils.translation import gettext as _
+
 
 
 
@@ -64,9 +66,23 @@ class Resource(ModelMeta, models.Model):
     updated_at=models.DateTimeField(default=datetime.datetime.now, blank=False)
     _keywords = models.CharField(max_length=500, blank=True)
 
+    relation = models.ManyToManyField('self', through='Relationship', symmetrical=False)
+
 
     def __str__(self):
         return self.title
+
+
+
+class Relationship(models.Model):
+    RELATIONS = (
+        ('depends', _('Depends on')),
+        ('refers', _('Refers to')),
+    )
+    from_resource = models.ForeignKey(Resource, related_name='from_resource', on_delete=models.DO_NOTHING)
+    to_resource = models.ForeignKey(Resource, related_name='to_resource', on_delete=models.DO_NOTHING)
+    type=models.CharField(max_length=20, choices=RELATIONS)
+
 
 class Video(Resource):
     url = models.URLField(max_length=500, null=False, blank=False, unique=True)

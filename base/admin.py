@@ -20,10 +20,19 @@ class UrlAdmin(admin.ModelAdmin):
             x = x + a.name
         return x
 
+class RelationshipInline(admin.TabularInline):
+    model = Relationship
+    extra = 1
+    fk_name = "to_resource"
+
+
+class ResourceAdmin(admin.ModelAdmin):
+    inlines = (RelationshipInline,)
 
 admin.site.register(Url, UrlAdmin)
 admin.site.register(Tag)
 admin.site.register(Area)
-admin.site.register(Video)
+admin.site.register(Video, ResourceAdmin)
 admin.site.register(Author)
-admin.site.register(Book)
+admin.site.register(Book, ResourceAdmin)
+admin.site.register(Resource)
