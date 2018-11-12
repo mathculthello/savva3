@@ -7,7 +7,7 @@ from graphene_django.types import DjangoObjectType
 from graphene_django.filter import DjangoFilterConnectionField
 
 
-from .models import Url, Tag, Area
+from .models import Resource, Tag, Area, Video
 
 class TagNode(DjangoObjectType):
     class Meta:
@@ -22,39 +22,42 @@ class AreaNode(DjangoObjectType):
         interfaces=(graphene.relay.Node, )
 
 
-class UrlNode(DjangoObjectType):
+class VideoNode(DjangoObjectType):
     get_absolute_url = graphene.String()
 
     def resolve_get_absolute_url(self, _args, *_kwargs):
         return self.get_absolute_url()
 
     class Meta:
-        model = Url
+        model = Video
         filter_fields = {
         'id': ['exact'],
-        'url': ['exact', 'contains'],
+        'url': ['contains'],
         'title': ['contains'],
         'areas': ['exact'],
-        'many_tag': ['exact'],
-        'many_tag__name': ['exact'],
         }
         interfaces = (graphene.relay.Node, )
 
-class UrlType(DjangoObjectType):
+class VideoType(DjangoObjectType):
     class Meta:
-        model = Url
+        model = Video
 
 class Query(object):
-    url = graphene.relay.Node.Field(UrlNode)
-    all_urls = DjangoFilterConnectionField(UrlNode)
+    url = graphene.relay.Node.Field(VideoNode)
+    all_urls = DjangoFilterConnectionField(VideoNode)
 
     tag = graphene.relay.Node.Field(TagNode)
     all_tags = DjangoFilterConnectionField(TagNode)
 
     area = graphene.relay.Node.Field(AreaNode)
     all_areas = DjangoFilterConnectionField(AreaNode)
+    #all_areas = graphene.Field(AreaNode)
 
-    random_url = graphene.Field(UrlType)
+    random_url = graphene.Field(VideoType)
 
-    def resolve_random_url(serlf,info,**kwargs):
-        return Url.objects.filter(url__contains="youtube").filter(url__contains="watch").order_by("?").first()
+    def resolve_all_areas(self,info,**kwargs):
+        # Выбираем только те темы, на которые есть видео
+        return Area.objects.exclude(resource__video__isnull=True)
+
+    def resolve_random_url(self,info,**kwargs):
+        return Video.objects.filter(url__contains="youtube").filter(url__contains="watch").order_by("?").first()

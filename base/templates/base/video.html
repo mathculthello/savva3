@@ -1,5 +1,27 @@
+{% extends 'base.html' %}
 {% load embed_video_tags %}
+{% load i18n %}
 
-<h1>{{ video.title|safe }}</h1>
+{% block content %}
+<div class="row">
+  <div class="col-md-12">
 
-{% video video.url '100% x 500' %}
+    <h1>{{ video.title|safe }}</h1>
+
+    {% video video.url '100% x 500' %}
+    <div class="description">
+      {{ video.description }}
+    </div>
+  </div>
+</div>
+
+<div class="row">
+<div class="col-md-1">
+<a href="{% url "base:index" %}">&larr; {% trans "Back" %}</a>
+</div>
+<div class="col-md-2 offset-md-9">
+  <a href="{{video.url}}" target="_blank">{% trans "Look at YouTube" %} &rarr;</a>
+</div>
+</div>
+
+{% endblock %}

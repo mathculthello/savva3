@@ -2,7 +2,7 @@ from django.shortcuts import redirect, render
 from .models import *
 
 #from .filters import UrlFilter
-from .models import Url
+from .models import Video
 
 # Create your views here.
 def app(request, **args):
@@ -10,13 +10,10 @@ def app(request, **args):
     #context = {'filter': f}
     return render (request, 'base/index.html')
 
-def details(request,url_id):
-    url = Url.objects.get(id=url_id)
-    if 'youtube' in url.url:
-        context={
-        'url':url,
-        'meta':url.as_meta()
-        }
-        return render (request, 'base/details.html',context)
-    else:
-        return redirect(url.url)
+def video(request,video_id):
+    video = Video.objects.get(id=video_id)
+    context={
+    'video':video,
+    'meta':video.as_meta()
+    }
+    return render (request, 'base/video.html',context)

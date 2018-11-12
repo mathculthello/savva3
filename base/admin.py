@@ -24,3 +24,6 @@ class UrlAdmin(admin.ModelAdmin):
 admin.site.register(Url, UrlAdmin)
 admin.site.register(Tag)
 admin.site.register(Area)
+admin.site.register(Video)
+admin.site.register(Author)
+admin.site.register(Book)
