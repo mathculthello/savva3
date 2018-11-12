@@ -44,6 +44,9 @@ def index(request):
     }
     return render (request, 'index.html', context)
 
+def sitemap(request):
+    return render(request,'sitemap.html')
+
 def handle404(request, exception):
     return redirect (reverse('404'))
 

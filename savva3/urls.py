@@ -53,5 +53,6 @@ urlpatterns = [
     path('events/', include('events.urls')),
     path('features/', include('features.urls')),
     path('404/', views.return404, name='404'),
+    path('sitemap/', views.sitemap, name='sitemap'),
     path('', include('django.contrib.flatpages.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
