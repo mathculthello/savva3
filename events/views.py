@@ -10,6 +10,12 @@ from .models import Event
 # Create your views here.
 
 
+def index(request):
+    events=Event.objects.all().order_by('start')
+    context={'events':events}
+    return render(request, 'events/index.html',context)
+
+
 def calendar(request):
     return render(request, 'events/calendar.html')
 
