@@ -7,6 +7,10 @@ from meta.models import ModelMeta
 
 
 
+
+
+
+
 class Tag(models.Model):
     name = models.CharField(max_length=100, null=False)
     title = models.CharField(max_length=100, null=False, default='')
@@ -19,6 +23,66 @@ class Area(models.Model):
 
     def __str__(self):
         return self.title
+
+
+
+
+
+class Person(models.Model):
+    first_name = models.CharField(max_length=50, blank=False, null=False)
+    last_name = models.CharField(max_length=50, blank=False, null=False)
+
+    @property
+    def full_name(self):
+        return '%s %s' % (self.first_name, self.last_name)
+
+    def __str__(self):
+        return self.full_name
+
+    class Meta:
+        abstract = True
+
+
+class Author(Person):
+    pass
+
+
+
+
+
+class Resource(ModelMeta, models.Model):
+    title = models.CharField(max_length=500, null=False, blank=False)
+    areas = models.ManyToManyField(Area, blank=False)
+
+    description = models.TextField(blank=True)
+
+    authors = models.ManyToManyField(Author)
+
+    created_at=models.DateTimeField(default=datetime.datetime.now, blank=False)
+    updated_at=models.DateTimeField(default=datetime.datetime.now, blank=False)
+    _keywords = models.CharField(max_length=500, blank=False, default=False)
+
+
+    def __str__(self):
+        return self.title
+
+class Video(Resource):
+    url = models.URLField(max_length=500, null=False, blank=False, unique=True)
+
+    def get_absolute_url(self, *args):
+        return reverse('base:video', kwargs={'video_id':self.id})
+
+
+
+
+class Book(Resource):
+    pass
+
+
+
+
+
+
 
 
 # Create your models here.
