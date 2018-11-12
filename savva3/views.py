@@ -48,7 +48,7 @@ def sitemap(request):
     return render(request,'sitemap.html')
 
 def handle404(request, exception):
-    return redirect (reverse('404'))
+    return redirect (reverse('404'), permanent=True)
 
 def return404(request, template_name=ERROR_404_TEMPLATE_NAME):
     template = loader.get_template(template_name)
