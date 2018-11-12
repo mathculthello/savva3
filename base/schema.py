@@ -57,7 +57,7 @@ class Query(object):
 
     def resolve_all_areas(self,info,**kwargs):
         # Выбираем только те темы, на которые есть видео
-        return Area.objects.exclude(resource__video__isnull=True)
+        return Area.objects.filter(resource__video__isnull=False).distinct()
 
     def resolve_random_url(self,info,**kwargs):
         return Video.objects.filter(url__contains="youtube").filter(url__contains="watch").order_by("?").first()
