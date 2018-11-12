@@ -17,3 +17,8 @@ def video(request,video_id):
     'meta':video.as_meta()
     }
     return render (request, 'base/video.html',context)
+
+def books(request):
+    books = Book.objects.all()
+    context={'books':books}
+    return render (request, 'base/books.html', context)

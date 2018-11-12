@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<table class="table">
+  <tbody>
+    {% for book in books %}
+      <tr>
+        <td>
+          {% for author in book.authors.all %}
+            {{author.full_name}}<br/>
+          {% endfor %}
+        </td>
+        <td>
+          {{book.title}}
+        </td>
+        <td>
+          {% if book.comment %}({{book.comment}}){% endif %}
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

@@ -56,11 +56,13 @@ class Resource(ModelMeta, models.Model):
 
     description = models.TextField(blank=True)
 
+    comment = models.TextField(blank=True)
+
     authors = models.ManyToManyField(Author)
 
     created_at=models.DateTimeField(default=datetime.datetime.now, blank=False)
     updated_at=models.DateTimeField(default=datetime.datetime.now, blank=False)
-    _keywords = models.CharField(max_length=500, blank=False, default=False)
+    _keywords = models.CharField(max_length=500, blank=True)
 
 
     def __str__(self):
