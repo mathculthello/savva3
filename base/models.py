@@ -94,7 +94,8 @@ class Video(Resource):
 
 
 class Book(Resource):
-    pass
+    def get_absolute_url(self):
+        return reverse('base:book', kwargs={'book_id':self.id})
 
 
 

@@ -22,3 +22,11 @@ def books(request):
     books = Book.objects.all()
     context={'books':books}
     return render (request, 'base/books.html', context)
+
+def book(request, book_id):
+    book = Book.objects.get(id=book_id)
+    context={
+    'book': book,
+    'meta': book.as_meta()
+    }
+    return render(request, 'base/book.html', context)

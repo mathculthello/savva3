@@ -8,4 +8,6 @@ urlpatterns = [
     path('', views.app, name='index'),
     path('<int:video_id>/', views.video, name='video'),
     path('books/', views.books, name="books"),
+    path('book/<int:book_id>', views.book, name="book"),
+
 ]
