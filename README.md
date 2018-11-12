@@ -19,7 +19,7 @@ cp savva3/env_settings.py.example savva3/env_settings.py
 ./manage.py migrate
 
 # Загружаем тестовые данные в базу данных
-./manage.py loaddata dump.json
+./manage.py loaddata base.json
 
 # Создание пользователя:
 ./manage.py createsuperuser
