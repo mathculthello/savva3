@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from events.models import Event
 from questions.forms import QuestionForm
 from features.forms import FormulaeForm
@@ -8,6 +8,14 @@ from base.models import Url
 from django.contrib.flatpages.models import FlatPage
 from meta.views import Meta
 from .models import Meta as ModelMeta
+
+from django.http import HttpResponseNotFound
+from django.template import loader
+from django.urls import reverse
+
+ERROR_404_TEMPLATE_NAME = '404.html'
+
+
 # Create your views here.
 def index(request):
     joke=Joke.objects.filter(published=True).filter(adult=False).order_by('?').first()
@@ -35,3 +43,13 @@ def index(request):
     'joke':joke,
     }
     return render (request, 'index.html', context)
+
+def handle404(request, exception):
+    return redirect (reverse('404'))
+
+def return404(request, template_name=ERROR_404_TEMPLATE_NAME):
+    template = loader.get_template(template_name)
+    context = {}
+    body = template.render(context, request)
+    content_type = None             # Django will use DEFAULT_CONTENT_TYPE
+    return HttpResponseNotFound(body, content_type=content_type)

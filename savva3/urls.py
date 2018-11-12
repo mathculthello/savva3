@@ -38,6 +38,7 @@ router.register(r'events', EventViewSet)
 
 
 from django.views.generic import TemplateView
+handler404 = 'savva3.views.handle404'
 
 
 urlpatterns = [
@@ -51,6 +52,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('events/', include('events.urls')),
     path('features/', include('features.urls')),
-    #path('404/', TemplateView.as_view(template_name='404.html')),
+    path('404/', views.return404, name='404'),
     path('', include('django.contrib.flatpages.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
