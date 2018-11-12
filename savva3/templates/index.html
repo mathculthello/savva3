@@ -21,9 +21,7 @@
 
 <div class="row mt-4 position-relative">
   <div id="particles-js"></div>
-  <div class="offset-md-1 col-md-10">
-    <div id="video"></div>
-  </div>
+  <div id="video" class="col-md-12"></div>
 </div>
 
 <div class="row mt-5">
@@ -34,9 +32,11 @@
   </div>
 </div>
 
-<h2 class="mt-5">Открытые лекции по математике</h2>
-<p><a href="{% url 'events:calendar' %}" title="Перейти в календарь">В календаре</a></p>
-<div id="events"></div>
+<section id="events_block" class="offset-md-1 col-md-10">
+  <h2 class="mt-5">Открытые лекции по математике</h2>
+  <p><a href="{% url 'events:calendar' %}" title="Перейти в календарь">В календаре</a></p>
+  <div id="events"></div>
+</section>
 
 
 <div class="row mt-4">

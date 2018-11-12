@@ -40,14 +40,15 @@ const Video = () => (
       if (error) return <p>Error :(</p>;
       return (
         <>
-        <p className="h4">{data.randomUrl.title}</p>
+          <h1>{data.randomUrl.title}</h1>
           <YouTube
             videoId={YouTubeGetID(data.randomUrl.url)}
             onReady={loadParticles}
             opts={opts} />
+          
           <div className="text-center">
             <Button color="success" onClick={() => refetch()}>Другое видео</Button>
-        </div>
+          </div>
         </>
       );
     }}

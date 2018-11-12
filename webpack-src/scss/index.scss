@@ -21,6 +21,17 @@
   height: 100%;
   z-index: 0;
 }
+#video > h4 {
+  min-height: 4rem;
+}
+section#events_block {
+  #events {
+    margin: 0 1rem;
+  }
+  h2 {
+    text-align: center;
+  }
+}
 
 .eventButton {
   border-bottom:1px dashed;

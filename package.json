@@ -34,7 +34,8 @@
     "react-spinners": "^0.4.7",
     "react-youtube": "^7.8.0",
     "reactjs": "^1.0.0",
-    "reactstrap": "^6.5.0"
+    "reactstrap": "^6.5.0",
+    "webpack": "^4.25.1"
   },
   "devDependencies": {
     "babel-loader": "^8.0.4",
