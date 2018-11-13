@@ -20,7 +20,7 @@
   <div class="col">
 
     {% if event.place or event.address or event.comment %}
-    <a href="{% url 'events:event' event.id %}" role="button" aria-expanded="false" aria-controls="event{{event.id}}">
+    <a href="{% url 'events:event' event.id %}" title="{{ event.title| default:"Пока без названия"}}">
         <strong>{{ event.title|default:"..." }}</strong>
     </a>
     {% else %}
