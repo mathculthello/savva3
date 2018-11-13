@@ -4,8 +4,6 @@
 <html lang="ru">
 
 <head>
-  {% include 'counters/_metrika.html' %}
-
   <title>{% block title %}{{savva.title_full}}{% endblock %}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -25,6 +23,7 @@
 </head>
 
 <body>
+      {{savva.counters_code|safe}}
 
       {% for message in messages %}
       <div class="alert alert-success mt-4">
