@@ -9,60 +9,81 @@
 {% endblock %}
 
 
-{% block content %}
+<div class="offset-md-1 col-md-10">
+  {% block content %}
 
-<!-- SAVVATEEV -->
-
-
-{% include './prosvet.html' %}
-
-<noindex>
-<div class="row mt-4 position-relative">
-  <div id="particles-js"></div>
-  <div class="offset-md-1 col-md-10">
-    <div id="video"></div>
-  </div>
-</div>
-</noindex>
-
-<div class="row mt-5">
-  <div class="col text-center">
-    <div class="formulae">
-    {{formulae.formulae}}
+  <!-- SAVVATEEV -->
+  
+  <noindex>
+  <div class="row">
+  <div class="col">
+    <h1>Премия «Просветитель»!</h1>
+    <h2>Проголосуй за Савватеева &darr;</h2>
+  
+    <!-- Put this script tag to the <head> of your page -->
+  <script type="text/javascript" src="https://vk.com/js/api/openapi.js?159"></script>
+  <!-- Put this div tag to the place, where the Poll block will be -->
+  <div id="vk_poll"></div>
+  <script type="text/javascript">
+  VK.Widgets.Poll("vk_poll", {}, "310356290_4779b81208ab3a3b87");
+  </script>
+    <h2>Проголосуй за Савватеева &uarr;</h2>
+  
+    </div>
+    </div>
+  </noindex>
+  
+  <!--
+    <img src="/img/savvateev.jpg">
+  -->
+  
+  <div class="row mt-4 position-relative">
+    <div id="particles-js"></div>
+    <div class="offset-md-1 col-md-10">
+      <div id="video"></div>
     </div>
   </div>
-</div>
-
-<section id="events_block" class="offset-md-1 col-md-10">
-  <h2 class="mt-5">Открытые лекции по математике</h2>
-  <div id="events"></div>
-</section>
-
-
-<div class="row mt-4">
-<div class="col-md-12">
-<h2>{{intro.title|safe}}</h2>
-{{intro.content|safe}}
-</div>
-</div>
-
-
-<div class="row mt-2">
-  <div class="col-md-6 offset-md-3">
+  
+  <div class="row mt-5">
+    <div class="col text-center">
+      <div class="formulae">
+      {{formulae.formulae}}
+      </div>
+    </div>
   </div>
-</div>
-
-
-<div class="row mt-5">
-  <div class="col-md-6 offset-md-1">
-    {% include 'jokes/_random_widget.html' %}
+  
+  <section id="events_block" class="offset-md-1 col-md-10">
+    <h2 class="mt-5">Открытые лекции по математике</h2>
+    <p><a href="{% url 'events:calendar' %}" title="Перейти в календарь">В календаре</a></p>
+    <div id="events"></div>
+  </section>
+  
+  
+  <div class="row mt-4">
+  <div class="col-md-12">
+  <h2>{{intro.title|safe}}</h2>
+  {{intro.content|safe}}
   </div>
-  <div class="col-md-4 pl-5">
-    {% include '_social.html' %}
   </div>
+  
+  
+  <div class="row mt-2">
+    <div class="col-md-6 offset-md-3">
+    </div>
+  </div>
+  
+  
+  <div class="row mt-5">
+    <div class="col-md-6 offset-md-1">
+      {% include 'jokes/_random_widget.html' %}
+    </div>
+    <div class="col-md-4 pl-5">
+      {% include '_social.html' %}
+    </div>
+  </div>
+  
+  
+  
+  
+  {% endblock %}
 </div>
-
-
-
-
-{% endblock %}

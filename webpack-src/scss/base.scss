@@ -2,3 +2,42 @@
   background: #add6fc;
   display: inline-block;
 }
+
+.date-nowrap {
+  min-width: 11rem;
+}
+.city-nowrap {
+  min-width: 11rem;
+}
+.col {
+  text-align: center;
+}
+
+#events {
+  .col {
+    text-align: left;
+  }
+}
+
+.links {
+  padding: 0;
+  min-width: 230px;
+}
+
+// ограничение максимальной ширины виджета голосования вк
+.container-fluid > noindex:nth-child(1) > div:nth-child(1) > div:nth-child(1) {
+  max-width: 740px;
+  margin: auto;
+}
+h1 {
+  font-weight: bold;
+  font-size: 2.9rem;
+  margin: 1rem;
+}
+h2 {
+  margin: 1rem;
+  font-size: 2rem;
+  font-family: sans-serif;
+  font-weight: lighter;
+  letter-spacing: 0px;
+}
