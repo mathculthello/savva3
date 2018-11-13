@@ -1,13 +1,15 @@
-from .models import Meta, Setting
+from .models import Setting
 import logging
 import sys
 from .helpers import sttngs
-
-logger = logging.getLogger(__name__)
+from savva_menu.models import MyTreeItem as Menu
 
 def meta(request):
-    meta = Meta.objects.filter(slug=request.path).first()
-    return {'meta':meta}
+    try:
+        meta = Menu.objects.get(url=request.path)
+        return {'meta':meta.as_meta()}
+    except:
+        return {}
 
 def settings(request):
     return {'savva':sttngs}
