@@ -5,7 +5,7 @@
 {% for event in events %}
 <div class="row border-bottom pt-1 pb-2">
 
-  <div class="col-md-2">
+  <div class="col-md-2 date-nowrap">
     {% with start=event.start time=event.start.time %}
     {% if time.hour == 0 and time.minute == 0 %}
       {{ start.date }}

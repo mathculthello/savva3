@@ -71,10 +71,10 @@ class Event extends React.Component {
 
     return(
       <div className="row border-bottom pt-1 pb-2">
-        <div className="col-md-2">
+        <div className="col-md-2 date-nowrap">
         {moment(this.props.start).utc().format(format)}
         </div>
-        <div className="col-md-1">
+        <div className="col-md-1 city-nowrap">
         {this.props.city}
         </div>
         <div className="col">
