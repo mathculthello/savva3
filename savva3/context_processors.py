@@ -7,7 +7,8 @@ from savva_menu.models import MyTreeItem as Menu
 def meta(request):
     try:
         meta = Menu.objects.get(url=request.path)
-        return {'meta':meta.as_meta()}
+        title = meta.head_title
+        return {'meta':meta.as_meta(), 'title': title}
     except:
         return {}
 
