@@ -17,7 +17,9 @@
 <div class="container">
 <div class="row mt-5">
   <div class="col-md-3">
-    <h1 class="savv"><a href="/" title="{{savva.title}}">{{savva.title}}</a></h1>
+    <p class="h1 savv">
+      <a href="/" title="{{savva.title}}">{{savva.title}}</a>
+    </p>
   </div>
 <div class="col-md">
 <h1>$4\cdot10^2+4 = $ страница не найдена!</h1>
@@ -27,7 +29,8 @@
 
 <br/>
 ... а также
-{% include "_bottommenu.html" %}
+{% sitetree_tree from "footermenu" %}
+
 </div>
 </div>
 {% endblock %}

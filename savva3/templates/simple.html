@@ -4,15 +4,14 @@
 <html lang="ru">
 
 <head>
-  {% include 'counters/_metrika.html' %}
-
-  <title>{% block title %}{{savva.title_full}}{% endblock %}</title>
+  <title>{% block title %}{%if title %}{{title}}{%else%}{{savva.title_full}}{%endif%}{% endblock %}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
 
   <meta name="author" content="{{savva.author}}">
+
   {% include 'meta/meta.html' %}
 
   {% block scripts %}
@@ -25,6 +24,7 @@
 </head>
 
 <body>
+      {{savva.counters_code|safe}}
 
       {% for message in messages %}
       <div class="alert alert-success mt-4">
@@ -35,7 +35,7 @@
       {% block body %}{% endblock %}
 
 
-  {% block style %}
+  {% block bundle %}
   <script src="{% static 'webpack/common.js' %}"></script>
   {% endblock %}
 

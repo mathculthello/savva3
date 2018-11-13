@@ -7,7 +7,6 @@ from jokes.models import Joke
 from base.models import Url
 from django.contrib.flatpages.models import FlatPage
 from meta.views import Meta
-from .models import Meta as ModelMeta
 
 from django.http import HttpResponseNotFound
 from django.template import loader
@@ -34,7 +33,6 @@ def index(request):
         meta = False
 
     context = {
-    'meta':meta,
     'intro':intro,
     'video':video,
     'formulae': formulae,
@@ -48,7 +46,7 @@ def sitemap(request):
     return render(request,'sitemap.html')
 
 def handle404(request, exception):
-    return redirect (reverse('404'))
+    return redirect (reverse('404'), permanent=True)
 
 def return404(request, template_name=ERROR_404_TEMPLATE_NAME):
     template = loader.get_template(template_name)

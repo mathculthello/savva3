@@ -5,7 +5,7 @@
 {% for event in events %}
 <div class="row border-bottom pt-1 pb-2">
 
-  <div class="col-md-2">
+  <div class="col-md-2 text-nowrap">
     {% with start=event.start time=event.start.time %}
     {% if time.hour == 0 and time.minute == 0 %}
       {{ start.date }}
@@ -20,7 +20,7 @@
   <div class="col">
 
     {% if event.place or event.address or event.comment %}
-    <a href="{% url 'events:event' event.id %}" title="{{ event.title| default:"Пока без названия"}}">
+    <a class="" data-toggle="collapse" href="#event{{event.id}}" role="button" aria-expanded="false" aria-controls="event{{event.id}}">
         <strong>{{ event.title|default:"..." }}</strong>
     </a>
     {% else %}

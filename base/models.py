@@ -139,8 +139,8 @@ class Url(ModelMeta, models.Model):
         else:
             raise exceptions.ValidationError('hello')
 
-    def get_absolute_url(self, *args):
-        return reverse('base:details', kwargs={'url_id':self.id})
+    #def get_absolute_url(self, *args):
+    #    return reverse('base:details', kwargs={'url_id':self.id})
 
 
     def __str__(self):

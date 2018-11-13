@@ -42,7 +42,7 @@ handler404 = 'savva3.views.handle404'
 
 
 urlpatterns = [
-    #path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
     path('', views.index, name='index'),
     path(r'graphql', csrf_exempt(GraphQLView.as_view(graphiql=True))),
     path(r'api/', include(router.urls)),

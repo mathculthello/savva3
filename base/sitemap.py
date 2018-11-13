@@ -1,12 +1,12 @@
 from django.contrib.sitemaps import Sitemap
-from .models import Url
+from .models import Video
 
-class UrlSitemap(Sitemap):
-    changefreq = "daily"
-    priority = 1
+class BaseSitemap(Sitemap):
+    changefreq = "monthly"
+    priority = 0.7
 
     def items(self):
-        return Url.objects.all()
+        return Video.objects.all()
 
     def lastmod(self, obj):
         return obj.updated_at
