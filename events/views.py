@@ -20,6 +20,6 @@ def calendar(request):
     return render(request, 'events/calendar.html')
 
 
-def details(request, event_id):
+def event(request, event_id):
     event=Event.objects.get(id=event_id)
-    return render(request, 'events/details.html', {'event':event})
+    return render(request, 'events/event.html', {'event':event})
