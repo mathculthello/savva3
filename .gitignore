@@ -5,3 +5,4 @@ savva3/env_settings.py
 node_modules
 bundle.js
 *.mo
+savva3/static/webpack
