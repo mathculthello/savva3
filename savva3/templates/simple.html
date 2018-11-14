@@ -9,7 +9,6 @@
 
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
-
   <meta name="author" content="{{savva.author}}">
 
   {% include 'meta/meta.html' %}
@@ -24,22 +23,20 @@
 </head>
 
 <body>
-      {{savva.counters_code|safe}}
+  {{savva.counters_code|safe}}
 
-      {% for message in messages %}
-      <div class="alert alert-success mt-4">
-        {{ message }}
-      </div>
-      {% endfor %}
+  {% for message in messages %}
+  <div class="alert alert-success mt-4">
+    {{ message }}
+  </div>
+  {% endfor %}
 
-      {% block body %}{% endblock %}
+  {% block body %}{% endblock %}
 
 
   {% block bundle %}
   <script src="{% static 'webpack/common.js' %}"></script>
   {% endblock %}
-
-
 </body>
 
 </html>

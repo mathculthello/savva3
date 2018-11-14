@@ -29,13 +29,6 @@ from graphene_django.views import GraphQLView
 from django.contrib.sitemaps.views import sitemap
 from .sitemaps import sitemaps
 
-### ROUTER REST
-from rest_framework import routers
-router = routers.DefaultRouter()
-
-from events.rest.viewsets import EventViewSet
-router.register(r'events', EventViewSet)
-
 
 from django.views.generic import TemplateView
 handler404 = 'savva3.views.handle404'
@@ -45,10 +38,8 @@ urlpatterns = [
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
     path('', views.index, name='index'),
     path(r'graphql', csrf_exempt(GraphQLView.as_view(graphiql=True))),
-    path(r'api/', include(router.urls)),
     path('base/', include('base.urls')),
     path('jokes/', include('jokes.urls')),
-    path('q/', include('questions.urls')),
     path('admin/', admin.site.urls),
     path('events/', include('events.urls')),
     path('features/', include('features.urls')),

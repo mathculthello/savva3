@@ -1,15 +1,11 @@
 from django.db import models
-from .utils import get_title
+from .helpers import get_title
 from django.core import exceptions
 from django.urls import reverse
 import datetime
 from meta.models import ModelMeta
 
 from django.utils.translation import gettext as _
-
-
-
-
 
 
 
@@ -25,9 +21,6 @@ class Area(models.Model):
 
     def __str__(self):
         return self.title
-
-
-
 
 
 class Person(models.Model):
@@ -96,11 +89,6 @@ class Video(Resource):
 class Book(Resource):
     def get_absolute_url(self):
         return reverse('base:book', kwargs={'book_id':self.id})
-
-
-
-
-
 
 
 

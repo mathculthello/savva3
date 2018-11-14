@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
 
+{% block heading %}
+<h1>Книги</h1>
+{% endblock %}
 
 {% block content %}
-
 <table class="table">
   <tbody>
     {% for book in books %}
@@ -22,5 +24,4 @@
     {% endfor %}
   </tbody>
 </table>
-
 {% endblock %}

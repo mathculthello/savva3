@@ -18,11 +18,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
-REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
-    )
-}
 
 
 SITETREE_MODEL_TREE_ITEM = 'savva_menu.MyTreeItem'
@@ -45,7 +40,6 @@ INSTALLED_APPS = [
     'jokes',
     'events',
     'savva3',
-    'questions',
     'features',
     'savva_menu',
 
@@ -54,7 +48,6 @@ INSTALLED_APPS = [
     'meta',
     'graphene_django',
     'menu',
-    'rest_framework',
     'django_filters',
     'markdown_filter',
     'embed_video',

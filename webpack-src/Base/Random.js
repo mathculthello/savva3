@@ -9,7 +9,7 @@ import { HttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { Button } from 'reactstrap';
 
-import client from './client';
+import client from '../client';
 import { ApolloProvider } from 'react-apollo';
 
 

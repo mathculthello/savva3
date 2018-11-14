@@ -1,7 +1,5 @@
 from django.shortcuts import render, redirect
 from events.models import Event
-from questions.forms import QuestionForm
-from features.forms import FormulaeForm
 from features.models import Formulae
 from jokes.models import Joke
 from base.models import Url
@@ -18,8 +16,6 @@ ERROR_404_TEMPLATE_NAME = '404.html'
 # Create your views here.
 def index(request):
     joke=Joke.objects.filter(published=True).filter(adult=False).order_by('?').first()
-    question_form=QuestionForm()
-    formulae_form=FormulaeForm()
     formulae=Formulae.objects.filter(published=True).order_by('?').first()
     video=Url.objects.filter(url__contains="youtube").filter(url__contains="watch").order_by("?").first()
     try:
@@ -36,8 +32,6 @@ def index(request):
     'intro':intro,
     'video':video,
     'formulae': formulae,
-    'question_form':question_form,
-    'formulae_form':formulae_form,
     'joke':joke,
     }
     return render (request, 'index.html', context)

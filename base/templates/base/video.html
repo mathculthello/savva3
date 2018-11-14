@@ -2,11 +2,13 @@
 {% load embed_video_tags %}
 {% load i18n %}
 
+{%block heading%}
+<h1>{{ video.title|safe }}</h1>
+{%endblock%}
+
 {% block content %}
 <div class="row">
   <div class="col-md-12">
-
-    <h1>{{ video.title|safe }}</h1>
 
     {% video video.url '100% x 500' %}
     <div class="description">
@@ -32,7 +34,4 @@
   <a href="{{video.url}}" target="_blank">{% trans "Look at YouTube" %} &rarr;</a>
 </div>
 </div>
-
-
-
 {% endblock %}

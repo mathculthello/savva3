@@ -1,0 +1,13 @@
+{allEvents {
+  edges {
+    node {
+      id
+      start
+      city
+      title
+      place
+      address
+      comment
+    }
+  }
+}}

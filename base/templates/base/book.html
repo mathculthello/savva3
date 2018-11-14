@@ -1,15 +1,16 @@
 {% extends 'base.html' %}
 
+{% block heading %}
+<h1>{{book.title}}</h1>
+{% endblock %}
 
 {% block content %}
-
-<h2>{{book.title}}</h2>
 
 {% for author in book.authors.all %}
 <p>{{author.full_name}}</p>
 {% endfor %}
-<p>{{ book.comment }}</p>
 
+<p>{{ book.comment }}</p>
 
 {% for area in book.areas.all %}
 <p>
@@ -17,10 +18,13 @@
 </p>
 {% endfor %}
 
+{% block references %}
 <h3>Ссылки сюда</h3>
 {% for item in book.relation.all %}
 {% if item.video %}
 <a href="{{item.video.get_absolute_url}}">{{item.title}}</a>
 {% endif %}
 {% endfor %}
+{% endblock %}
+
 {% endblock %}

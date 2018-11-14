@@ -2,61 +2,29 @@
 {% load markdown_filter %}
 {% load static %}
 
-{% block header %}{% endblock %}
-
 {% block bundle %}
 <script src="{% static 'webpack/index.js' %}"></script>
 {% endblock %}
 
+{% block content %}
 
-<div class="offset-md-1 col-md-10">
-  {% block content %}
+{% include 'index/poll.html' %}
 
-  {% include './poll.html' %}
+{% include 'index/video.html' %}
 
-  <div class="row mt-4 position-relative">
-    <div id="particles-js"></div>
-    <div class="offset-md-1 col-md-10">
-      <div id="video"></div>
-    </div>
+{% include 'index/formulae.html' %}
+
+{% include 'index/lections.html' %}
+
+{% include 'index/intro.html' %}
+
+<div class="row mt-5">
+  <div class="col-md-6 offset-md-1">
+    {% include 'jokes/random_widget.html' %}
   </div>
-
-  <div class="row mt-5">
-    <div class="col text-center">
-      <div class="formulae">
-      {{formulae.formulae}}
-      </div>
-    </div>
+  <div class="col-md-4 pl-5">
+    {% include 'index/social.html' %}
   </div>
-
-  <section id="events_block" class="offset-md-1 col-md-10">
-    <h2 class="mt-5">Открытые лекции по математике</h2>
-    <div id="events"></div>
-  </section>
-
-
-  <div class="row mt-4">
-  <div class="col-md-12">
-  <h2>{{intro.title|safe}}</h2>
-  {{intro.content|safe}}
-  </div>
-  </div>
-
-
-  <div class="row mt-2">
-    <div class="col-md-6 offset-md-3">
-    </div>
-  </div>
-
-
-  <div class="row mt-5">
-    <div class="col-md-6 offset-md-1">
-      {% include 'jokes/_random_widget.html' %}
-    </div>
-    <div class="col-md-4 pl-5">
-      {% include '_social.html' %}
-    </div>
-  </div>
-
-  {% endblock %}
 </div>
+
+{% endblock %}

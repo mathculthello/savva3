@@ -12,8 +12,6 @@ ReactDOM.render(
   document.getElementById('video'),
 );
 
-
-
 ReactDOM.render(
   <Events />,
   document.getElementById('events')

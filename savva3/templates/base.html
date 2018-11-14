@@ -1,26 +1,26 @@
 {% extends 'simple.html' %}
 {% load static %}
-{% load sitetree %}
+
 
 
 {% block body %}
-{% block menu %}
-  {% sitetree_menu from "topmenu" include "trunk,topmenu" template "savva_menu/topmenu.html" %}
+
+{% block header %}
+{% include 'header.html' %}
 {% endblock %}
 
 <div class="container-fluid">
 
   {% block heading %}
   {% endblock %}
+
   {% block content %}
-
-
-
   {% endblock %}
-  <hr />
+
+
   {% block footer %}
-    {% include '_footer.html' %}
+  {% include 'footer.html' %}
   {% endblock %}
 </div>
 
-{% endblock %}{# body #}
+{% endblock %}
