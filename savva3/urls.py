@@ -31,7 +31,7 @@ from .sitemaps import sitemaps
 
 
 from django.views.generic import TemplateView
-handler404 = 'savva3.views.handle404'
+#handler404 = 'savva3.views.handle404'
 
 
 urlpatterns = [
