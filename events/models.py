@@ -24,7 +24,7 @@ class Event(models.Model):
 
     comment = models.TextField(blank=True)
 
-    pub_date = models.DateTimeField(default=datetime.datetime.now, blank=True)
+    pub_date = models.DateTimeField(auto_now_add=True, blank=True)
 
 
     #managers

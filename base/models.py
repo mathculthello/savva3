@@ -55,8 +55,8 @@ class Resource(ModelMeta, models.Model):
 
     authors = models.ManyToManyField(Author)
 
-    created_at=models.DateTimeField(default=datetime.datetime.now, blank=False)
-    updated_at=models.DateTimeField(default=datetime.datetime.now, blank=False)
+    created_at=models.DateTimeField(auto_now_add=True, blank=False)
+    updated_at=models.DateTimeField(auto_now=True, blank=False)
     _keywords = models.CharField(max_length=500, blank=True)
 
     relation = models.ManyToManyField('self', through='Relationship', symmetrical=False)
@@ -102,7 +102,7 @@ class Url(ModelMeta, models.Model):
 
     status_code = models.IntegerField(null=True)
 
-    updated_at=models.DateTimeField(default=datetime.datetime.now, blank=True)
+    updated_at=models.DateTimeField(auto_now=True, blank=True)
 
     keywords_string = models.CharField(max_length=500, blank=True)
 

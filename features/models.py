@@ -7,4 +7,4 @@ class Formulae(models.Model):
     published = models.BooleanField(default=False)
 
 class Counter(models.Model):
-    visit_date = models.DateTimeField(auto_now=True)
+    visit_date = models.DateTimeField(auto_now_add=True)
