@@ -12,9 +12,6 @@ git clone https://github.com/aeifn/savva3
 cd savva3/
 pip install -r requirements.txt
 
-# Тестовые настройки
-cp savva3/env_settings.py.example savva3/env_settings.py
-
 # Создание базы данных
 ./manage.py migrate
 
