@@ -47,7 +47,6 @@ INSTALLED_APPS = [
     'sitetree',
     'meta',
     'graphene_django',
-    'menu',
     'django_filters',
     'markdown_filter',
     'embed_video',
