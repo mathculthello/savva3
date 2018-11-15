@@ -7,17 +7,13 @@ from meta.models import ModelMeta
 from django.utils.translation import gettext as _
 
 
+### ABSTRACT CLASSES
 
-class Tag(models.Model):
-    name = models.CharField(max_length=100, null=False)
-    title = models.CharField(max_length=100, null=False, default='')
-    def __str__(self):
-        return self.title
 
-class Area(models.Model):
-    name = models.CharField(max_length=500, null=False)
-    title = models.CharField(max_length=500, null=True)
-
+class Rubricator(models.Model):
+    title = models.CharField(max_length=100, null=True, blank=True)
+    class Meta:
+        abstract=True
     def __str__(self):
         return self.title
 
@@ -37,34 +33,28 @@ class Person(models.Model):
         abstract = True
 
 
-class Author(Person):
-    pass
-
-
-
-
-
-class Resource(ModelMeta, models.Model):
-    title = models.CharField(max_length=500, null=False, blank=False)
-    areas = models.ManyToManyField(Area, blank=False)
-
-    description = models.TextField(blank=True)
-
-    comment = models.TextField(blank=True)
-
-    authors = models.ManyToManyField(Author)
-
+class MetaClass(ModelMeta, models.Model):
     created_at=models.DateTimeField(auto_now_add=True, blank=False)
     updated_at=models.DateTimeField(auto_now=True, blank=False)
     _keywords = models.CharField(max_length=500, blank=True)
+    class Meta:
+        abstract=True
 
+
+
+### BASE CLASS
+
+class Resource(MetaClass, models.Model):
+    title = models.CharField(max_length=500, null=False, blank=False)
+    areas = models.ManyToManyField('Area', blank=False)
+    description = models.TextField(blank=True)
+    comment = models.TextField(blank=True)
+    authors = models.ManyToManyField('Author')
     relation = models.ManyToManyField('self', through='Relationship', symmetrical=False)
-
-
     def __str__(self):
         return self.title
 
-
+### RELATION CLASS
 
 class Relationship(models.Model):
     RELATIONS = (
@@ -76,20 +66,43 @@ class Relationship(models.Model):
     type=models.CharField(max_length=20, choices=RELATIONS)
 
 
+
+
+### CHILD CLASSES
+
+class Tag(Rubricator):
+    pass
+
+class Area(Rubricator):
+    pass
+
+class Author(Person):
+    pass
+
 class Video(Resource):
     url = models.URLField(max_length=500, null=False, blank=False, unique=True)
-
     def get_absolute_url(self, *args):
         return reverse('base:video', kwargs={'video_id':self.id})
-
-
-
 
 class Book(Resource):
     def get_absolute_url(self):
         return reverse('base:book', kwargs={'book_id':self.id})
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+### DEPRECATED
 
 # Create your models here.
 class Url(ModelMeta, models.Model):
