@@ -147,7 +147,6 @@ USE_L10N = True
 USE_TZ = True
 
 STATICFILES_DIRS = (
-    os.path.join(os.path.dirname(BASE_DIR), 'static-dist'),
     os.path.join(BASE_DIR, 'static-dist' )
     )
 

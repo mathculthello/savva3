@@ -5,4 +5,4 @@ node_modules
 bundle.js
 *.mo
 savva3/static/webpack
-static-dist
+static-dist/*
