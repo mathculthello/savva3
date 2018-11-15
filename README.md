@@ -35,7 +35,6 @@ Jupyter notebook:
 ./manage.py shell_plus --notebook
 ```
 
-
 # Фронтенд
 
 Чтобы собрать фронтенд:
