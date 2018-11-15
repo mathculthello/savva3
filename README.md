@@ -52,7 +52,7 @@ webpack
 
 # Что где находится
 
-шаблоны в папках templates
+шаблоны в папках templates.
 
 стили в папке webpack-src/scss
 
