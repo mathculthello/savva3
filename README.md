@@ -15,9 +15,6 @@ pip install -r requirements.txt
 # Создание базы данных
 ./manage.py migrate
 
-# Загружаем тестовые данные в базу данных
-./manage.py loaddata base.json
-
 # Создание пользователя:
 ./manage.py createsuperuser
 
