@@ -1,4 +1,3 @@
-import datetime
 from django import template
 from features.models import Counter
 register = template.Library()

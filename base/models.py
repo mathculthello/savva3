@@ -2,7 +2,6 @@ from django.db import models
 from .helpers import get_title
 from django.core import exceptions
 from django.urls import reverse
-import datetime
 from meta.models import ModelMeta
 
 from django.utils.translation import gettext as _

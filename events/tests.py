@@ -4,7 +4,7 @@ from django.test.utils import override_settings
 from django.conf import settings
 from django.urls import reverse
 from .models import Event
-import datetime
+from django.utils import timezone
 
 # Create your tests here.
 class EventsTestCase(TestCase):
@@ -12,7 +12,7 @@ class EventsTestCase(TestCase):
     def setUp(self):
         a=Event()
         a.title='test'
-        a.start = datetime.datetime.now()
+        a.start = timezone.now()
         a.save()
         self.c=Client()
 
