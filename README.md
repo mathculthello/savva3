@@ -54,7 +54,7 @@ webpack
 
 шаблоны в папках templates.
 
-стили в папке webpack-src/scss
+стили в папке webpack-src/scss.
 
 yarn ставит JS зависимости в директорию node_modules
 
