@@ -22,4 +22,9 @@ def calendar(request):
 
 def event(request, event_id):
     event=Event.objects.get(id=event_id)
-    return render(request, 'events/event.html', {'event':event})
+    meta=event.as_meta()
+    context={
+    'event':event,
+    'meta':meta,
+    }
+    return render(request, 'events/event.html', context)

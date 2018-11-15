@@ -1,17 +1,21 @@
 from django.db import models
 from django.urls import reverse
 from django.utils import timezone
+from meta.models import ModelMeta
 
 from base.models import Url
-# Create your models here.
 
+from django.conf import settings
+import locale
+# Create your models here.
+locale.setlocale(locale.LC_TIME,settings.LANGUAGE_CODE)
 
 # First, define the Manager subclass.
 class FutureManager(models.Manager):
     def get_queryset(self):
         return super().get_queryset().filter(start__date__gte=timezone.now().date())
 
-class Event(models.Model):
+class Event(ModelMeta, models.Model):
     title = models.CharField(max_length=500, null=True, blank=True)
     start = models.DateTimeField()
     end = models.DateTimeField(blank=True, null=True)
@@ -31,8 +35,16 @@ class Event(models.Model):
     objects = models.Manager()
     future = FutureManager()
 
+    _metadata = {
+        'title': 'title',
+        'description': 'where_and_when',
+    }
+
     def url(self):
         return self.get_absolute_url(self)
+
+    def where_and_when(self):
+        return "%s, %s" % (self.city, self.start.strftime('%d %B %Y %H:%M'))
 
     def get_absolute_url(self, *args):
         return reverse('events:event', kwargs={'event_id':self.id})

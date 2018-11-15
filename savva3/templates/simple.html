@@ -4,7 +4,18 @@
 <html lang="ru">
 
 <head>
-  <title>{% block title %}{%if title %}{{title}}{%else%}{{savva.title_full}}{%endif%}{% endblock %}</title>
+  <title>
+    {% block title %}
+    {%if title %}
+    {{title}}
+    {% endif %}
+    {% if meta.title %}
+    {{ meta.title }} &mdash;
+    {% endif %}
+    {% if savva.title_full %}
+    {{savva.title_full}}
+    {%endif%}
+    {% endblock %}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
