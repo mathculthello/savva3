@@ -45,6 +45,6 @@
   },
   "scripts": {
     "dev": "webpack --mode=development",
-    "build": "webpack"
+    "build": "webpack --mode=production"
   }
 }
