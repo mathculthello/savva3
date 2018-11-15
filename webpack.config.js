@@ -9,7 +9,7 @@ module.exports = {
   },
   devtool: 'source-map',
   output: {
-    path: path.resolve(__dirname,'savva3/static/webpack'),
+    path: path.resolve(path.dirname(__dirname),'dist/webpack'),
     filename: '[name].js',
     publicPath: '/static/webpack/',
   },

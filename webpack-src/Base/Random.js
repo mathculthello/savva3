@@ -31,6 +31,9 @@ const opts = {
   width: '100%',
 }
 
+
+const particlesjson=require('../particles.json');
+
 const Video = () => (
 
 
@@ -57,7 +60,8 @@ const Video = () => (
 
 
 function loadParticles(){
-  window.particlesJS.load('particles-js', '/static/particles.json');
+  console.log(particlesjson)
+  window.particlesJS('particles-js', particlesjson);
 
 }
 

@@ -16,7 +16,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from django.conf import settings
-from django.conf.urls.static import static
 from . import views
 from django.views.decorators.csrf import csrf_exempt
 from graphene_django.views import GraphQLView
@@ -25,6 +24,10 @@ from django.contrib.sitemaps.views import sitemap
 from .sitemaps import sitemaps
 from django.views.generic import TemplateView
 #handler404 = 'savva3.views.handle404'
+
+
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
 
 urlpatterns = [
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
@@ -38,4 +41,8 @@ urlpatterns = [
     path('404/', views.return404, name='404'),
     path('sitemap/', views.sitemap, name='sitemap'),
     path('', include('django.contrib.flatpages.urls')),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
+
+
+if settings.DEBUG == True:
+    urlpatterns += staticfiles_urlpatterns()
