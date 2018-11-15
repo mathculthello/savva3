@@ -1,3 +1,6 @@
+from .common import *
+
+
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'development'
 
@@ -15,7 +18,7 @@ REPOSITORY_ROOT = os.path.dirname(BASE_DIR)
 
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(REPOSITORY_ROOT, 'static/')
+#STATIC_ROOT = os.path.join(REPOSITORY_ROOT, 'static/')
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(REPOSITORY_ROOT, 'media/')
+#MEDIA_ROOT = os.path.join(REPOSITORY_ROOT, 'media/')
