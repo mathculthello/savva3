@@ -18,21 +18,13 @@ from django.urls import include, path
 from django.conf import settings
 from django.conf.urls.static import static
 from . import views
-
 from django.views.decorators.csrf import csrf_exempt
-
-
 from graphene_django.views import GraphQLView
-
 ### sitemap
-
 from django.contrib.sitemaps.views import sitemap
 from .sitemaps import sitemaps
-
-
 from django.views.generic import TemplateView
 #handler404 = 'savva3.views.handle404'
-
 
 urlpatterns = [
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),

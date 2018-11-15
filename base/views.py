@@ -1,14 +1,8 @@
-from django.shortcuts import redirect, render
-from .models import *
+from django.shortcuts import render
+from .models import Video, Book
 
-#from .filters import UrlFilter
-from .models import Video
-
-# Create your views here.
-def app(request, **args):
-    #f = UrlFilter(request.GET)
-    #context = {'filter': f}
-    return render (request, 'base/index.html')
+def videos(request):
+    return render (request, 'base/videos.html')
 
 def video(request,video_id):
     video = Video.objects.get(id=video_id)

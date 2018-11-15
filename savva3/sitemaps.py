@@ -1,5 +1,5 @@
 from events.sitemap import EventSitemap
-from base.sitemap import BaseSitemap
+from base.sitemap import VideoSitemap
 from django.contrib.sitemaps import Sitemap
 from savva_menu.models import MyTreeItem as Pages
 
@@ -15,7 +15,7 @@ class PagesSitemap(Sitemap):
         return obj.priority
 
 sitemaps = {
-'base': BaseSitemap,
+'base': VideoSitemap,
 'events': EventSitemap,
 'pages': PagesSitemap,
 }
