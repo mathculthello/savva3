@@ -4,4 +4,4 @@ db.sqlite3
 node_modules
 bundle.js
 *.mo
-static-dist/webpack
+static-dist
