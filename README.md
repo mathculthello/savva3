@@ -40,8 +40,8 @@ Jupyter notebook:
 
 Чтобы собрать фронтенд:
 ```
-yarn
-webpack
+npm install
+npm run dev
 ```
 
 # Что где находится
