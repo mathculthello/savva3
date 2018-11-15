@@ -6,9 +6,6 @@ from meta.models import ModelMeta
 from base.models import Url
 
 from django.conf import settings
-import locale
-# Create your models here.
-locale.setlocale(locale.LC_TIME,'ru_RU')
 
 # First, define the Manager subclass.
 class FutureManager(models.Manager):
