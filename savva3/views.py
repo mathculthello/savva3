@@ -55,7 +55,7 @@ def handle404(request, exception):
 def return404(request, template_name=ERROR_404_TEMPLATE_NAME):
     map=TOP_MENU+BOTTOM_MENU;
     template = loader.get_template(template_name)
-    context = {'map':map}
+    context = {'map': map}
     body = template.render(context, request)
     content_type = None             # Django will use DEFAULT_CONTENT_TYPE
     return HttpResponseNotFound(body, content_type=content_type)
