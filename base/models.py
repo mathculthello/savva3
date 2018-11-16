@@ -5,6 +5,7 @@ from django.urls import reverse
 from meta.models import ModelMeta
 
 from django.utils.translation import gettext as _
+from embed_video.fields import EmbedVideoField
 
 
 ### ABSTRACT CLASSES
@@ -83,7 +84,7 @@ class Author(Person):
     pass
 
 class Video(Resource):
-    url = models.URLField(max_length=500, null=False, blank=False, unique=True)
+    url = EmbedVideoField(max_length=500, null=False, blank=False, unique=True)
     def get_absolute_url(self, *args):
         return reverse('base:video', kwargs={'video_id':self.id})
 

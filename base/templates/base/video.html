@@ -7,15 +7,14 @@
 {{video.title|safe}}
 {%endblock%}
 
-{%block heading%}
-<h1>{{ video.title|safe }}</h1>
-{%endblock%}
 
 {% block content %}
+<h1>{{ video.title|safe }}</h1>
 <div class="row">
   <div class="col-md-12">
-
-    {% video video.url '100% x 500' %}
+    {% video video.url is_secure=True as my_video %}
+    {% video my_video '100% x 500' %}
+    {% endvideo %}
     <div class="description">
       {{ video.description }}
     </div>
