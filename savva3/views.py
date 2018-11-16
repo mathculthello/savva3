@@ -3,7 +3,6 @@ from events.models import Event
 from features.models import Formulae
 from jokes.models import Joke
 from base.models import Url
-from django.contrib.flatpages.models import FlatPage
 from meta.views import Meta
 
 from django.http import HttpResponseNotFound
@@ -18,13 +17,8 @@ def index(request):
     joke=Joke.objects.filter(published=True).filter(adult=False).order_by('?').first()
     formulae=Formulae.objects.filter(published=True).order_by('?').first()
     video=Url.objects.filter(url__contains="youtube").filter(url__contains="watch").order_by("?").first()
-    try:
-        intro = FlatPage.objects.get(url='/intro/')
-    except:
-        intro = False
 
     context = {
-    'intro':intro,
     'video':video,
     'formulae': formulae,
     'joke':joke,

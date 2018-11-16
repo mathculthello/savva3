@@ -60,7 +60,7 @@ BOTTOM_MENU = [
 	{
 	'title': 'Участие',
 	'hint': 'Как поучаствовать в проекте',
-	'url': '/participate/',
+	'url': reverse('participate'),
 	'changefreq': 'monthly',
 	'priority': 0.5
 	},
@@ -68,7 +68,7 @@ BOTTOM_MENU = [
 	{
 	'title': 'Команда',
 	'hint': 'Кто делает проект?',
-	'url': '/who/',
+	'url': reverse('team'),
 	'changefreq': 'monthly',
 	'priority': 0.5
 	},
@@ -76,7 +76,7 @@ BOTTOM_MENU = [
 	{
 	'title': 'Благодарности',
 	'hint': 'Спасибо всем!',
-	'url': '/thanks/',
+	'url': reverse('credits'),
 	'changefreq': 'monthly',
 	'priority': 0.5
 	},
@@ -84,7 +84,7 @@ BOTTOM_MENU = [
 	{
 	'title': 'Карта сайта',
 	'hint': 'Чтобы не потеряться!',
-	'url': '/sitemap/',
+	'url': reverse('sitemap'),
 	'changefreq': 'monthly',
 	'priority': 0.5
 	}

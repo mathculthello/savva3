@@ -46,7 +46,7 @@ urlpatterns = [
     path('team/', views.team, name='team'),
     path('credits/', views.credits, name='credits'),
 
-    path('', include('django.contrib.flatpages.urls')),
+    #path('', include('django.contrib.flatpages.urls')),
 ]
 
 

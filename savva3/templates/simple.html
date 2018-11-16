@@ -27,7 +27,7 @@
 </head>
 
 <body>
-  {{savva.counters_code|safe}}
+  {% include './include/metrics.html' %}
 
   {% for message in messages %}
   <div class="alert alert-success mt-4">
