@@ -34,7 +34,13 @@
 <h1>$4\cdot10^2+4 = $ страница не найдена!</h1>
 <p>Не беда, у нас есть другие интересные страницы:</p>
 
-{% include 'include/sitemap_list.html' %}
+<ul>
+{% for item in map %}
+	<li>
+		<a title="{{item.hint}}" href="{{item.url}}">{{item.title}}</a>
+	</li>
+{% endfor %}
+</ul>
 
 </div>
 </div>
