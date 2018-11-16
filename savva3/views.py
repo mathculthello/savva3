@@ -43,7 +43,9 @@ def credits(request):
     return render(request,'pages/credits.html')
 
 def sitemap(request):
-    return render(request,'pages/sitemap.html')
+    from .menu import TOP_MENU, BOTTOM_MENU
+    map=TOP_MENU+BOTTOM_MENU;
+    return render(request,'pages/sitemap.html', {'map': map})
 
 # HANDLERS
 def handle404(request, exception):

@@ -7,15 +7,21 @@
 {% endblock %}
 
 
+
 {% block content %}
 <h2>Карта сайта</h2>
-<div class="row">
-  <div class="col-md-2">
-    {% sitetree_tree from "topmenu" %}
-  </div>
-  <div class="col-md">
-    {% sitetree_tree from "footermenu" %}
-  </div>
-</div>
+<ul>
+{% for item in map %}
+	{% if not item.url == request.path %}
+	<li>
+		<a title="{{item.hint}}" href="{{item.url}}">{{item.title}}</a>
+	</li>
+	{% endif %}
+{% endfor %}
+</ul>
+{% endblock %}
 
+
+{% block footer %}
+{% include 'include/sitemap_footer.html' %}
 {% endblock %}
