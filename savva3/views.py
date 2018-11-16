@@ -43,9 +43,7 @@ def credits(request):
     return render(request,'pages/credits.html')
 
 def sitemap(request):
-    return render(request,'sitemap.html')
-
-
+    return render(request,'pages/sitemap.html')
 
 # HANDLERS
 def handle404(request, exception):
