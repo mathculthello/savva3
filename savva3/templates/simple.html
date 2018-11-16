@@ -4,35 +4,24 @@
 <html lang="ru">
 
 <head>
-  <title>
-    {% block title %}
-    {%if title %}
-    {{title}}
-    {% endif %}
-    {% if meta.title %}
-    {{ meta.title }} &mdash;
-    {% endif %}
-    {% if savva.title_full %}
-    {{savva.title_full}}
-    {%endif%}
-    {% endblock %}</title>
+  <title>{% block title %}Лекторий Савватеева{% endblock %}</title>
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
-  <meta name="author" content="{{savva.author}}">
-
-  {% include 'meta/meta.html' %}
-
-  {% block scripts %}
-  {% endblock %}
+  <meta name="author" content="Алексей Савватеев">
 
   {% block robots %}
   <meta name="robots" content="index, follow">
   {% endblock %}
 
   {% block meta %}
+  {% include 'meta/meta.html' %}
+  {% endblock %}
 
+  {% block scripts %}
+  {# сюда можно вставить нужные скрипты и стили #}
   {% endblock %}
 
 </head>
