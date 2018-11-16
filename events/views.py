@@ -12,19 +12,17 @@ from .models import Event
 
 def index(request):
     events=Event.objects.all().order_by('start')
-    context={'events':events}
+    meta = {
+    'keywords': ['расписание', 'открытые лекции', 'график', 'выступления', 'Савватеев'],
+    'description': 'График открытых лекций Алексея Савватеева по математике',
+    }
+    context={'events':events, 'meta': meta}
     return render(request, 'events/index.html',context)
-
-
-def calendar(request):
-    return render(request, 'events/calendar.html')
-
 
 def event(request, event_id):
     event=Event.objects.get(id=event_id)
-    meta=event.as_meta()
     context={
     'event':event,
-    'meta':meta,
+    'meta':event.as_meta(),
     }
     return render(request, 'events/event.html', context)

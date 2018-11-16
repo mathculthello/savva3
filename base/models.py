@@ -37,6 +37,9 @@ class MetaClass(ModelMeta, models.Model):
     created_at=models.DateTimeField(auto_now_add=True, blank=False)
     updated_at=models.DateTimeField(auto_now=True, blank=False)
     _keywords = models.CharField(max_length=500, blank=True)
+
+    def date_field(self):
+        return self.updated_at
     class Meta:
         abstract=True
 

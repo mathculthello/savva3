@@ -9,4 +9,4 @@ class EventSitemap(Sitemap):
         return Event.objects.all()
 
     def lastmod(self, obj):
-        return obj.pub_date
+        return obj.updated_at

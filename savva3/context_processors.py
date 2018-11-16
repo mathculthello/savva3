@@ -4,6 +4,7 @@ import sys
 from .helpers import sttngs
 from savva_menu.models import MyTreeItem as Menu
 
+
 def meta(request):
     try:
         meta = Menu.objects.get(url=request.path)
@@ -14,3 +15,7 @@ def meta(request):
 
 def settings(request):
     return {'savva':sttngs}
+
+
+def menu(request):
+	return {}

@@ -1,6 +1,6 @@
 {% load counter %}
 {% load static %}
-{% load sitetree %}
+{% load menu_tags %}
 <div id="footer" class="row">
 
   <div class="col-md-4">
@@ -10,7 +10,7 @@
   </div>
 
   <div class="col-md-5">
-    {% sitetree_menu from "footermenu" include "trunk,topmenu" template "savva_menu/menu_bootstrap4_navpills.html" %}
+    {% bottom_menu %}
   </div>
 
 </div>

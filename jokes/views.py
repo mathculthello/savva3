@@ -16,6 +16,10 @@ def yo(request):
 def index_all(request, jokes):
     form=JokeForm()
     jokes=jokes.order_by('-date_added')
+    meta = {
+    'keywords': ['анекдоты', 'математические анекдоты', 'шутки', 'сборник анекдотов', 'Савватеев шутит', 'коллекция анекдотов'],
+    'description': 'Сборник математических анекдотов, присылаемых читателями.'
+    }
     return render (request, 'jokes/index.html', {'form': form, 'jokes': jokes})
 
 def add(request):
