@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
-{% load i18n %}
 {% load static %}
+
+{% block meta %}
+<meta name="description" content="Видеозаписи лекций Алексея Савватеева.">
+<meta name="keywords" content="видеозаписи, лекции, Алексей Савватеев, материалы, ссылки">
+{% endblock %}
 
 {% block bundle %}
 <script src="{% static 'webpack/base.js' %}"></script>

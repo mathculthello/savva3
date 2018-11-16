@@ -2,6 +2,13 @@
 {% load markdown_filter %}
 {% load static %}
 
+
+{% block meta %}
+<meta name="description" content="Популярная математика от Савватеева. Проект, где любой человек может взять и изучить интересующую его математическую тему.">
+<meta name="keywords" content="Савватеев, математика, обучающие видео, популярная математика, обучение, видео">
+{% endblock %}
+
+
 {% block bundle %}
 <script src="{% static 'webpack/index.js' %}"></script>
 {% endblock %}

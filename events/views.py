@@ -10,14 +10,10 @@ from .models import Event
 # Create your views here.
 
 
-def index(request):
+def events(request):
     events=Event.objects.all().order_by('start')
-    meta = {
-    'keywords': ['расписание', 'открытые лекции', 'график', 'выступления', 'Савватеев'],
-    'description': 'График открытых лекций Алексея Савватеева по математике',
-    }
-    context={'events':events, 'meta': meta}
-    return render(request, 'events/index.html',context)
+    context={'events':events}
+    return render(request, 'events/events.html',context)
 
 def event(request, event_id):
     event=Event.objects.get(id=event_id)
