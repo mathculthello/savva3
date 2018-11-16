@@ -50,7 +50,6 @@ INSTALLED_APPS = [
     'features',
     'savva_menu',
 
-    'menu_generator',
     'sitetree',
     'meta',
     'graphene_django',
