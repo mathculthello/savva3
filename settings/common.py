@@ -49,9 +49,9 @@ INSTALLED_APPS = [
     'events',
     'savva3',
     'features',
-    'savva_menu',
+#    'savva_menu',
 
-    'sitetree',
+#    'sitetree',
     'meta',
     'graphene_django',
     'django_filters',
