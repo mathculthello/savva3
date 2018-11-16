@@ -9,6 +9,8 @@ from django.http import HttpResponseNotFound
 from django.template import loader
 from django.urls import reverse
 
+from .menu import TOP_MENU, BOTTOM_MENU
+
 ERROR_404_TEMPLATE_NAME = '404.html'
 
 
@@ -43,7 +45,6 @@ def credits(request):
     return render(request,'pages/credits.html')
 
 def sitemap(request):
-    from .menu import TOP_MENU, BOTTOM_MENU
     map=TOP_MENU+BOTTOM_MENU;
     return render(request,'pages/sitemap.html', {'map': map})
 
@@ -52,8 +53,9 @@ def handle404(request, exception):
     return redirect (reverse('404'), permanent=True)
 
 def return404(request, template_name=ERROR_404_TEMPLATE_NAME):
+    map=TOP_MENU+BOTTOM_MENU;
     template = loader.get_template(template_name)
-    context = {}
+    context = {'map':map}
     body = template.render(context, request)
     content_type = None             # Django will use DEFAULT_CONTENT_TYPE
     return HttpResponseNotFound(body, content_type=content_type)

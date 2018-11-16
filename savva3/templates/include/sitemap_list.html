@@ -1,0 +1,9 @@
+<ul>
+{% for item in map %}
+	{% if not item.url == request.path %}
+	<li>
+		<a title="{{item.hint}}" href="{{item.url}}">{{item.title}}</a>
+	</li>
+	{% endif %}
+{% endfor %}
+</ul>

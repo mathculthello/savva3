@@ -9,15 +9,7 @@
 
 {% block content %}
 <h2>Карта сайта</h2>
-<ul>
-{% for item in map %}
-	{% if not item.url == request.path %}
-	<li>
-		<a title="{{item.hint}}" href="{{item.url}}">{{item.title}}</a>
-	</li>
-	{% endif %}
-{% endfor %}
-</ul>
+{% include 'include/sitemap_list.html' %}
 {% endblock %}
 
 

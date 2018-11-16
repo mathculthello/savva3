@@ -1,6 +1,4 @@
 {% extends 'simple.html' %}
-{% load sitetree %}
-
 
 {% block title %}
 Страница не найдена!
@@ -36,11 +34,7 @@
 <h1>$4\cdot10^2+4 = $ страница не найдена!</h1>
 <p>Не беда, у нас есть другие интересные страницы:</p>
 
-{% sitetree_tree from "topmenu" %}
-
-<br/>
-... а также
-{% sitetree_tree from "footermenu" %}
+{% include 'include/sitemap_list.html' %}
 
 </div>
 </div>
