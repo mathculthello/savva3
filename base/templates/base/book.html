@@ -1,10 +1,18 @@
 {% extends 'base.html' %}
 
-{% block heading %}
-<h1>{{book.title}}</h1>
+
+{% block title}
+{{book.title}}
 {% endblock %}
 
+
+{% comment %}
+Метатеги сюда добавляются автоматически, в шаблоне их указывать не нужно
+{% endcomment %}
+
+
 {% block content %}
+<h1>{{book.title}}</h1>
 
 {% for author in book.authors.all %}
 <p>{{author.full_name}}</p>

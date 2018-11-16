@@ -1,18 +1,20 @@
 {% extends 'base.html' %}
 {% load embed_video_tags %}
-{% load i18n %}
 
 
 {%block title%}
 {{video.title|safe}}
 {%endblock%}
 
+{% comment %}
+Метатеги сюда добавляются автоматически, в шаблоне их указывать не нужно
+{% endcomment %}
 
 {% block content %}
 <h1>{{ video.title|safe }}</h1>
 <div class="row">
   <div class="col-md-12">
-    {% video video.url is_secure=True as my_video %}
+    {% video video.url as my_video %}
     {% video my_video '100% x 500' %}
     {% endvideo %}
     <div class="description">
@@ -32,10 +34,10 @@
 
 <div class="row">
 <div class="col-md-1">
-<a href="{% url "base:videos" %}">&larr; {% trans "Back" %}</a>
+<a href="{% url "base:videos" %}">&larr; Назад</a>
 </div>
 <div class="col-md-2 offset-md-9">
-  <a href="{{video.url}}" target="_blank">{% trans "Look at YouTube" %} &rarr;</a>
+  <a href="{{video.url}}" target="_blank">Смотреть на Ютюбе &rarr;</a>
 </div>
 </div>
 {% endblock %}

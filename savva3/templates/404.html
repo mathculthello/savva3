@@ -1,6 +1,17 @@
 {% extends 'simple.html' %}
 {% load sitetree %}
 
+
+{% block title %}
+Страница не найдена!
+{% endblock %}
+
+
+{% block meta %}
+<meta name="description" content="Страница не найдена.">
+<meta name="keywords" content="404">
+{% encblock %}
+
 {% block robots %}
 <meta name="robots" content="noindex, follow">
 {% endblock %}

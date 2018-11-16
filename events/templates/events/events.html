@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
 
+
+{% block title %}
+Открытые лекции Алексея Савватеева по математике
+{% endblock %}
+
 {% block meta %}
 <meta name="description" content="График открытых лекций Алексея Савватеева по математике">
 <meta name="keywords" content="расписание, открытые лекции, график, выступления, Савватеев">
@@ -11,7 +16,7 @@
 <p>Алексей Савватеев выступает с открытыми лекциями по всей России.<br/>В календаре
   показаны ближайшие лекции, на которые приглашаются все желающие.</p>
 
-{% include './table.html' %}
+{% include './include/table.html' %}
 
 {% endblock %}
 {% block forkme %}{% endblock %}
