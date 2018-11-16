@@ -43,8 +43,8 @@ urlpatterns = [
     path('savvateev/', views.savvateev, name='savvateev'),
     path('book/', views.savva_book, name='savva_book'),
     path('participate/', views.participate, name='participate'),
-    path('who/', views.team, name='team'),
-    path('thanks/', views.credits, name='credits'),
+    path('team/', views.team, name='team'),
+    path('credits/', views.credits, name='credits'),
 
     path('', include('django.contrib.flatpages.urls')),
 ]
