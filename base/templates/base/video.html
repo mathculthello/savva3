@@ -2,6 +2,11 @@
 {% load embed_video_tags %}
 {% load i18n %}
 
+
+{%block title%}
+{%video.title|safe%}
+{%endblock%}
+
 {%block heading%}
 <h1>{{ video.title|safe }}</h1>
 {%endblock%}
