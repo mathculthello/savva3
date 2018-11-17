@@ -1,22 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-
 import { Query } from "react-apollo";
 import Loader from 'react-spinners/PacmanLoader';
 import Event from './components/Event';
 
 import EVENTS_QUERY from "./graphql/events.gql";
 
-
-
 import { ApolloProvider } from 'react-apollo';
 import client from '../client';
-
-
-const Vam = ()=> (<p>hello</p>)
-
-
 
 class App extends React.Component {
 
