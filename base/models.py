@@ -112,14 +112,8 @@ class Book(Resource):
         return reverse('base:book', kwargs={'book_id':self.id})
 
 
-
-
-
-
-
-
-
-
+class Theorem(Resource):
+    text = models.TextField()
 
 
 
