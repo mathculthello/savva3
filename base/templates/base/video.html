@@ -22,12 +22,16 @@
     </div>
 
     <div class="related mb-5 mt-3">
-      <h3>Связанные ресурсы</h3>
-      {% for item in video.resource_set.all %}
-        {% if item.book %}
-          <a href="{{item.book.get_absolute_url}}">{{ item.book.title }}</a>
-        {% endif %}
+      {% with video.resource_set.all as set %}
+      {% if set %}
+      <h3>Отсылки</h3>
+      <ul>
+      {% for item in set %}
+          <li>{{ item.title }}</li>
       {% endfor %}
+      </ul>
+      {%endif%}
+      {% endwith %}
     </div>
   </div>
 </div>
