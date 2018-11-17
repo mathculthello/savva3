@@ -11,7 +11,7 @@ const SetLink = (props) => {
 if(item.node.url.includes('youtube')){
   icon=<FaYoutube color="red" className="m-1"/>;
   //url="/base/video/"+item.node.id;
-  link=<a href={url}>{item.node.title}</a>;
+  link=<a href={url} title={item.node.title}>{item.node.title}</a>;
   //link=<Link to={url}>{item.node.title}</Link>
   //link=<Link to={url}>{item.node.title}</Link>
 }
