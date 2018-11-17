@@ -29,20 +29,8 @@ def index(request):
 
 
 # PAGES
-def savvateev(request):
-    return render(request,'pages/savvateev.html')
-
-def savva_book(request):
-    return render(request,'pages/savva_book.html')
-
-def participate(request):
-    return render(request,'pages/participate.html')
-
-def team(request):
-    return render(request,'pages/team.html')
-
-def credits(request):
-    return render(request,'pages/credits.html')
+def page(request, **kwargs):
+    return render(request,kwargs['tpl'])
 
 def sitemap(request):
     map=TOP_MENU+BOTTOM_MENU;

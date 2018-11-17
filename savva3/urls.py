@@ -40,11 +40,12 @@ urlpatterns = [
     path('features/', include('features.urls')),
     path('404/', views.return404, name='404'),
     path('sitemap/', views.sitemap, name='sitemap'),
-    path('savvateev/', views.savvateev, name='savvateev'),
-    path('book/', views.savva_book, name='savva_book'),
-    path('participate/', views.participate, name='participate'),
-    path('team/', views.team, name='team'),
-    path('credits/', views.credits, name='credits'),
+
+    path('savvateev/', views.page, {'tpl': 'pages/savvateev.html'}, name='savvateev'),
+    path('book/', views.page, {'tpl':'pages/savva_book.html'}, name='savva_book'),
+    path('participate/', views.page, {'tpl': 'pages/participate.html'}, name='participate'),
+    path('team/', views.page, {'tpl': 'pages/team.html'}, name='team'),
+    path('credits/', views.page, {'tpl': 'pages/credits.html'}, name='credits'),
 
     #path('', include('django.contrib.flatpages.urls')),
 ]
