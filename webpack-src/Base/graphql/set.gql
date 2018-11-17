@@ -5,6 +5,7 @@ query myQuery ($areas: [ID]) {
         id
         url
         title
+        passed
         getAbsoluteUrl
       }
     }

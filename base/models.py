@@ -61,6 +61,7 @@ class Resource(MetaClass, models.Model):
     def __str__(self):
         return self.title
 
+
 ### RELATION CLASS
 
 class Relationship(models.Model):
@@ -68,14 +69,14 @@ class Relationship(models.Model):
         ('depends', _('Depends on')),
         ('refers', _('Refers to')),
     )
-    from_resource = models.ForeignKey(Resource, related_name='from_resource', on_delete=models.DO_NOTHING)
-    to_resource = models.ForeignKey(Resource, related_name='to_resource', on_delete=models.DO_NOTHING)
+    from_resource = models.ForeignKey('Resource', related_name='from_resource', on_delete=models.DO_NOTHING)
+    to_resource = models.ForeignKey('Resource', related_name='to_resource', on_delete=models.DO_NOTHING)
     type=models.CharField(max_length=20, choices=RELATIONS)
 
 
 class Progress(models.Model):
     user = models.ForeignKey(User, related_name='resource', on_delete=models.CASCADE)
-    resource = models.ForeignKey(Resource, related_name='user', on_delete=models.DO_NOTHING)
+    resource = models.ForeignKey('Resource', related_name='user', on_delete=models.DO_NOTHING)
     class Meta:
         unique_together = ('user', 'resource')
 

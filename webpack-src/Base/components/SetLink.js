@@ -1,12 +1,16 @@
 import React from "react";
-import {FaYoutube} from 'react-icons/fa';
+import {FaYoutube, FaCheckCircle} from 'react-icons/fa';
 
 import { Link } from "react-router-dom";
 
 const SetLink = (props) => {
-  let icon, link, url, item
+  let icon, link, url, item, passed
   item = props.item;
   url = item.node.getAbsoluteUrl;
+  if(item.node.passed){
+    passed = <FaCheckCircle color="green" />
+  }
+
   link=<a href={url} target="_blank">{item.node.title}</a>;
 if(item.node.url.includes('youtube')){
   icon=<FaYoutube color="red" className="m-1"/>;
@@ -16,7 +20,7 @@ if(item.node.url.includes('youtube')){
   //link=<Link to={url}>{item.node.title}</Link>
 }
 return(<tr key={item.node.id}>
-  <td>{icon}{link}</td>
+  <td>{passed}{icon}{link}</td>
   </tr>);
 }
 

@@ -7,7 +7,7 @@ from graphene_django.types import DjangoObjectType
 from graphene_django.filter import DjangoFilterConnectionField
 
 
-from .models import Resource, Tag, Area, Video
+from .models import Resource, Tag, Area, Video, Progress
 
 class TagNode(DjangoObjectType):
     class Meta:
@@ -24,6 +24,16 @@ class AreaNode(DjangoObjectType):
 
 class VideoNode(DjangoObjectType):
     get_absolute_url = graphene.String()
+    passed = graphene.Boolean()
+
+
+    def resolve_passed(self,info):
+        user = info.context.user
+        try:
+            Progress.objects.get(user=user,resource=self)
+            return True
+        except:
+            return False
 
     def resolve_get_absolute_url(self, _args, *_kwargs):
         return self.get_absolute_url()
