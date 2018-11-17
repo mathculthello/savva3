@@ -41,6 +41,8 @@ class MetaClass(ModelMeta, models.Model):
 
     def date_field(self):
         return self.updated_at
+    def get_keywords(self):
+        return [x.strip() for x in self._keywords.split(',')]
     class Meta:
         abstract=True
 
@@ -87,6 +89,17 @@ class Video(Resource):
     url = EmbedVideoField(max_length=500, null=False, blank=False, unique=True)
     def get_absolute_url(self, *args):
         return reverse('base:video', kwargs={'video_id':self.id})
+
+    def get_description(self):
+        if self.description:
+            return self.description
+        else:
+            return "Видео в Лектории Савватеева: %s" % self.title
+
+    _metadata = {
+    'description': 'get_description',
+    'keywords': 'get_keywords'
+    }
 
 class Book(Resource):
     def get_absolute_url(self):
