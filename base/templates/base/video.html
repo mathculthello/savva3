@@ -32,6 +32,20 @@
   </div>
 </div>
 
+{% if user.is_authenticated %}
+<div class="row">
+  <div class="col text-center">
+    {% if viewed %}
+    <div class="badge badge-pill badge-success">Просмотрено!</div>
+    <a class="btn btn-secondary" href="{% url "base:update_progress" video.id %}">Отметить как непросмотренное</a>
+    {% else %}
+    <div class="badge badge-pill badge-warning">Еще не просмотрено!</div>
+    <a class="btn btn-primary"  href="{% url "base:update_progress" video.id %}">Отметить как просмотренное</a>
+    {% endif %}
+  </div>
+</div>
+{% endif %}
+
 <div class="row">
 <div class="col-md-1">
 <a href="{% url "base:videos" %}">&larr; Назад</a>

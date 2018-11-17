@@ -18,4 +18,7 @@
     {% topmenu %}
 
   </div>
+  {% if user.is_authenticated %}
+  Привет, {{ user.first_name }}
+  {% endif %}
 </nav>

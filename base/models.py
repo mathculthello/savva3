@@ -3,6 +3,7 @@ from .helpers import get_title
 from django.core import exceptions
 from django.urls import reverse
 from meta.models import ModelMeta
+from django.contrib.auth.models import User
 
 from django.utils.translation import gettext as _
 from embed_video.fields import EmbedVideoField
@@ -72,6 +73,11 @@ class Relationship(models.Model):
     type=models.CharField(max_length=20, choices=RELATIONS)
 
 
+class Progress(models.Model):
+    user = models.ForeignKey(User, related_name='resource', on_delete=models.CASCADE)
+    resource = models.ForeignKey(Resource, related_name='user', on_delete=models.DO_NOTHING)
+    class Meta:
+        unique_together = ('user', 'resource')
 
 
 ### CHILD CLASSES
