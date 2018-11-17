@@ -9,7 +9,27 @@
 
 {% block content %}
 <h2>Карта сайта</h2>
-{% include 'include/sitemap_list.html' %}
+<div class="row">
+	<div class="col-md-6">
+		<p class="h3">Все разделы</p>
+		{% include 'include/sitemap_list.html' %}
+
+		<p class="h3">Все видео</p>
+		<ul>
+		{% for video in videos %}
+			<li><a href="{{video.get_absolute_url}}" title="{{video.title}}">{{video.title}}</a></li>
+		{% endfor %}
+		</ul>
+	</div>
+	<div class="col-md-6">
+		<p class="h3">Все события</p>
+		<ul>
+			{% for event in events %}
+			<li><a href="{{event.get_absolute_url}}" title="{{event.title}}">{{event.start}} &mdash; {{event.title}}</a></li>
+			{% endfor %}
+		</ul>
+	</div>
+</div>
 {% endblock %}
 
 

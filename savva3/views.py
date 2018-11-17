@@ -2,12 +2,13 @@ from django.shortcuts import render, redirect
 from events.models import Event
 from features.models import Formulae
 from jokes.models import Joke
-from base.models import Url
+from base.models import Url, Video
 from meta.views import Meta
 
 from django.http import HttpResponseNotFound
 from django.template import loader
 from django.urls import reverse
+
 
 from .menu import TOP_MENU, BOTTOM_MENU
 
@@ -33,8 +34,17 @@ def page(request, **kwargs):
     return render(request,kwargs['tpl'])
 
 def sitemap(request):
-    map=TOP_MENU+BOTTOM_MENU;
-    return render(request,'pages/sitemap.html', {'map': map})
+    menus=TOP_MENU+BOTTOM_MENU;
+    videos=Video.objects.all()
+    events=Event.objects.all()
+    context={
+    'map':menus,
+    'videos': videos,
+    'events': events,
+    }
+    return render(request,'pages/sitemap.html', context)
+
+
 
 # HANDLERS
 def handle404(request, exception):
