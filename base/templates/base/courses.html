@@ -16,17 +16,17 @@
   Полномасштабные учебные курсы по математике.
 </p>
 {% with courses as items %}
-
+      <ul>
     {% for item in items %}
-      <div>
+      	<li>
           {% if item.url %}
             <a target="_blank" title="{{item.title}}" href="{{item.url}}">{{item.title}}</a>
           {% else %}
             {{item.title}}
           {% endif %}
-      </div>
+      </li>
     {% endfor %}
-
+      </ul>
 {% endwith %}
 
 {% endblock %}
