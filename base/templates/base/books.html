@@ -21,7 +21,7 @@
         </td>
         <td>
           {% if book.md5 %}
-            <a href="http://libgen.io/book/index.php?md5={{book.md5}}">{{book.title}}</a>
+            <a target="_blank" title="{{book.title}}" href="http://libgen.io/book/index.php?md5={{book.md5}}">{{book.title}}</a>
           {% else %}
             {{book.title}}
           {% endif %}
