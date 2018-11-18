@@ -12,6 +12,7 @@
 <script src="{% static 'webpack/index.js' %}"></script>
 {% endblock %}
 
+
 {% block content %}
 
 {% include 'index/video.html' %}
@@ -23,12 +24,10 @@
 {% include 'index/intro.html' %}
 
 <div class="row mt-5">
-  <div class="col-md-6 offset-md-1">
+  <div class="col-md-8 offset-md-2">
     {% include 'jokes/random_widget.html' %}
   </div>
-  <div class="col-md-4 pl-5">
-    {% include 'index/social.html' %}
-  </div>
+
 </div>
 
 {% endblock %}

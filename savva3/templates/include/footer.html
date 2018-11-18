@@ -3,13 +3,17 @@
 {% load menu_tags %}
 <div id="footer" class="row">
 
-  <div class="col-md-4">
+  <div class="col-md-3 pl-5">
     <p>Тираж: {% counter %} экз.</p>
   </div>
-  <div class="col-md-3">
+
+
+  <div class="col-md-4">
+    {% include 'index/social.html' %}
   </div>
 
   <div class="col-md-5">
+
   	{% block bottom_menu %}
       {% bottom_menu %}
     {% endblock %}
