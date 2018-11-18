@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Resource, Progress, Video, Book
+from .models import Resource, Progress, Video, Book, Course
 
 def videos(request):
     return render (request, 'base/videos.html')
@@ -31,6 +31,14 @@ def book(request, book_id):
     'meta': book.as_meta()
     }
     return render(request, 'base/book.html', context)
+
+def courses(request):
+    # Meta in template
+    courses = Course.objects.all()
+    context = {
+    'courses': courses
+    }
+    return render(request, 'base/courses.html', context)
 
 def update_progress(request, resource_id):
     ''' Функция отмечает факт проработки конкретного ресурса конкретным юзером '''

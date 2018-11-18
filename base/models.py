@@ -48,12 +48,13 @@ class Resource(MetaClass, models.Model):
     ''' Базовый класс, представляющий любой ресурс (видео, статья, книга, теорема...) '''
     title = models.CharField(max_length=500, null=False, blank=False)
     areas = models.ManyToManyField('Area', blank=False)
-    description = models.TextField(blank=True)
     comment = models.TextField(blank=True)
     authors = models.ManyToManyField('Author')
     relation = models.ManyToManyField('self', through='Relationship', symmetrical=False)
     def __str__(self):
         return self.title
+
+
 
 
 ### RELATION CLASS
@@ -102,10 +103,7 @@ class Video(Resource):
         else:
             return "Видео в Лектории Савватеева: %s" % self.title
 
-    _metadata = {
-    'description': 'get_description',
-    'keywords': 'get_keywords'
-    }
+
 
 
 
@@ -117,6 +115,9 @@ class Book(Resource):
 
 class Theorem(Resource):
     text = models.TextField()
+
+class Course(Resource):
+    url = models.URLField(blank=False)
 
 
 

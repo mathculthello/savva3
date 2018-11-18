@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Полноформатные курсы
+{% endblock %}
+
+
+{% block meta %}
+<meta name="description" content="Полноформатные видеокурсы по математике.">
+<meta name="keywords" content="курсы, математика, онлайн">
+{% endblock %}
+
+{% block content %}
+<h1>Курсы</h1>
+<p class="description">
+  Полномасштабные учебные курсы по математике.
+</p>
+{% with courses as items %}
+
+    {% for item in items %}
+      <div>
+          {% if item.url %}
+            <a target="_blank" title="{{item.title}}" href="{{item.url}}">{{item.title}}</a>
+          {% else %}
+            {{item.title}}
+          {% endif %}
+      </div>
+    {% endfor %}
+
+{% endwith %}
+
+{% endblock %}

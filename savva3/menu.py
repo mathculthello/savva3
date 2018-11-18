@@ -1,6 +1,6 @@
 from django.urls import reverse_lazy as reverse
 from events.models import Event
-from base.models import Video, Book
+from base.models import Video, Book, Course
 from jokes.models import Joke
 from savva3.utils import template_mtime, model_mtime
 
@@ -34,6 +34,16 @@ TOP_MENU = [
 	},
 
 	{
+	'title': 'Курсы',
+	'url': reverse('base:courses'),
+	'hint': 'Полномасштабные видеокурсы',
+	'changefreq': 'monthly',
+	'priority': 0.5,
+	'lastmod': model_mtime(Course)
+	},
+
+
+	{
 	'title': 'Анекдоты',
 	'url': reverse('jokes:index'),
 	'hint': 'Замечательная подборка математических шуток',
@@ -50,7 +60,6 @@ TOP_MENU = [
 	'changefreq': 'monthly',
 	'priority': 0.9,
 	'lastmod': template_mtime('pages/savvateev.html'),
-
 	},
 
 	{

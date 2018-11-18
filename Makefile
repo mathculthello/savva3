@@ -8,3 +8,5 @@ build:
 sync:
 	rsync -r static-dist/ $(REMOTE):$(REMOTE_DIR)/static/
 
+getbasefix:
+	ssh $(REMOTE) "cd $(REMOTE_DIR); venv/bin/python3 savva3/manage.py dumpdata base" > base/fixtures/base.json
