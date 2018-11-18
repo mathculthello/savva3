@@ -1,6 +1,8 @@
 from django.urls import reverse_lazy as reverse
-
-
+from events.models import Event
+from base.models import Video, Book
+from jokes.models import Joke
+from savva3.utils import template_mtime, model_mtime
 
 TOP_MENU = [
 
@@ -10,6 +12,7 @@ TOP_MENU = [
 	'hint': 'Открытые лекции Алексея Савватеева',
 	'changefreq': "weekly",
     'priority': 0.8,
+    'lastmod': model_mtime(Event)
 	},
 
 	{
@@ -17,7 +20,8 @@ TOP_MENU = [
 	'url': reverse('base:videos'),
 	'hint': 'Взять и изучить!',
 	'changefreq': 'weekly',
-	'priority': 0.8
+	'priority': 0.8,
+	'lastmod': model_mtime(Video)
 	},
 
 	{
@@ -25,7 +29,8 @@ TOP_MENU = [
 	'url': reverse('base:books'),
 	'hint': 'Рекомендуемые книги по математике, физике',
 	'changefreq': 'monthly',
-	'priority': 0.5
+	'priority': 0.5,
+	'lastmod': model_mtime(Book)
 	},
 
 	{
@@ -34,7 +39,8 @@ TOP_MENU = [
 	'hint': 'Замечательная подборка математических шуток',
 	'rel': 'nofollow',
 	'changefreq': 'monthly',
-	'priority': 0.5
+	'priority': 0.5,
+	'lastmod': model_mtime(Joke)
 	},
 
 	{
@@ -43,15 +49,17 @@ TOP_MENU = [
 	'hint': 'Кто такой Савватеев?',
 	'changefreq': 'monthly',
 	'priority': 0.9,
-	'template': 'pages/savvateev.html'
+	'lastmod': template_mtime('pages/savvateev.html'),
+
 	},
 
 	{
 	'title': 'Математика для гуманитариев',
-	'url': '/book/',
+	'url': reverse('savva_book'),
 	'hint': 'Книга Алексея Савватеева для представителей гуманитарных специальностей (скачать)',
 	'changefreq': 'yearly',
-	'priority': 0.8
+	'priority': 0.8,
+	'lastmod': template_mtime('pages/savva_book.html')
 	},
 ]
 
@@ -62,7 +70,8 @@ BOTTOM_MENU = [
 	'hint': 'Как поучаствовать в проекте',
 	'url': reverse('participate'),
 	'changefreq': 'monthly',
-	'priority': 0.5
+	'priority': 0.5,
+	'lastmod': template_mtime('pages/participate.html')
 	},
 
 	{
@@ -70,7 +79,8 @@ BOTTOM_MENU = [
 	'hint': 'Кто делает проект?',
 	'url': reverse('team'),
 	'changefreq': 'monthly',
-	'priority': 0.5
+	'priority': 0.5,
+	'lastmod': template_mtime('pages/team.html')
 	},
 
 	{
@@ -78,7 +88,8 @@ BOTTOM_MENU = [
 	'hint': 'Спасибо всем!',
 	'url': reverse('credits'),
 	'changefreq': 'monthly',
-	'priority': 0.5
+	'priority': 0.5,
+	'lastmod': template_mtime('pages/credits.html')
 	},
 
 	{
@@ -90,3 +101,4 @@ BOTTOM_MENU = [
 	}
 
 ]
+

@@ -8,6 +8,7 @@ from django.contrib.auth.models import User
 from django.utils.translation import gettext as _
 from embed_video.fields import EmbedVideoField
 
+from savva3.models import MetaClass
 
 ### ABSTRACT CLASSES
 
@@ -37,18 +38,7 @@ class Person(models.Model):
         abstract = True
 
 
-class MetaClass(ModelMeta, models.Model):
-    ''' Класс, содержащий дополнительную информацию для поисковиков '''
-    created_at=models.DateTimeField(auto_now_add=True, blank=False)
-    updated_at=models.DateTimeField(auto_now=True, blank=False)
-    _keywords = models.CharField(max_length=500, blank=True)
 
-    def date_field(self):
-        return self.updated_at
-    def get_keywords(self):
-        return [x.strip() for x in self._keywords.split(',')]
-    class Meta:
-        abstract=True
 
 
 
