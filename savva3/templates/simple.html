@@ -27,7 +27,9 @@
 </head>
 
 <body>
-  {% include './include/metrics.html' %}
+  {% if not user.is_authenticated %}
+    {% include './include/metrics.html' %}
+  {% endif %}
 
   {% for message in messages %}
   <div class="alert alert-success mt-4">
