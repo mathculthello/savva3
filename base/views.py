@@ -33,14 +33,18 @@ def book(request, book_id):
     return render(request, 'base/book.html', context)
 
 def update_progress(request, resource_id):
+    ''' Функция отмечает факт проработки конкретного ресурса конкретным юзером '''
     resource = Resource.objects.get(id=resource_id)
     user = request.user
     try:
+        # Если запись о просмотре существует, то удаляем
         progress=Progress.objects.get(resource=resource, user=user)
         progress.delete()
     except:
+        # Если же не существует, то создаем запись
         progress=Progress()
         progress.user=user
         progress.resource=resource
         progress.save()
+    # После всего возвращаем на предыдущую страницу
     return redirect(request.META.get('HTTP_REFERER'))
