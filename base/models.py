@@ -110,6 +110,7 @@ class Video(Resource):
 
 
 class Book(Resource):
+    md5 = models.CharField(max_length=300,blank=True)
     def get_absolute_url(self):
         return reverse('base:book', kwargs={'book_id':self.id})
 

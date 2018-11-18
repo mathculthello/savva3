@@ -20,7 +20,11 @@
           {% endfor %}
         </td>
         <td>
-          {{book.title}}
+          {% if book.md5 %}
+            <a href="http://libgen.io/book/index.php?md5={{book.md5}}">{{book.title}}</a>
+          {% else %}
+            {{book.title}}
+          {% endif %}
         </td>
         <td>
           {% if book.comment %}({{book.comment}}){% endif %}
