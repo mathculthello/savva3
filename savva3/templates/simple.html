@@ -20,10 +20,6 @@
   {% include 'meta/meta.html' %}
   {% endblock %}
 
-  {% block scripts %}
-  {# сюда можно вставить нужные скрипты и стили #}
-  {% endblock %}
-
 </head>
 
 <body>
@@ -42,6 +38,9 @@
 
   {% block bundle %}
   <script src="{% static 'webpack/common.js' %}"></script>
+  {% endblock %}
+
+  {% block scripts %}
   {% endblock %}
 </body>
 

@@ -15,10 +15,17 @@
   {% block content %}
   {% endblock %}
 
+  {% block disqus %}
+  {% include 'include/disqus.html' %}
+  {% endblock %}
 
   {% block footer %}
   {% include 'include/footer.html' %}
   {% endblock %}
 </div>
 
+{% endblock %}
+
+{% block scripts %}
+    <script id="dsq-count-scr" src="//savvateev.disqus.com/count.js" async></script>
 {% endblock %}
