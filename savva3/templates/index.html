@@ -23,6 +23,8 @@
 
 {% include 'index/intro.html' %}
 
+{% include 'include/disqus.html' %}
+
 <div class="row mt-5">
   <div class="col-md-9">
     {% include 'jokes/random_widget.html' %}
@@ -33,3 +35,6 @@
 </div>
 
 {% endblock %}
+
+  {% block disqus %}
+  {% endblock %}
