@@ -29,7 +29,7 @@ class Event(ModelMeta, models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
-        ordering = ['-start']
+        ordering = ['start']
 
 
     #managers
