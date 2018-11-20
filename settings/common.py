@@ -32,7 +32,7 @@ SITETREE_MODEL_TREE_ITEM = 'savva_menu.MyTreeItem'
 
 
 
-MARKDOWN_FILTER_WHITELIST_TAGS = ['a','p','ul','li','br','h1','h2','em']
+MARKDOWN_FILTER_WHITELIST_TAGS = ['a','p','ul','ol','li','br','h1','h2','em']
 
 # Application definition
 
