@@ -11,7 +11,7 @@ from .models import Event
 
 
 def archive(request):
-    events=Event.future.all()
+    events=Event.objects.all()
     context={'events':events}
     return render(request, 'events/archive.html', context)
 
