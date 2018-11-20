@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+Архив лекций Алексея Савватеева по математике
+{% endblock %}
+
+{% block meta %}
+<meta name="description" content="Архив открытых лекций Алексея Савватеева по математике">
+<meta name="keywords" content="открытые лекции, архив, выступления, Савватеев">
+{% endblock %}
+
+{% block content %}
+<h1>Архив открытых лекций Алексея Савватеева</h1>
+<p>Здесь собрано все, что было с момента, как начался вестись этот архив :)</p>
+
+{% include './include/table.html' %}
+
+{% endblock %}

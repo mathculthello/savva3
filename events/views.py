@@ -10,6 +10,11 @@ from .models import Event
 # Create your views here.
 
 
+def archive(request):
+    events=Event.future.all()
+    context={'events':events}
+    return render(request, 'events/archive.html', context)
+
 def events(request):
     events=Event.future.all()
     context={'events':events}

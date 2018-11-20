@@ -28,6 +28,10 @@ class EventsTestCase(TestCase):
         r=self.c.get('/events/')
         self.assertEqual(r.status_code,200)
 
+    def test_archive(self):
+        r=self.c.get('/events/archive/')
+        self.assertEqual(r.status_code,200)
+
     def test_event(self):
         obj = Event.objects.first()
         url = reverse('events:event',args=[obj.id])
