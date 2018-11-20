@@ -13,3 +13,6 @@ class EventNode(DjangoObjectType):
 class Query(object):
     event = graphene.relay.Node.Field(EventNode)
     all_events = DjangoFilterConnectionField(EventNode)
+
+    def resolve_all_events(self, info):
+        return Event.future.all()

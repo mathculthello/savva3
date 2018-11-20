@@ -11,7 +11,7 @@ from .models import Event
 
 
 def events(request):
-    events=Event.objects.all()
+    events=Event.future.all()
     context={'events':events}
     return render(request, 'events/events.html',context)
 
