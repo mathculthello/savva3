@@ -3,6 +3,12 @@
 
 {% block title %}Команда проекта savvateev.xyz{% endblock %}
 
+{% block comments %}
+<div id="vk_comments_browse"></div>
+<script type="text/javascript">
+ VK.Widgets.CommentsBrowse('vk_comments_browse', {width: 500, limit: 5, mini: 0});
+</script>
+{% endblock %}
 
 {% block meta %}
 <meta name="description" content="Люди, которые делают сайт savvateev.xyz">
