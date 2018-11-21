@@ -26,6 +26,10 @@
 </head>
 
 <body>
+
+  {% block top_body_scripts %}
+  {% endblock %}
+
   {% if not user.is_authenticated %}
     {% include './include/metrics.html' %}
   {% endif %}
@@ -43,8 +47,9 @@
   <script src="{% static 'webpack/common.js' %}"></script>
   {% endblock %}
 
-  {% block body_scripts %}
+  {% block bottom_body_scripts %}
   {% endblock %}
+
 </body>
 
 </html>
