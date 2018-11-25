@@ -12,6 +12,15 @@ class FutureManager(models.Manager):
     def get_queryset(self):
         return super().get_queryset().filter(start__date__gte=timezone.now().date())
 
+class Invite(models.Model):
+	theme = models.CharField(max_length=200, blank=True, verbose_name="Предположительная тема")
+	city = models.CharField(max_length=50, verbose_name="Город")
+	name = models.CharField(max_length=40, verbose_name="Ваше имя")
+	email = models.EmailField(max_length=200, verbose_name="Ваша электропочта")
+	phone = models.CharField(max_length=30, verbose_name="Телефон")
+	comment = models.TextField(blank=True, verbose_name="Пожелания")
+	created_at = models.DateTimeField(auto_now_add=True)
+
 class Event(ModelMeta, models.Model):
     title = models.CharField(max_length=500, null=True, blank=True)
     start = models.DateTimeField()

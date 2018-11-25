@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+
+{% block comments %}
+{% endblock %}
+
+{% block content %}
+
+
+<h1>Пригласить Алексея Савватеева</h1>
+
+{% if formset %}
+<form method="post">
+{% csrf_token %}
+{{ formset|bootstrap }}
+<button type="submit" class="btn btn-primary">Пригласить</button>
+</form>
+{% endif %}
+{% if success %}
+<p>Вы пригласили Алексея Савватеева. С вами скоро свяжутся.</p>
+{% endif %}
+
+{% endblock %}

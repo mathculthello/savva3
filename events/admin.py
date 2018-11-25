@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Event
+from .models import Event, Invite
 
 
 class EventAdmin(admin.ModelAdmin):
@@ -18,3 +18,4 @@ class EventAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Event, EventAdmin)
+admin.site.register(Invite)
