@@ -105,6 +105,11 @@ class Video(Resource):
 
 
 
+class Link(Resource):
+	''' Таблица, где хранятся ссылки '''
+	url = models.URLField(unique=True)
+	def get_absolute_url(self):
+		return self.url
 
 
 class Book(Resource):
