@@ -42,6 +42,13 @@ TOP_MENU = [
 	'lastmod': model_mtime(Course)
 	},
 
+	{
+	'title': '100 уроков',
+	'url': reverse('savva3:100lessons'),
+	'hint': '100 уроков математики',
+	'changefreq': 'monthly',
+	'priority': 0.5,
+	},
 
 	{
 	'title': 'Анекдоты',
