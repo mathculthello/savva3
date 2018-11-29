@@ -90,6 +90,15 @@ TOP_MENU = [
 	'priority': 0.8,
 	'lastmod': template_mtime('pages/savva_book.html')
 	},
+
+	{
+	'title': 'Пригласить',
+	'url': reverse('events:invite'),
+	'hint': 'Пригласить Алексея Савватеева с лекцией в ваш город',
+	'changefreq': 'yearly',
+	'priority': 0.8,
+	'lastmod': template_mtime('events/invite.html')
+	}
 ]
 
 
