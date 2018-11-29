@@ -64,7 +64,7 @@ urlpatterns = [
 
     path('savvateev/', views.page, {'tpl': 'pages/savvateev.html'}, name='savvateev'),
     path('book/', views.page, {'tpl':'pages/savva_book.html'}, name='savva_book'),
-    path('participate/', views.page, {'tpl': 'pages/participate.html'}, name='participate'),
+    path('participate/', views.participate, name='participate'),
     path('team/', views.page, {'tpl': 'pages/team.html'}, name='team'),
     path('credits/', views.page, {'tpl': 'pages/credits.html'}, name='credits'),
     path('100lessons/', views.page, {'tpl': 'pages/100lessons.html'}, name='100lessons'),

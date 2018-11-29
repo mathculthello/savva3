@@ -33,6 +33,17 @@ def index(request):
 def page(request, **kwargs):
     return render(request,kwargs['tpl'])
 
+from finance.models import Transaction
+from django.db.models import Sum
+def participate(request):
+    money = Transaction.objects.all()
+    summary = money.aggregate(Sum('amount'))['amount__sum']
+    context = {
+    'transactions': money,
+    'summary': summary
+    }
+    return render(request, 'pages/participate.html', context)
+
 def sitemap(request):
     menus=TOP_MENU+BOTTOM_MENU;
     videos=Video.objects.all()
