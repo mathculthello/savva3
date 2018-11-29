@@ -97,7 +97,8 @@ TOP_MENU = [
 	'hint': 'Пригласить Алексея Савватеева с лекцией в ваш город',
 	'changefreq': 'yearly',
 	'priority': 0.8,
-	'lastmod': template_mtime('events/invite.html')
+	'lastmod': template_mtime('events/invite.html'),
+	'class': 'ml-1 btn btn-outline-warning my-0'
 	}
 ]
 

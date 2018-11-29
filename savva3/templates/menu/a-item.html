@@ -3,7 +3,12 @@
 		href="{{ item.url }}"
                 aria-haspopup="true"
 
-                class="nav-link"
+                class="nav-link
+
+	{% if item.class %}
+	{{item.class}}
+	{% endif %}
+"
 
                 {% if item.rel %}rel="{{item.rel}}"{% endif %}
                 {% if item.hint %}title="{{item.hint}}"{% endif %}>
