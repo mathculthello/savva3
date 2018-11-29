@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'events',
     'savva3',
     'features',
+    'finance',
 #    'savva_menu',
 
 #    'sitetree',
