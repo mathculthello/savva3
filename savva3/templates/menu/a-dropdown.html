@@ -1,0 +1,13 @@
+<a 
+		href="#"
+                aria-haspopup="true"
+		data-toggle="dropdown"
+		class="nav-link dropdown-toggle"
+		role="button"
+		aria-expanded="false"
+
+                {% if item.rel %}rel="{{item.rel}}"{% endif %}
+                {% if item.hint %}title="{{item.hint}}"{% endif %}>
+                    {{ item.title }}
+                </a>
+

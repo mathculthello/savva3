@@ -1,0 +1,20 @@
+{% if not item.url == request.path %}
+<a 
+		href="{{ item.url }}"
+                aria-haspopup="true"
+
+                class="nav-link"
+
+                {% if item.rel %}rel="{{item.rel}}"{% endif %}
+                {% if item.hint %}title="{{item.hint}}"{% endif %}>
+
+                    {{ item.title }}
+
+                </a>
+                {% else %}
+                <span class="nav-link active">
+                {{ item.title }}
+                </span>
+                {% endif %}
+
+

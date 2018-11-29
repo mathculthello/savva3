@@ -1,23 +1,17 @@
     <ul class="navbar-nav mr-auto">
         {% for item in menu %}
-            <li class="nav-item {% if item.has_children %}dropdown{% endif %}">
+            <li class="nav-item {% if item.submenu %}dropdown{% endif %}">
+	
+		{% if item.submenu %}
 
-                {% if not item.url == request.path %}
-                <a href="{{ item.url }}"
-                class="nav-link"
-                aria-haspopup="true"
-                {% if item.rel %}rel="{{item.rel}}"{% endif %}
-                {% if item.hint %}title="{{item.hint}}"{% endif %}>
+		{% include './a-dropdown.html %}
+		{% with items=item.submenu %}
+		{% include './submenu.html' %}
+		{% endwith %}
 
-                    {{ item.title }}
-
-                </a>
-                {% else %}
-                <span class="nav-link active">
-                {{ item.title }}
-                </span>
-                {% endif %}
-
+		{% else %}
+		{% include './a-item.html' %}
+		{% endif %}
 
             </li>
         {% endfor %}

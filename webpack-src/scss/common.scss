@@ -20,6 +20,7 @@
 @import "~bootstrap/scss/navbar";
 @import "~bootstrap/scss/alert";
 @import "~bootstrap/scss/badge";
+@import "~bootstrap/scss/dropdown";
 @import "~bootstrap/scss/utilities/borders";
 @import "~bootstrap/scss/utilities/spacing";
 @import "~bootstrap/scss/utilities/text";
@@ -31,7 +32,7 @@
 @import url("https://use.fontawesome.com/releases/v5.5.0/css/all.css");
 
 @import 'index';
-//@import "~bootstrap/scss/bootstrap";
+@import "~bootstrap/scss/bootstrap";
 
 @import 'forms';
 

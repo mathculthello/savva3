@@ -4,16 +4,9 @@ from base.models import Video, Book, Course
 from jokes.models import Joke
 from savva3.utils import template_mtime, model_mtime
 
-TOP_MENU = [
 
-	{
-	'title': 'Лекции',
-	'url': reverse('events:events'),
-	'hint': 'Открытые лекции Алексея Савватеева',
-	'changefreq': "weekly",
-    'priority': 0.8,
-    'lastmod': model_mtime(Event)
-	},
+
+MATHERIALS = [
 
 	{
 	'title': 'Видеозаписи',
@@ -48,6 +41,26 @@ TOP_MENU = [
 	'hint': '100 уроков математики',
 	'changefreq': 'monthly',
 	'priority': 0.5,
+	},
+
+]
+
+
+
+TOP_MENU = [
+
+	{
+	'title': 'Лекции',
+	'url': reverse('events:events'),
+	'hint': 'Открытые лекции Алексея Савватеева',
+	'changefreq': "weekly",
+	'priority': 0.8,
+	'lastmod': model_mtime(Event)
+	},
+
+	{
+	'title': 'Материалы',
+	'submenu': MATHERIALS,
 	},
 
 	{

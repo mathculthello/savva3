@@ -1,0 +1,6 @@
+<div class="dropdown-menu">
+{% for item in items %}
+
+<a class="dropdown-item" title="{{item.hint}}" href="{{item.url}}">{{ item.title }}</a>
+{% endfor %}
+</div>
