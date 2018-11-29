@@ -64,7 +64,7 @@ TOP_MENU = [
 	},
 
 	{
-	'title': 'Анекдоты',
+	'title': 'Юмор',
 	'url': reverse('jokes:index'),
 	'hint': 'Замечательная подборка математических шуток',
 	'rel': 'nofollow',
