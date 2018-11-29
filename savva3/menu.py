@@ -44,7 +44,7 @@ TOP_MENU = [
 
 	{
 	'title': '100 уроков',
-	'url': reverse('savva3:100lessons'),
+	'url': reverse('100lessons'),
 	'hint': '100 уроков математики',
 	'changefreq': 'monthly',
 	'priority': 0.5,
