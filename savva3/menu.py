@@ -34,15 +34,6 @@ MATHERIALS = [
 	'priority': 0.5,
 	'lastmod': model_mtime(Course)
 	},
-
-	{
-	'title': '100 уроков',
-	'url': reverse('100lessons'),
-	'hint': '100 уроков математики',
-	'changefreq': 'monthly',
-	'priority': 0.5,
-	},
-
 ]
 
 
@@ -62,6 +53,15 @@ TOP_MENU = [
 	'title': 'Материалы',
 	'submenu': MATHERIALS,
 	},
+
+	{
+	'title': '100 уроков',
+	'url': reverse('100lessons'),
+	'hint': '100 уроков математики',
+	'changefreq': 'monthly',
+	'priority': 0.5,
+	},
+
 
 	{
 	'title': 'Юмор',
