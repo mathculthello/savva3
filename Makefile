@@ -11,7 +11,7 @@ install:
 getbasefix:
 	ssh $(REMOTE) "cd $(REMOTE_DIR); venv/bin/python3 savva3/manage.py dumpdata base" > base/fixtures/base.json
 
-getdb:
+syncdb:
 	scp $(REMOTE):$(REMOTE_DIR)/db.sqlite3 ../
 
 

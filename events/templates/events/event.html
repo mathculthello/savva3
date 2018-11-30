@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load markdown_filter %}
+{% load embed_video_tags %}
 
 
 {% block title %}
@@ -30,6 +31,18 @@
   <br>
   {{ event.address }}
 </p>
+
+{% if event.video %}
+<div>
+<hr>
+<p>Видеозапись:</p>
+{% for resource in event.video.all %}
+{% video resource.video.url %}
+{% endfor %}
+<hr><br>
+</div>
+{% endif %}
+
 <div>
     {{ event.comment |markdown_filter|safe }}
 </div>
