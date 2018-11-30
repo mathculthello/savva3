@@ -3,7 +3,7 @@ from django.urls import reverse
 from django.utils import timezone
 from meta.models import ModelMeta
 
-from base.models import Url
+from base.models import Resource
 
 from django.conf import settings
 
@@ -28,7 +28,7 @@ class Event(ModelMeta, models.Model):
     city = models.CharField(max_length=50, blank=True)
     address = models.CharField(max_length=300, blank=True)
 
-    video = models.ManyToManyField(Url,blank=True)
+    video = models.ManyToManyField(Resource,blank=True)
 
     place = models.CharField(max_length=300, blank=True)
 
