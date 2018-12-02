@@ -114,12 +114,12 @@ BOTTOM_MENU = [
 	},
 
 	{
-	'title': 'Команда',
+	'title': 'Контрибьюторы',
 	'hint': 'Кто делает проект?',
-	'url': reverse('team'),
-	'changefreq': 'monthly',
-	'priority': 0.5,
-	'lastmod': template_mtime('pages/team.html')
+        'url': 'https://github.com/aeifn/savva3/graphs/contributors',
+#	'changefreq': 'monthly',
+#	'priority': 0.5,
+#	'lastmod': template_mtime('pages/team.html')
 	},
 
 	{
