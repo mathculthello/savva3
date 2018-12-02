@@ -2,7 +2,7 @@
     {% for item in menu %}
         <li class="nav-item">
         	{% if not item.url == request.path %}
-            <a {% if item.hint %}title="{{item.hint}}"{% endif %} class="nav-link" href="{{item.url}}">{{ item.title }}</a>
+		<a {% if item.target %}target="{{item.target}}"{% endif %} {% if item.hint %}title="{{item.hint}}"{% endif %} class="nav-link" href="{{item.url}}">{{ item.title }}</a>
             {% else %}
       		<span class="nav-link active">{{item.title}}</span>
       		{% endif %}
