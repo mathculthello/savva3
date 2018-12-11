@@ -16,6 +16,10 @@
   <meta name="robots" content="index, follow">
   {% endblock %}
 
+  {% block style %}
+  <link rel="stylesheet" href="{% static 'webpack/styles.css' %}">
+  {% endblock style %}
+
   {% block meta %}
   {% include 'meta/meta.html' %}
   {% endblock %}
@@ -31,7 +35,7 @@
   {% endblock %}
 
   {% if not user.is_staff %}
-    {% include './include/metrics.html' %}
+  {% include './include/metrics.html' %}
   {% endif %}
 
   {% for message in messages %}
