@@ -5,3 +5,4 @@ node_modules
 bundle.js
 *.mo
 static-dist
+venv
