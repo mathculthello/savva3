@@ -1,0 +1,40 @@
+.rating{
+    display: inline-block;
+}
+
+.rating.red{
+    color: #f00;
+}
+
+.rating.green{
+    color: #0f0;
+}
+
+.rating.pop-up {
+    overflow: hidden;
+    animation-name: pop-up;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.rating.error {
+    animation-name: error;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes pop-up {
+    from {line-height: 0em}
+    to {line-height: 1em}
+}
+
+@keyframes error {
+    0% {transform: rotate(0)}
+    10% {transform: rotate(30deg)}
+    30% {transform: rotate(-30deg)}
+    50% {transform: rotate(20deg)}
+    60% {transform: rotate(-2deg)}
+    70% {transform: rotate(10deg)}
+    90% {transform: rotate(-10deg)}
+    100% {transform: rotate(0)}
+}
