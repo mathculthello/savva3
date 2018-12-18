@@ -53,6 +53,7 @@ urlpatterns = [
     path('base/', include('base.urls')),
 
     path('jokes/', include('jokes.urls')),
+    path('rating/', include('rating.urls')),
     path('admin/', admin.site.urls),
     path('events/', include('events.urls')),
     path('features/', include('features.urls')),

@@ -1,0 +1,20 @@
+{% load rating_filters %}
+<div>
+    {% csrf_token %}
+    <script>
+    (function(){
+        var parent = document.currentScript.parentNode;
+        var csrf = parent.querySelector("[name=csrfmiddlewaretoken]").value;
+        window.addEventListener('load', function(){
+            __ReactDOM.render(__React.createElement(Rating, {
+                rating: {{rated_object.rating}},
+                csrf: csrf,
+                rating_type: '{{rated_object | rating_type}}',
+                iid: {{rated_object.id}},
+                value: {{rated_object.rating}},
+                
+            }), parent)
+        });
+    })();
+    </script>
+</div>
