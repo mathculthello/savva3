@@ -1,13 +1,14 @@
 .rating{
     display: inline-block;
+    padding: 0 0.5em;
 }
 
 .rating.red{
-    color: #f00;
+    color: #E91E63;
 }
 
 .rating.green{
-    color: #0f0;
+    color: #4CAF50;
 }
 
 .rating.pop-up {

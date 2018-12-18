@@ -5,7 +5,7 @@
     (function(){
         var parent = document.currentScript.parentNode;
         var csrf = parent.querySelector("[name=csrfmiddlewaretoken]").value;
-        window.onload = function(){
+        window.addEventListener('load', function(){
             __ReactDOM.render(__React.createElement(Rating, {
                 rating: {{rated_object.rating}},
                 csrf: csrf,
@@ -14,7 +14,7 @@
                 value: {{rated_object.rating}},
                 
             }), parent)
-        };
+        });
     })();
     </script>
 </div>
