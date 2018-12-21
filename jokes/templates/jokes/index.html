@@ -36,6 +36,15 @@
   </div>
 </div>
 
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link active" href="{{ request.path }}?sort=byDate">По Дате</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{{ request.path }}?sort=byRating">По Рейтингу</a>
+  </li>
+</ul>
+
 <div class="row mt-5">
 
 {% for joke in jokes %}

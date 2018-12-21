@@ -5,7 +5,17 @@ from .models import Joke
 from django.contrib import messages
 from django.core.mail import mail_managers
 
-PAGE_SIZE = 10
+PAGE_SIZE = 12
+
+def get_order(request):
+    str_sort = request.GET.get('sort', 'byDate').lower()
+    order = ('-date_added',)
+
+    if (str_sort == "byrating"):
+        order = ('-rating', '-date_added')
+    
+    return order
+
 
 def get_pages_count(query_dict):
     return math.ceil(Joke.objects.filter( **query_dict ).count() / PAGE_SIZE)
@@ -13,7 +23,7 @@ def get_pages_count(query_dict):
 def get_current_page(query_dict, order_by, page):
     jokes = Joke.objects \
         .filter( **query_dict ) \
-        .order_by( order_by ) \
+        .order_by( *order_by ) \
         [(page - 1) * PAGE_SIZE: page * PAGE_SIZE]
 
     return jokes
@@ -33,10 +43,11 @@ def index(request):
         "adult": False,
     }
     current_page = get_page(request)
+    order_by = get_order(request)
     pages_count = get_pages_count(query_dict)
     jokes = get_current_page(
         query_dict=query_dict, 
-        order_by='-date_added', 
+        order_by=tuple(order_by), 
         page=current_page,
     )
     
@@ -52,10 +63,11 @@ def yo(request):
         "adult": True,
     }
     current_page = get_page(request)
+    order_by = get_order(request)
     pages_count = get_pages_count(query_dict)
     jokes = get_current_page(
         query_dict=query_dict, 
-        order_by='-date_added', 
+        order_by=order_by, 
         page=current_page,
     )
 
