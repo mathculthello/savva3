@@ -29,7 +29,7 @@ def parse_request(request):
     rating_type = body.get('rating_type', '')
     iid = body.get('iid', 0)
     value = body['value']
-    ip = request.META['REMOTE_ADDR']
+    ip = request.META.get('HTTP_X_FORWARDED_FOR', '') or request.META['REMOTE_ADDR']
 
     if value > 1 or value < -1 or value == 0:
         return HttpResponseBadRequest(json.dumps({
