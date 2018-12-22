@@ -1,4 +1,7 @@
-REMOTE=f
+# DEPENDS ON
+# node npm rsync scp
+#
+REMOTE=s
 REMOTE_DIR=savva3
 
 frontend: build install
