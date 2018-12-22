@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+
+{% block title %}
+Сборник математических анекдотов
+{% endblock %}
+
+{% block content %}
+<h1>Сборник математических анекдотов <span class="text-nowrap">&laquo;$E=mc^3$&raquo;</span></h1>
+
+<div class="row">
+
+  <div class="col-md-6 mb-3">
+    <img src="/media/joke.jpg" class="img-fluid rounded"
+    alt="Алексей Савватеев указывает на надпись на заборе"
+    title="Алексей Савватеев шутит"
+    >
+    <div class="text-right mt-1" style="color:#bbd; font-size:.85em;">
+      <em>&laquo;Алексей Савватеев шутит&raquo;<br>Фотограф &mdash; Артём Моисеев</em>
+    </div>
+  </div>
+
+  <div class="col">
+
+    <h5>Добавить новый анекдот</h5>
+
+    <form action="{% url 'jokes:add' %}" method="post">
+      {% csrf_token %}
+      {{ form|bootstrap }}
+      <button type="submit" class="btn btn-primary">Отправить</button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
