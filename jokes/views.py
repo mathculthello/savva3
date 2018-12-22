@@ -78,7 +78,6 @@ def yo(request):
     })
 
 def index_all(request, jokes, pagination={}):
-    form=JokeForm()
     meta = {
         'keywords': [
             'анекдоты', 
@@ -91,9 +90,13 @@ def index_all(request, jokes, pagination={}):
         'description': 'Сборник математических анекдотов, присылаемых читателями.'
     }
 
-    return render (request, 'jokes/index.html', {'form': form, 'jokes': jokes, 'pagination': pagination})
+    return render (request, 'jokes/index.html', {'jokes': jokes, 'pagination': pagination})
 
 def add(request):
+    if request.method == 'GET':
+        form=JokeForm()
+        return render (request, 'jokes/form.html', {'form': form})
+
     a=JokeForm(request.POST)
     obj=a.save()
     mail_managers('Новый анекдот:'+obj.title,obj.text)

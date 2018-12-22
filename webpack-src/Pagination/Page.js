@@ -2,8 +2,8 @@ import React, {PureComponent}  from "react";
 
 class Page extends PureComponent{
     render() {
-        const {page, isLink} = this.props;
-        const path = `${window.location.pathname}?page=${page}`;
+        const {page, isLink, baseUrl} = this.props;
+        const path = `${baseUrl}page=${page}`;
 
         const getItem = ()=>{
             if (!isLink)

@@ -6,35 +6,16 @@
 {% endblock %}
 
 {% block content %}
+
 <h1>Сборник математических анекдотов <span class="text-nowrap">&laquo;$E=mc^3$&raquo;</span></h1>
+
+<div class="joke_header"></div>
+
 <p>
   Скачать одним файлом:
   <a href="/media/jokes.pdf" title="Сборник анекдотов в формате ПДФ" target="_blank">ПДФ</a>,
   <a href="/media/jokes.tex" title="Исходники сборника анекдотов в формате ТеХ" target="_blank">$\TeX$</a>.</p>
 
-<div class="row">
-
-  <div class="col-md-6 mb-3">
-    <img src="/media/joke.jpg" class="img-fluid rounded"
-    alt="Алексей Савватеев указывает на надпись на заборе"
-    title="Алексей Савватеев шутит"
-    >
-    <div class="text-right mt-1" style="color:#bbd; font-size:.85em;">
-      <em>&laquo;Алексей Савватеев шутит&raquo;<br>Фотограф &mdash; Артём Моисеев</em>
-    </div>
-  </div>
-
-  <div class="col">
-
-    <h5>Добавить новый анекдот</h5>
-
-    <form action="{% url 'jokes:add' %}" method="post">
-      {% csrf_token %}
-      {{ form|bootstrap }}
-      <button type="submit" class="btn btn-primary">Отправить</button>
-    </form>
-  </div>
-</div>
 
 <ul class="nav">
   <li class="nav-item">
@@ -42,6 +23,9 @@
   </li>
   <li class="nav-item">
     <a class="nav-link" href="{{ request.path }}?sort=byRating">По Рейтингу</a>
+  </li>
+  <li class="ml-auto">
+    <a href="{{ request.path }}add" class="pull-right btn btn-success joke_add"> Добавить Анекдот </a>
   </li>
 </ul>
 

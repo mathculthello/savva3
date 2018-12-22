@@ -7,3 +7,31 @@
   color:red;
   font-weight:bold;
 }
+
+.joke_add {
+  animation-name: debounce;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+}
+
+.joke_header {
+  background-image: url(/media/joke.jpg);
+  height: 300px;
+  background-position-y: -260px;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-size: cover;
+}
+
+@keyframes debounce {
+  0% {transform: rotate(0)}
+  20% {transform: rotate(0)}
+  21% {transform: rotate(-5deg)}
+  22% {transform: rotate(5deg)}
+  23% {transform: rotate(10deg)}
+  24% {transform: rotate(-10deg)}
+  25% {transform: rotate(5deg)}
+  26% {transform: rotate(-5deg)}
+  27% {transform: rotate(0)}
+  100% {transform: rotate(0)}
+}
