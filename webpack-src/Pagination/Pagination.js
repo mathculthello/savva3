@@ -2,7 +2,9 @@ import React, {PureComponent}  from "react";
 import Page from './Page';
 import '../scss/pagination.scss';
 
-const MAX_PAGES = 10;
+const MAX_PAGES = 9;
+const HALF_MAX = Math.floor(MAX_PAGES / 2);
+const OFFSET = HALF_MAX - 2;
 
 class Pagination extends PureComponent{
     render() {
@@ -13,14 +15,14 @@ class Pagination extends PureComponent{
 
         const pages = [];
         if (count > MAX_PAGES){
-            if (current > MAX_PAGES - 2){
+            if (current > HALF_MAX){
                 pages.push(<Page page={ 1 } isLink={true}></Page>);
                 pages.push(<Page page='...' isLink={false}></Page>);
-                start = current - 3;
-                currentPosition = 5;
+                start = Math.min(current - OFFSET, count - MAX_PAGES + 3);
+                currentPosition = HALF_MAX;
             }
-            if (count - current > MAX_PAGES - currentPosition){
-                stop = current + 3;
+            if (count - start > MAX_PAGES - 2){
+                stop = Math.max(current + OFFSET, MAX_PAGES-2);
             }
         }
 
