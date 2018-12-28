@@ -114,9 +114,9 @@ BOTTOM_MENU = [
 	},
 
 	{
-	'title': 'Контрибьюторы',
+	'title': 'Команда',
 	'hint': 'Кто делает проект?',
-        'url': 'https://github.com/aeifn/savva3/graphs/contributors',
+        'url': reverse('team'),
         'target': '_blank',
 #	'changefreq': 'monthly',
 #	'priority': 0.5,
