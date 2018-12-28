@@ -7,3 +7,4 @@ bundle.js
 static-dist
 venv
 *.ipynb
+media
