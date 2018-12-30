@@ -9,10 +9,16 @@ TYPE_CHOICES = (
 class RatingBase(models.Model):
     __metaclass__ = abc.ABCMeta
     rating = models.IntegerField(default=0)
+    rating_positive = models.IntegerField(default=0)
+    rating_negative = models.IntegerField(default=0)
 
     @abc.abstractmethod
     def update_rating(self, inc_value):
-        self.rating = self.rating + inc_value
+        if inc_value > 0:
+            self.rating_positive = self.rating_positive + inc_value
+        else:
+            self.rating_negative = self.rating_negative + inc_value
+
         self.save()
 
     @abc.abstractmethod

@@ -1,4 +1,6 @@
 import React, {PureComponent}  from "react";
+import RatingValue from './RatingValue';
+import RatingButton from './RatingButton';
 import '../scss/rating.scss';
 
 class Rating extends PureComponent{
@@ -6,7 +8,8 @@ class Rating extends PureComponent{
     constructor(props){
         super(props);
         this.state = {
-            rating: this.props.rating,
+            rating_positive: this.props.rating_positive,
+            rating_negative: this.props.rating_negative,
             successAnimation: false,
             errorAnimation: false,
         }
@@ -37,9 +40,9 @@ class Rating extends PureComponent{
             return response.json();
         })
         .then(response => {
-            const {rating} = response;
+            const { rating_positive, rating_negative } = response;
             this.setState(Object.assign({}, this.state, {
-                rating,
+                rating_positive, rating_negative,
                 successAnimation: true
             }));
         })
@@ -51,44 +54,33 @@ class Rating extends PureComponent{
     }
 
     render() {
-        const {rating, successAnimation, errorAnimation} = this.state;
-        let className = 'rating';
-        if (rating > 0){
-            className += ' green';
-        }
-        if (rating < 0){
-            className += ' red';
-        }
-        if (successAnimation){
-            className += ' pop-up';
-        }
-        if (errorAnimation){
-            className += ' error';
-        }
-        
-        const renderLinkContent = (vote)=>{
-            if (vote > 0) {
-                return (<span>+</span>)
-            }
-            return (<span>-</span>)
-        }
-        const renderLink = (vote) => {
-            return (
-                <button 
-                    type="button" 
-                    className="btn btn-default btn-sm"  
-                    onClick={this.onVoteClick.bind(this, vote)}>
-                    {renderLinkContent(vote)}
-                </button>
-            )
-        }
+        const {rating_positive, rating_negative, successAnimation, errorAnimation} = this.state;
+
         return (
-            <div>
-                {renderLink(-1)}
-                <span className={className}>
-                    <b>{rating}</b>
-                </span>
-                {renderLink(1)}
+            <div className="rating-container">
+                <RatingButton vote={-1} onVoteClick={this.onVoteClick.bind(this)}></RatingButton>
+                <div className="rating-container--value-container">
+                    <div className="rating-container--value-container__overall">
+                        <RatingValue 
+                            rating={rating_positive+rating_negative}
+                            successAnimation={successAnimation} 
+                            errorAnimation={errorAnimation}
+                        ></RatingValue>
+                    </div>
+                    <div className="rating-container--value-container__parts">
+                        <RatingValue 
+                            rating={rating_positive}
+                            successAnimation={successAnimation} 
+                            errorAnimation={false}
+                        ></RatingValue>
+                        <RatingValue 
+                            rating={rating_negative}
+                            successAnimation={successAnimation} 
+                            errorAnimation={false}
+                        ></RatingValue>
+                    </div>
+                </div>
+                <RatingButton vote={1} onVoteClick={this.onVoteClick.bind(this)}></RatingButton>
             </div>
         )
     } 
