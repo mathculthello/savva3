@@ -7,12 +7,11 @@
         var csrf = parent.querySelector("[name=csrfmiddlewaretoken]").value;
         window.addEventListener('load', function(){
             __ReactDOM.render(__React.createElement(Rating, {
-                rating: {{rated_object.rating}},
+                rating_positive: {{rated_object.rating_positive}},
+                rating_negative: {{rated_object.rating_negative}},
                 csrf: csrf,
                 rating_type: '{{rated_object | rating_type}}',
                 iid: {{rated_object.id}},
-                value: {{rated_object.rating}},
-                
             }), parent)
         });
     })();

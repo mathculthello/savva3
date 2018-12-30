@@ -57,6 +57,7 @@ def update(request):
     )
 
     return JsonResponse({
-        "rating": model.rating
+        "rating_positive": model.rating_positive, 
+        "rating_negative": model.rating_negative,
     })
      

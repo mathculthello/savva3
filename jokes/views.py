@@ -12,7 +12,7 @@ def get_order(request):
     order = ('-date_added',)
 
     if (str_sort == "byrating"):
-        order = ('-rating', '-date_added')
+        order = ('-total_rating', '-date_added')
     
     return order
 
@@ -22,7 +22,12 @@ def get_pages_count(query_dict):
 
 def get_current_page(query_dict, order_by, page):
     jokes = Joke.objects \
-        .filter( **query_dict ) \
+        .extra(
+            select={
+                'total_rating': 'rating_positive + rating_negative'
+            },
+        )\
+        .filter(**query_dict) \
         .order_by( *order_by ) \
         [(page - 1) * PAGE_SIZE: page * PAGE_SIZE]
 
