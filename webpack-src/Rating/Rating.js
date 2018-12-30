@@ -67,14 +67,15 @@ class Rating extends PureComponent{
                             errorAnimation={errorAnimation}
                         ></RatingValue>
                     </div>
-                    <div className="rating-container--value-container__parts">
+                    <div className="
+                    rating-container--value-container__parts">
                         <RatingValue 
-                            rating={rating_positive}
+                            rating={rating_negative}
                             successAnimation={successAnimation} 
                             errorAnimation={false}
                         ></RatingValue>
                         <RatingValue 
-                            rating={rating_negative}
+                            rating={rating_positive}
                             successAnimation={successAnimation} 
                             errorAnimation={false}
                         ></RatingValue>
