@@ -5,7 +5,7 @@ from .models import Joke
 from django.contrib import messages
 from django.core.mail import mail_managers
 
-PAGE_SIZE = 12
+PAGE_SIZE = 36
 
 def get_order(request):
     str_sort = request.GET.get('sort', 'byDate').lower()

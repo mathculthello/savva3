@@ -4,11 +4,7 @@
 REMOTE=s
 REMOTE_DIR=savva3
 
-frontend: build install
-
-build:
-	npm run build
-install:
+frontend-install:
 	rsync -r static-dist/ $(REMOTE):$(REMOTE_DIR)/static/
 
 getbasefix:
