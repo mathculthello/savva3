@@ -1,5 +1,10 @@
+$single-column-resolution: 735px;
+
 .jokes{
   display: flex;
+  @media screen and (max-width: $single-column-resolution)  {
+    flex-direction: column;
+  }
 }
 
 .jokes--column{
@@ -7,6 +12,10 @@
   flex: 33.33333333%;
   max-width: 33.33333333%;
   flex-direction: column;
+  @media screen and (max-width: $single-column-resolution)  {
+    flex: 100%;
+    max-width: 100%;
+  }
 }
 
 .jokes--column--joke{
@@ -22,6 +31,8 @@
 .jokes--column--joke__content{
   text-align: justify;
 }
+
+medi
 
 .sender {
   font-size:.8em;
