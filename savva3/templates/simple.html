@@ -20,6 +20,10 @@
   {% include 'meta/meta.html' %}
   {% endblock %}
 
+  {% block styles %}
+  <link rel="stylesheet" type="text/css" href="/static/webpack/common.css">
+  {% endblock %}
+
   {% block head_scripts %}
   {% endblock %}
 
@@ -46,6 +50,7 @@
   {% block bundle %}
   <script src="{% static 'webpack/common.js' %}"></script>
   {% endblock %}
+
 
   {% block bottom_body_scripts %}
   {% endblock %}

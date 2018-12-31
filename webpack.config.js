@@ -1,6 +1,13 @@
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require('path');
 
 module.exports = {
+  plugins: [
+	  new MiniCssExtractPlugin({
+		  filename: "[name].css",
+//		  chunkFilename: "[id].css"
+	  })
+  ],
   entry: {
     common: './webpack-src/common.js',
     index: './webpack-src/index.js',
@@ -16,7 +23,8 @@ module.exports = {
   module: {
   rules: [
     { test: /\.scss$/, use: [
-      'style-loader',
+      MiniCssExtractPlugin.loader,
+      //'style-loader',
       'css-loader',
       'sass-loader',
     ],

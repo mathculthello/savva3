@@ -6,3 +6,5 @@ bundle.js
 *.mo
 static-dist
 venv
+*.ipynb
+media
