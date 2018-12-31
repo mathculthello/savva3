@@ -29,10 +29,14 @@
   </li>
 </ul>
 
-<div class="row mt-5">
+<div class="jokes">
 
-{% for joke in jokes %}
-{% include './joke.html' with col="4" %}
+{% for column_jokes in columns %}
+  <div class="jokes--column">
+    {% for joke in column_jokes %}
+    {% include './joke.html'%}
+    {% endfor %}
+  </div>
 {% endfor %}
 
 </div>

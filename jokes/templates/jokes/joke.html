@@ -1,9 +1,13 @@
 {% load markdown_filter %}
 {% load i18n %}
 
-<div class="col-md-{{col}} joke">
-  <h3>{{joke.title}}</h3>
-  {{ joke.text|markdown_filter|safe }}
+<div class="jokes--column--joke">
+  <div class="jokes--column--joke__header">
+    <h4>{{joke.title}}</h4>
+  </div>
+  <hr /> 
+  <div class="jokes--column--joke__content">{{ joke.text|markdown_filter|safe }}</div>
+  <hr /> 
 
   <p class="sender">{% trans "Who added:" %} {{joke.author|default:"{% trans Anon %}"}}
     {% if joke.already_in_book %}

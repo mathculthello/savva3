@@ -1,3 +1,28 @@
+.jokes{
+  display: flex;
+}
+
+.jokes--column{
+  display: flex;
+  flex: 33.33333333%;
+  max-width: 33.33333333%;
+  flex-direction: column;
+}
+
+.jokes--column--joke{
+  margin: 0.5em;
+  padding: 1em;
+  box-shadow: 0px 0px 10px -5px #000;
+}
+
+.jokes--column--joke__header{
+  text-align: center;
+}
+
+.jokes--column--joke__content{
+  text-align: justify;
+}
+
 .sender {
   font-size:.8em;
   color: $gray;

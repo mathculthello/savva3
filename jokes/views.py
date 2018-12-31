@@ -6,6 +6,7 @@ from django.contrib import messages
 from django.core.mail import mail_managers
 
 PAGE_SIZE = 12
+COLUMNS_COUNT = 3
 
 def get_order(request):
     str_sort = request.GET.get('sort', 'byDate').lower()
@@ -95,7 +96,14 @@ def index_all(request, jokes, pagination={}):
         'description': 'Сборник математических анекдотов, присылаемых читателями.'
     }
 
-    return render (request, 'jokes/index.html', {'jokes': jokes, 'pagination': pagination})
+    columns = [[] for i in range(COLUMNS_COUNT)]
+    for i in range(len(jokes)):
+        columns[i % COLUMNS_COUNT].append(jokes[i])
+
+    return render (request, 'jokes/index.html', {
+        'columns': columns, 
+        'pagination': pagination,
+    })
 
 def add(request):
     if request.method == 'GET':
