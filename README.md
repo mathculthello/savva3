@@ -43,6 +43,10 @@ npm install
 npm run dev
 ```
 
+# TODO
+
+[TODO](TODO.md)
+
 # Что где находится
 
 шаблоны в папках templates.
