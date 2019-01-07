@@ -34,6 +34,14 @@ MATHERIALS = [
 	'priority': 0.5,
 	'lastmod': model_mtime(Course)
 	},
+
+        {
+            'title': 'Курсы лекций',
+            'url': reverse('list'),
+            'hint': 'Курсы лекций',
+            'changefreq': 'yearly',
+            'priority': 0.5,
+        }
 ]
 
 
