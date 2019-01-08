@@ -99,6 +99,12 @@ TOP_MENU = [
 	'lastmod': template_mtime('pages/savva_book.html')
 	},
 
+        {
+                'title': 'Вики',
+                'url': 'https://wiki.savvateev.xyz/',
+                'hint': 'Публичная вики',
+        },
+
 	{
 	'title': 'Пригласить',
 	'url': reverse('events:invite'),

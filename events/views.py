@@ -21,6 +21,7 @@ def invite(request):
 			messages.success(request, 'Ваше приглашение отправлено')
 			success = True
 			formset = None
+                        # Вот тут надо сформировать письмо со всей информацией отправить менеджерам и Савватееву
 			mail_managers("Invite",'check admin')
 		else:
 			fromset = formset
