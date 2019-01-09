@@ -52,6 +52,7 @@ TOP_MENU = [
 	'title': 'Лекции',
 	#'url': reverse('events:events'),
         'url': 'https://wiki.savvateev.xyz/doku.php?id=лекции',
+        'target': '_blank',
 	'hint': 'Открытые лекции Алексея Савватеева',
 	'changefreq': "weekly",
 	'priority': 0.8,
