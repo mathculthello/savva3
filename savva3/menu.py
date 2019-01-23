@@ -48,6 +48,16 @@ MATHERIALS = [
 
 TOP_MENU = [
 
+        {
+        'title': 'Задонатить',
+	'hint': 'Помочь проекту',
+	'url': reverse('participate'),
+	'changefreq': 'monthly',
+	'priority': 0.5,
+	'lastmod': template_mtime('pages/participate.html'),
+	'class': 'ml-1 btn btn-success my-0'
+	},
+
 	{
 	'title': 'Лекции',
         # Переадресация происходит в events/views.py
