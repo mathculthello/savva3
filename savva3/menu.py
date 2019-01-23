@@ -55,7 +55,7 @@ TOP_MENU = [
 	'changefreq': 'monthly',
 	'priority': 0.5,
 	'lastmod': template_mtime('pages/participate.html'),
-	'class': 'ml-1 btn btn-success my-0'
+	'class': 'ml-1 btn btn-outline-success my-0'
 	},
 
 	{
