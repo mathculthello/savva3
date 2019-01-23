@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from django.core.serializers import serialize
 from django.contrib import messages
@@ -44,6 +44,8 @@ def archive(request):
     return render(request, 'events/archive.html', context)
 
 def events(request):
+    # Переадресуем на вики
+    return redirect('https://wiki.savvateev.xyz/doku.php?id=лекции')
     events=Event.future.all()
     context={'events':events}
     return render(request, 'events/events.html',context)
