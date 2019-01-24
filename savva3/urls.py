@@ -41,6 +41,7 @@ from savva3.utils import redirect_permanent
 urlpatterns = [
     # First, redirects
     path('books/', redirect_permanent('base:books')),
+    path('donate/', redirect_permanent('participate'), name='donate'),
 
     path('list/', base_views.list, name='list'),
 
