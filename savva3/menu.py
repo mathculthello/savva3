@@ -120,7 +120,7 @@ TOP_MENU = [
 
 	{
 	'title': 'Пригласить',
-	'url': reverse('events:invite'),
+	'url': reverse('invite'),
 	'hint': 'Пригласить Алексея Савватеева с лекцией в ваш город',
 	'changefreq': 'yearly',
 	'priority': 0.8,
