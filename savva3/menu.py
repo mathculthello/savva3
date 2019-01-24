@@ -51,7 +51,7 @@ TOP_MENU = [
         {
         'title': 'Задонатить',
 	'hint': 'Помочь проекту',
-	'url': reverse('participate'),
+	'url': reverse('donate'),
 	'changefreq': 'monthly',
 	'priority': 0.5,
 	'lastmod': template_mtime('pages/participate.html'),
