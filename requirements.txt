@@ -1,11 +1,11 @@
-beautifulsoup4==4.6.3
+beautifulsoup4
 Django
-django-bootstrap-form==3.4
-django-crispy-forms==1.7.2
+django-bootstrap-form
+django-crispy-forms
 django-embed-video
-django-extensions==2.1.3
-django-filter==2.0.0
-django-markdown-filter==0.0.1
+django-extensions
+django-filter
+django-markdown-filter
 django-menu
 graphene
 graphene_django

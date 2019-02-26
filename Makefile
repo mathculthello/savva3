@@ -1,8 +1,8 @@
 # DEPENDS ON
 # node npm rsync scp
 #
-REMOTE=s
-REMOTE_DIR=savva3
+REMOTE=savvateev.xyz
+REMOTE_DIR=/app/savva3
 
 frontend-install:
 	rsync -r static-dist/ $(REMOTE):$(REMOTE_DIR)/static/
