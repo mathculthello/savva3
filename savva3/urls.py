@@ -30,21 +30,18 @@ from django.urls import reverse_lazy
 from django.views.generic import RedirectView
 
 from base import views as base_views
+from events import views as events_views
 
 
 
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
-
-
-def redirect_permanent(name):
-    return RedirectView.as_view(url=reverse_lazy(name), permanent=True)
-
-
+from savva3.utils import redirect_permanent
 
 urlpatterns = [
     # First, redirects
     path('books/', redirect_permanent('base:books')),
+    path('donate/', redirect_permanent('participate'), name='donate'),
 
     path('list/', base_views.list, name='list'),
 
@@ -61,6 +58,7 @@ urlpatterns = [
     path('404/', views.return404, name='404'),
     path('sitemap/', views.sitemap, name='sitemap'),
 
+    path('invite/', events_views.invite, name='invite'),
 
     # Static pages
 

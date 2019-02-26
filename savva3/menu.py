@@ -51,7 +51,7 @@ TOP_MENU = [
         {
         'title': 'Задонатить',
 	'hint': 'Помочь проекту',
-	'url': reverse('participate'),
+	'url': reverse('donate'),
 	'changefreq': 'monthly',
 	'priority': 0.5,
 	'lastmod': template_mtime('pages/participate.html'),
@@ -120,7 +120,7 @@ TOP_MENU = [
 
 	{
 	'title': 'Пригласить',
-	'url': reverse('events:invite'),
+	'url': reverse('invite'),
 	'hint': 'Пригласить Алексея Савватеева с лекцией в ваш город',
 	'changefreq': 'yearly',
 	'priority': 0.8,

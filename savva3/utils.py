@@ -5,6 +5,8 @@ from django.template.utils import get_app_template_dirs
 from django.utils import timezone as tz
 from savva3.models import MetaClass
 
+from django.urls import reverse_lazy
+from django.views.generic import RedirectView
 
 def template_mtime(template_name):
 	template_dirs = get_app_template_dirs('templates')
@@ -26,3 +28,10 @@ def model_mtime(model: MetaClass):
 		return model.objects.order_by('-updated_at').first().updated_at
 	except:
 		return None
+
+
+def redirect_permanent(name):
+    return RedirectView.as_view(url=reverse_lazy(name), permanent=True)
+
+
+
