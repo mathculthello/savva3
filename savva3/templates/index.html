@@ -20,28 +20,31 @@
 {% block content %}
 {% include 'index/video.html' %}
 
+<hr>
+
 {% include 'index/formulae.html' %}
 
 {% comment %}
 {% include 'index/lections.html' %}
 {% endcomment %}
 
+
 <p class="text-center mt-2"><a class="btn btn-primary mt-2" href="{% url 'events:invite' %}">Пригласить Алексея Савватеева в свой город!</a></p>
 
+<div class="intro-wrapper">
 {% include 'index/intro.html' %}
-
+</div>
 <hr>
 <p>Скажите в комментариях, что вы хотите видеть на сайте?</p>
-{% include 'include/vk.html' %}
-
-<div class="row mt-5">
-  <div class="col-md-9">
-    {% include 'jokes/random_widget.html' %}
-  </div>
-  <div class="col-md-3">
-    {% include 'include/vk_widget.html' %}
+<div class="widgets">
+  {% include 'include/vk.html' %}
+  <div class='side-widgets'>
+  {% include 'include/vk_widget.html' %}
+  {% include 'jokes/random_widget.html' %}
   </div>
 </div>
+
+<hr>
 
 {% endblock %}
 

@@ -24,6 +24,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('jokes', '0010_joke_rating'),
+	('rating', '0001_initial')
     ]
 
     operations = [

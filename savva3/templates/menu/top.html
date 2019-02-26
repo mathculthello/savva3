@@ -1,20 +1,18 @@
-    <ul class="navbar-nav mr-auto">
+<ul class="nav navbar-nav">
         {% for item in menu %}
-            <li class="
-	nav-item 
-	{% if item.submenu %}dropdown{% endif %}">
+            <li class="nav-item {% if item.submenu %} dropdown {% endif %}">
 	
-		{% if item.submenu %}
+				{% if item.submenu %}
 
-		{% include './a-dropdown.html %}
-		{% with items=item.submenu %}
-		{% include './submenu.html' %}
-		{% endwith %}
+				{% include './a-dropdown.html' %}
+				{% with items=item.submenu %}
+					{% include './submenu.html' %}
+				{% endwith %}
 
-		{% else %}
-		{% include './a-item.html' %}
-		{% endif %}
+				{% else %}
+				{% include './a-item.html' %}
+				{% endif %}
 
             </li>
         {% endfor %}
-    </ul>
+</ul>
