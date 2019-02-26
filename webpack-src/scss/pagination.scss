@@ -1,0 +1,31 @@
+$border-color: rgb(222, 226, 230);
+
+.pagination{
+    width: min-content;
+}
+
+.pagination ul{
+    border: 1px solid $border-color;
+    border-radius: 5px;
+    list-style-type: none;
+    padding: 0;
+    margin: 1em;
+    display: flex;
+}
+
+.pagination .page-item{
+    display: flex;
+    border: 1px solid $border-color;
+    border-top: 0;
+    border-bottom: 0;
+    border-left: 0;
+}
+
+.pagination .page-item:last-child{
+    border-right: 0;
+}
+
+.pagination .page-item > *{
+    padding: 0.5em 1em;
+    text-decoration: none;
+}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block meta %}
+<meta name="description" content="Список лекций Алексея Савватеева.">
+<meta name="keywords" content="видеозаписи, лекции, Алексей Савватеев, материалы, ссылки">
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="/static/webpack/base.css">
+{% endblock %}
+
+{% block bundle %}
+<script src="{% static 'webpack/base.js' %}"></script>
+{% endblock %}
+
+{%block title%}
+Курсы Алексея Савватеева
+{%endblock%}
+
+{% block content %}
+<h1>Список курсов</h1>
+
+{{ content|safe }}
+
+{% endblock %}

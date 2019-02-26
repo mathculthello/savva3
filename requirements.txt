@@ -11,3 +11,5 @@ graphene
 graphene_django
 django-meta
 django-sitetree
+Markdown
+mdx_linkify

@@ -1,0 +1,14 @@
+<div class="pagination">
+    <script>
+    (function(){
+        var parent = document.currentScript.parentNode;
+        window.addEventListener('load', function(){
+            __ReactDOM.render(__React.createElement(Pagination, {
+                current: {{pagination.current}},
+                count: {{pagination.count}},
+                size: {{pagination.size}},
+            }), parent)
+        });
+    })();
+    </script>
+</div>

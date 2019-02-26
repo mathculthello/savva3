@@ -29,7 +29,7 @@ from django.urls import reverse_lazy
 
 from django.views.generic import RedirectView
 
-
+from base import views as base_views
 
 
 
@@ -46,6 +46,7 @@ urlpatterns = [
     # First, redirects
     path('books/', redirect_permanent('base:books')),
 
+    path('list/', base_views.list, name='list'),
 
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
     path('', views.index, name='index'),
@@ -53,6 +54,7 @@ urlpatterns = [
     path('base/', include('base.urls')),
 
     path('jokes/', include('jokes.urls')),
+    path('rating/', include('rating.urls')),
     path('admin/', admin.site.urls),
     path('events/', include('events.urls')),
     path('features/', include('features.urls')),

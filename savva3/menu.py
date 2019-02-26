@@ -34,15 +34,36 @@ MATHERIALS = [
 	'priority': 0.5,
 	'lastmod': model_mtime(Course)
 	},
+
+        {
+            'title': 'Курсы лекций',
+            'url': reverse('list'),
+            'hint': 'Курсы лекций',
+            'changefreq': 'yearly',
+            'priority': 0.5,
+        }
 ]
 
 
 
 TOP_MENU = [
 
+        {
+        'title': 'Задонатить',
+	'hint': 'Помочь проекту',
+	'url': reverse('participate'),
+	'changefreq': 'monthly',
+	'priority': 0.5,
+	'lastmod': template_mtime('pages/participate.html'),
+	'class': 'ml-1 btn btn-outline-success my-0'
+	},
+
 	{
 	'title': 'Лекции',
+        # Переадресация происходит в events/views.py
 	'url': reverse('events:events'),
+        #'url': 'https://wiki.savvateev.xyz/doku.php?id=лекции',
+        'target': '_blank',
 	'hint': 'Открытые лекции Алексея Савватеева',
 	'changefreq': "weekly",
 	'priority': 0.8,
@@ -91,6 +112,12 @@ TOP_MENU = [
 	'lastmod': template_mtime('pages/savva_book.html')
 	},
 
+        {
+                'title': 'Вики',
+                'url': 'https://wiki.savvateev.xyz/',
+                'hint': 'Публичная вики',
+        },
+
 	{
 	'title': 'Пригласить',
 	'url': reverse('events:invite'),
@@ -114,9 +141,9 @@ BOTTOM_MENU = [
 	},
 
 	{
-	'title': 'Контрибьюторы',
+	'title': 'Команда',
 	'hint': 'Кто делает проект?',
-        'url': 'https://github.com/aeifn/savva3/graphs/contributors',
+        'url': reverse('team'),
         'target': '_blank',
 #	'changefreq': 'monthly',
 #	'priority': 0.5,

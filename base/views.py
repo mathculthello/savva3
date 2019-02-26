@@ -1,6 +1,23 @@
 from django.shortcuts import render, redirect
 from .models import Resource, Progress, Video, Book, Course
 
+import os
+import markdown
+
+def list(request):
+    file=os.path.join(os.path.dirname(__file__),'data/list.txt');
+    f = open(file,'r', encoding='utf-8')
+    content=markdown.markdown(
+            f.read(),
+            extensions=["mdx_linkify"]
+            )
+    context={
+            'content': content
+            }
+    return render(request, 'base/list.html', context)
+
+
+
 def videos(request):
     return render (request, 'base/videos.html')
 
