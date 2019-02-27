@@ -20,6 +20,8 @@ class Invite(models.Model):
 	phone = models.CharField(max_length=30, verbose_name="Телефон")
 	comment = models.TextField(blank=True, verbose_name="Пожелания")
 	created_at = models.DateTimeField(auto_now_add=True)
+	def __str__(self):
+		return self.city
 
 class Event(ModelMeta, models.Model):
     title = models.CharField(max_length=500, null=True, blank=True)
