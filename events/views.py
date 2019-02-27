@@ -17,12 +17,17 @@ def invite(request):
 	if request.method == 'POST':
 		formset = InviteForm(request.POST)
 		if formset.is_valid():
-			formset.save()
+			model=formset.save()
 			messages.success(request, 'Ваше приглашение отправлено')
 			success = True
 			formset = None
-                        # Вот тут надо сформировать письмо со всей информацией отправить менеджерам и Савватееву
-			mail_managers("Invite",'check admin')
+			mail_managers("Приглашение." + model.city,
+                        model.theme + '\n' +
+                        model.name + '\n' +
+                        model.email + '\n' +
+                        model.phone + '\n' +
+                        model.comment
+                        )
 		else:
 			fromset = formset
 		context = {

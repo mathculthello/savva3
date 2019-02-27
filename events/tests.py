@@ -5,6 +5,9 @@ from django.conf import settings
 from django.urls import reverse
 from .models import Event
 from django.utils import timezone
+from .forms import InviteForm
+from .models import Invite
+from pprint import pprint
 
 # Create your tests here.
 class EventsTestCase(TestCase):
@@ -25,8 +28,9 @@ class EventsTestCase(TestCase):
         self.assertEqual(obj.where_and_when(),expect)
 
     def test_index(self):
+	# Переадресация на вики
         r=self.c.get('/events/')
-        self.assertEqual(r.status_code,200)
+        self.assertEqual(r.status_code,302)
 
     def test_archive(self):
         r=self.c.get('/events/archive/')
@@ -37,3 +41,9 @@ class EventsTestCase(TestCase):
         url = reverse('events:event',args=[obj.id])
         r=self.c.get(url)
         self.assertEqual(r.status_code,200)
+
+    def test_model_form(self):
+        invite = Invite.objects.first()
+        form = InviteForm(instance=invite) 
+        pprint(form)
+        self.assertEqual(form.name, "Егор")
