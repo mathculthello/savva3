@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+Открытые лекции Алексея Савватеева по математике
+{% endblock %}
+
+{% block meta %}
+<meta name="description" content="График открытых лекций Алексея Савватеева по математике">
+<meta name="keywords" content="расписание, открытые лекции, график, выступления, Савватеев">
+{% endblock %}
+
+{% block content %}
+<h1>Открытые лекции Алексея Савватеева по математике</h1>
+<p>Алексей Савватеев выступает с открытыми лекциями по всей России.<br/>
+  В календаре показаны ближайшие лекции, на которые приглашаются все желающие.</p>
+
+<iframe
+src="https://calendar.google.com/calendar/embed?src=0ccgru8qssgcgvi8g5jt95vlfs%40group.calendar.google.com&ctz=Europe%2FMoscow" style="border: 0"
+width="100%"
+height="600" frameborder="0" scrolling="no"></iframe>
+
+{% endblock %}

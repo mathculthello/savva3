@@ -6,7 +6,7 @@ from . import views
 app_name = 'events'
 
 urlpatterns = [
-    path('', views.events, name='events'),
+    path('', views.google_calendar, name='events'),
     path('archive/', views.archive, name='archive'),
     path('invite/',redirect_permanent('invite'), name='invite'),
     path('<int:event_id>/', views.event, name='event'),

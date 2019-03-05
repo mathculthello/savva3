@@ -34,7 +34,7 @@ def invite(request):
 		'formset':formset,
 		'success':success
 		}
-	else: 
+	else:
 		formset = InviteForm
 		context = {
 		'formset': formset
@@ -47,6 +47,9 @@ def archive(request):
     events=Event.objects.all()
     context={'events':events}
     return render(request, 'events/archive.html', context)
+
+def google_calendar(request):
+	return render(request, 'events/google_calendar.html')
 
 def events(request):
     # Переадресуем на вики
