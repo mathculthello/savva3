@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from django.core.serializers import serialize
 from django.contrib import messages
-from django.core.mail import mail_managers
+from django.core.mail import send_mail
 
 from .models import Event
 
@@ -21,12 +21,14 @@ def invite(request):
 			messages.success(request, 'Ваше приглашение отправлено')
 			success = True
 			formset = None
-			mail_managers("Приглашение." + model.city,
+			send_mail("Приглашение." + model.city,
                         model.theme + '\n' +
                         model.name + '\n' +
                         model.email + '\n' +
                         model.phone + '\n' +
-                        model.comment
+                        model.comment,
+						'django@savvateev.xyz',
+						['savvaorg@googlegroups.com']
                         )
 		else:
 			fromset = formset
