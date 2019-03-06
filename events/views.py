@@ -27,7 +27,7 @@ def invite(request):
                         model.email + '\n' +
                         model.phone + '\n' +
                         model.comment,
-						'django@savvateev.xyz',
+						model.email,
 						['savvaorg@googlegroups.com']
                         )
 		else:
