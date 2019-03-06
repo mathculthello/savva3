@@ -27,8 +27,8 @@ def invite(request):
                         model.email + '\n' +
                         model.phone + '\n' +
                         model.comment,
-						model.email,
-						['savvaorg@googlegroups.com']
+						'django@savvateev.xyz',
+						['savvaorg@googlegroups.com', model.email]
                         )
 		else:
 			fromset = formset
