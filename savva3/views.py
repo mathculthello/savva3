@@ -4,6 +4,7 @@ from features.models import Formulae
 from jokes.models import Joke
 from base.models import Url, Video
 from meta.views import Meta
+from django.db import connection
 
 from django.http import HttpResponseNotFound
 from django.template import loader
@@ -56,7 +57,6 @@ def sitemap(request):
     return render(request,'pages/sitemap.html', context)
 
 
-
 # HANDLERS
 def handle404(request, exception):
     return redirect (reverse('404'), permanent=True)
@@ -68,3 +68,12 @@ def return404(request, template_name=ERROR_404_TEMPLATE_NAME):
     body = template.render(context, request)
     content_type = None             # Django will use DEFAULT_CONTENT_TYPE
     return HttpResponseNotFound(body, content_type=content_type)
+
+# Sheets for 100 lessons.
+def lessons_sheets(request):
+    cursor = connection.cursor()
+    cursor.execute("SELECT lesson_nums, lesson_name, sheet_url, author FROM sheets")
+    ans = cursor.fetchall()
+    context = {'table_sheets': ans}
+
+    return render(request, 'pages/sheets.html', context)
