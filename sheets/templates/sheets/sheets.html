@@ -1,0 +1,29 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+
+<h1>100 уроков математики</h1>
+<p>Листки к курсу</p>
+
+<table border="1" align="center">
+    <tr align="center">
+        <td>№ урока</td>
+        <td>Название урока</td>
+        <td>Ссылка на листок</td>
+        <td>Автор</td>
+    </tr>
+    {% for row in sheets %}
+        <tr align="center">
+            <td>{{ row.lesson_nums }}</td>
+            <td>{{ row.lesson_name }}</td>
+            <td>{% if row.sheet_url %}<a href="{{ row.sheet_url }}">Скачать</a>{% endif %}</td>
+            <td>{{ row.author }}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+<p>
+<a href="ftp://savvateev.xyz/sheets/">FTP-пространство с листками</a>
+</p>
+
+{% endblock %}

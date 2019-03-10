@@ -59,6 +59,7 @@ urlpatterns = [
     path('sitemap/', views.sitemap, name='sitemap'),
 
     path('invite/', events_views.invite, name='invite'),
+    path('sheets/', include('sheets.urls')),
 
     # Static pages
 
