@@ -1,0 +1,194 @@
+[
+  {
+    "model": "sheets.categories",
+    "pk": 1,
+    "fields":{
+      "name": "Геометрия и группы"
+    }
+  },
+  {
+    "model": "sheets.categories",
+    "pk": 2,
+    "fields":{
+      "name": "Арифметика и остатки"
+    }
+  },
+  {
+    "model": "sheets.categories",
+    "pk": 3,
+    "fields":{
+      "name": "Перестановки"
+    }
+  },
+  {
+    "model": "sheets.subcategories",
+    "pk:": 1,
+    "fields": {
+      "category_id": 1,
+      "name": "Геометрия чисел"
+    }
+  },
+  {
+    "model": "sheets.subcategories",
+    "pk:": 2,
+    "fields": {
+      "category_id": 1,
+      "name": "Движения"
+    }
+  },
+  {
+    "model": "sheets.subcategories",
+    "pk:": 3,
+    "fields": {
+      "category_id": 1,
+      "name": "Комплексные числа"
+    }
+  },
+  {
+    "model": "sheets.subcategories",
+    "pk:": 4,
+    "fields": {
+      "category_id": 1,
+      "name": "Продолжение Эрлангенской программы Клейна"
+    }
+  },
+  {
+    "model": "sheets.subcategories",
+    "pk:": 5,
+    "fields": {
+      "category_id": 1,
+      "name": "Подобия, переносы и линейные отображения"
+    }
+  },
+  {
+    "model": "sheets.subcategories",
+    "pk:": 6,
+    "fields": {
+      "category_id": 1,
+      "name": "Построение циркулем и линейкой"
+    }
+  },
+  {
+    "model": "sheets.subcategories",
+    "pk:": 7,
+    "fields": {
+      "category_id": 1,
+      "name": "Целые комплексные числа"
+    }
+  },
+  {
+    "model": "sheets.subcategories",
+    "pk:": 8,
+    "fields": {
+      "category_id": 2,
+      "name": "Основная теорема арифметики"
+    }
+  },
+  {
+    "model": "sheets.subcategories",
+    "pk:": 9,
+    "fields": {
+      "category_id": 2,
+      "name": "Многочлены и поля"
+    }
+  },
+  {
+    "model": "sheets.subcategories",
+    "pk:": 10,
+    "fields": {
+      "category_id": 2,
+      "name": "Доп. материалы"
+    }
+  },
+  {
+    "model": "sheets.subcategories",
+    "pk:": 11,
+    "fields": {
+      "category_id": 2,
+      "name": "Матрицы"
+    }
+  },
+  {
+    "model": "sheets.subcategories",
+    "pk:": 12,
+    "fields": {
+      "category_id": 2,
+      "name": "Алгебраические числа"
+    }
+  },
+  {
+    "model": "sheets.subcategories",
+    "pk:": 13,
+    "fields": {
+      "category_id": 2,
+      "name": "Канторовская теория множеств"
+    }
+  },
+  {
+    "model": "sheets.subcategories",
+    "pk:": 14,
+    "fields": {
+      "category_id": 2,
+      "name": "Аксиома полноты"
+    }
+  },
+  {
+    "model": "sheets.subcategories",
+    "pk:": 15,
+    "fields": {
+      "category_id": 3,
+      "name": "Перестановки"
+    }
+  },
+
+{"model": "sheets.sheet", "pk": 1, "fields":{"subcategory_id": 1, "lesson_nums": "1", "lesson_name": "Числа, символы и фигуры", "sheet_url": "","author": ""}},
+{"model": "sheets.sheet", "pk": 2, "fields":{"subcategory_id": 1, "lesson_nums": "2", "lesson_name": "Соизмеримость и несоизмеримость отрезков", "sheet_url": "","author": ""}},
+{"model": "sheets.sheet", "pk": 3, "fields":{"subcategory_id": 1, "lesson_nums": "3", "lesson_name": "Визуальное представление бинома Ньютона", "sheet_url": "","author": ""}},
+{"model": "sheets.sheet", "pk": 4, "fields":{"subcategory_id": 1, "lesson_nums": "4", "lesson_name": "Бесконечные суммы", "sheet_url": "","author": ""}},
+{"model": "sheets.sheet", "pk": 5, "fields":{"subcategory_id": 2, "lesson_nums": "5", "lesson_name": "Начальные представления о движении", "sheet_url": "","author": ""}},
+{"model": "sheets.sheet", "pk": 6, "fields":{"subcategory_id": 2, "lesson_nums": "6", "lesson_name": "Классификация движений прямой", "sheet_url": "","author": ""}},
+{"model": "sheets.sheet", "pk": 7, "fields":{"subcategory_id": 2, "lesson_nums": "7", "lesson_name": "Таблица умножения движений прямой", "sheet_url": "","author": ""}},
+{"model": "sheets.sheet", "pk": 8, "fields":{"subcategory_id": 2, "lesson_nums": "8", "lesson_name": "Движения окружности", "sheet_url": "","author": ""}},
+{"model": "sheets.sheet", "pk": 9, "fields":{"subcategory_id": 2, "lesson_nums": "9", "lesson_name": "Таблица умножения движений окружности", "sheet_url": "","author": ""}},
+{"model": "sheets.sheet", "pk": 10, "fields":{"subcategory_id": 2, "lesson_nums": "10", "lesson_name": "Конечные подгруппы движений прямой и окружности", "sheet_url": "","author": ""}},
+{"model": "sheets.sheet", "pk": 11, "fields":{"subcategory_id": 8, "lesson_nums": "11", "lesson_name": "Введение в арифметику остатков", "sheet_url": "","author": ""}},
+{"model": "sheets.sheet", "pk": 12, "fields":{"subcategory_id": 8, "lesson_nums": "12", "lesson_name": "Арифметика остатков", "sheet_url": "","author": ""}},
+{"model": "sheets.sheet", "pk": 13, "fields":{"subcategory_id": 8, "lesson_nums": "13-14", "lesson_name": "Основная теорема арифметики", "sheet_url": "","author": ""}},
+{"model": "sheets.sheet", "pk": 14, "fields":{"subcategory_id": 8, "lesson_nums": "15", "lesson_name": "Основная теорема арифметики: следствия", "sheet_url": "","author": ""}},
+{"model": "sheets.sheet", "pk": 15, "fields":{"subcategory_id": 10, "lesson_nums": "16-18", "lesson_name": "Линейные уравнения", "sheet_url": "","author": ""}},
+{"model": "sheets.sheet", "pk": 16, "fields":{"subcategory_id": 10, "lesson_nums": "19-20", "lesson_name": "Цепные дроби", "sheet_url": "","author": ""}},
+{"model": "sheets.sheet", "pk": 17, "fields":{"subcategory_id": 15, "lesson_nums": "21-22", "lesson_name": "Перестановки", "sheet_url": "","author": ""}},
+{"model": "sheets.sheet", "pk": 18, "fields":{"subcategory_id": 15, "lesson_nums": "23-24", "lesson_name": "Перестановки: циклы, чётность, порядок", "sheet_url": "","author": ""}},
+{"model": "sheets.sheet", "pk": 19, "fields":{"subcategory_id": 15, "lesson_nums": "25-26", "lesson_name": "Задачи на перестановки", "sheet_url": "","author": ""}},
+{"model": "sheets.sheet", "pk": 20, "fields":{"subcategory_id": 15, "lesson_nums": "27-28", "lesson_name": "Группа Клейна", "sheet_url": "","author": ""}},
+{"model": "sheets.sheet", "pk": 21, "fields":{"subcategory_id": 15, "lesson_nums": "29-30", "lesson_name": "Перестановки 'Деликатесы'. Комплексные числа", "sheet_url": "","author": ""}},
+{"model": "sheets.sheet", "pk": 22, "fields":{"subcategory_id": 3, "lesson_nums": "31-32", "lesson_name": "Движение плоскости", "sheet_url": "","author": ""}},
+{"model": "sheets.sheet", "pk": 23, "fields":{"subcategory_id": 3, "lesson_nums": "33-34", "lesson_name": "Скользящая симметрия", "sheet_url": "","author": ""}},
+{"model": "sheets.sheet", "pk": 24, "fields":{"subcategory_id": 3, "lesson_nums": "35-36", "lesson_name": "Комплексные числа", "sheet_url": "","author": ""}},
+{"model": "sheets.sheet", "pk": 25, "fields":{"subcategory_id": 3, "lesson_nums": "37-38", "lesson_name": "Геометрия комплексных чисел", "sheet_url": "","author": ""}},
+{"model": "sheets.sheet", "pk": 26, "fields":{"subcategory_id": 3, "lesson_nums": "39-40", "lesson_name": "Комплексные числа и их арифметика (повторение)", "sheet_url": "","author": ""}},
+{"model": "sheets.sheet", "pk": 27, "fields":{"subcategory_id": 3, "lesson_nums": "41-42", "lesson_name": "Умножение комплексных чисел", "sheet_url": "","author": ""}},
+{"model": "sheets.sheet", "pk": 28, "fields":{"subcategory_id": 7, "lesson_nums": "43-44", "lesson_name": "Знакомство с Гауссовыми числами", "sheet_url": "","author": ""}},
+{"model": "sheets.sheet", "pk": 29, "fields":{"subcategory_id": 7, "lesson_nums": "45-48", "lesson_name": "Основная теорема арифметики для Гауссовых чисел", "sheet_url": "","author": ""}},
+{"model": "sheets.sheet", "pk": 30, "fields":{"subcategory_id": 7, "lesson_nums": "49-50", "lesson_name": "Пифагоровы тройки, общая формула", "sheet_url": "","author": ""}},
+{"model": "sheets.sheet", "pk": 31, "fields":{"subcategory_id": 9, "lesson_nums": "51-52", "lesson_name": "Конечная арифметика. Теорема Безу", "sheet_url": "","author": ""}},
+{"model": "sheets.sheet", "pk": 32, "fields":{"subcategory_id": 9, "lesson_nums": "53-54", "lesson_name": "Теорема о корнях многочленов", "sheet_url": "","author": ""}},
+{"model": "sheets.sheet", "pk": 33, "fields":{"subcategory_id": 9, "lesson_nums": "55-56", "lesson_name": "Теоремы Виета, Вильсона и Ферма (малая)", "sheet_url": "","author": ""}},
+{"model": "sheets.sheet", "pk": 34, "fields":{"subcategory_id": 9, "lesson_nums": "57-58", "lesson_name": "Малая теорема Ферма: осн. следствие.Продолжение Теорема Вильсона", "sheet_url": "","author": ""}},
+{"model": "sheets.sheet", "pk": 35, "fields":{"subcategory_id": 4, "lesson_nums": "59-60", "lesson_name": "Геометрия, арифметика и алгебра преобразований", "sheet_url": "","author": ""}},
+{"model": "sheets.sheet", "pk": 36, "fields":{"subcategory_id": 4, "lesson_nums": "61-62", "lesson_name": "Классификация подобий прямой. Подобия плоскости", "sheet_url": "","author": ""}},
+{"model": "sheets.sheet", "pk": 37, "fields":{"subcategory_id": 5, "lesson_nums": "63-64", "lesson_name": "Геометрия: обзор того, что было", "sheet_url": "","author": ""}},
+{"model": "sheets.sheet", "pk": 38, "fields":{"subcategory_id": 5, "lesson_nums": "65-66", "lesson_name": "Векторы и действие группы подобий на них", "sheet_url": "","author": ""}},
+{"model": "sheets.sheet", "pk": 39, "fields":{"subcategory_id": 5, "lesson_nums": "67-68", "lesson_name": "Линейные отображения прямой и плоскости", "sheet_url": "","author": ""}},
+{"model": "sheets.sheet", "pk": 40, "fields":{"subcategory_id": 5, "lesson_nums": "69-70", "lesson_name": "Линейные отображения плоскости, окончание", "sheet_url": "","author": ""}},
+{"model": "sheets.sheet", "pk": 41, "fields":{"subcategory_id": 5, "lesson_nums": "71-72", "lesson_name": "Координатная запись линейных отображений плоскости", "sheet_url": "","author": ""}},
+{"model": "sheets.sheet", "pk": 42, "fields":{"subcategory_id": 11, "lesson_nums": "73-74", "lesson_name": "Матрицы: арифметика", "sheet_url": "","author": ""}},
+{"model": "sheets.sheet", "pk": 43, "fields":{"subcategory_id": 11, "lesson_nums": "75-76", "lesson_name": "Группа квадратных невырожденных матриц", "sheet_url": "","author": ""}},
+{"model": "sheets.sheet", "pk": 44, "fields":{"subcategory_id": 12, "lesson_nums": "79-80", "lesson_name": "Алгебраические числа, первое знакомство", "sheet_url": "","author": ""}},
+{"model": "sheets.sheet", "pk": 45, "fields":{"subcategory_id": 12, "lesson_nums": "81-82", "lesson_name": "Алгебраические числа: минимальный многочлен", "sheet_url": "","author": ""}},
+{"model": "sheets.sheet", "pk": 46, "fields":{"subcategory_id": 12, "lesson_nums": "83-84", "lesson_name": "Всё про корень кубический из двух Построение циркулем и линейкой", "sheet_url": "","author": ""}},
+{"model": "sheets.sheet", "pk": 47, "fields":{"subcategory_id": 6, "lesson_nums": "85-88", "lesson_name": "Теория построений циркулем и линейкой", "sheet_url": "","author": ""}},
+{"model": "sheets.sheet", "pk": 48, "fields":{"subcategory_id": 6, "lesson_nums": "89-90", "lesson_name": "Волшебство Гаусса: 17-угольник циркулем и линейкой", "sheet_url": "","author": ""}},
+{"model": "sheets.sheet", "pk": 49, "fields":{"subcategory_id": 13, "lesson_nums": "91-95", "lesson_name": "Канторовская теория множеств, масса примеров", "sheet_url": "","author": ""}},
+{"model": "sheets.sheet", "pk": 50, "fields":{"subcategory_id": 14, "lesson_nums": "96-100", "lesson_name": "Аксиоматика полноты действительных чисел", "sheet_url": "","author": ""}}
+]

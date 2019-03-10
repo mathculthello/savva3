@@ -59,6 +59,7 @@ urlpatterns = [
     path('sitemap/', views.sitemap, name='sitemap'),
 
     path('invite/', events_views.invite, name='invite'),
+    path('sheets/', include('sheets.urls')),
 
     # Static pages
 
@@ -68,7 +69,6 @@ urlpatterns = [
     path('team/', views.page, {'tpl': 'pages/team.html'}, name='team'),
     path('credits/', views.page, {'tpl': 'pages/credits.html'}, name='credits'),
     path('100lessons/', views.page, {'tpl': 'pages/100lessons.html'}, name='100lessons'),
-    path('sheets/', views.lessons_sheets, name='lessons_sheets') # Sheets for 100 lessons
 
     #path('', include('django.contrib.flatpages.urls')),
 ]

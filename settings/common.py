@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'features',
     'finance',
     'rating',
+    'sheets',
 #    'savva_menu',
 
 #    'sitetree',

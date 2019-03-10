@@ -69,11 +69,4 @@ def return404(request, template_name=ERROR_404_TEMPLATE_NAME):
     content_type = None             # Django will use DEFAULT_CONTENT_TYPE
     return HttpResponseNotFound(body, content_type=content_type)
 
-# Sheets for 100 lessons.
-def lessons_sheets(request):
-    cursor = connection.cursor()
-    cursor.execute("SELECT lesson_nums, lesson_name, sheet_url, author FROM sheets")
-    ans = cursor.fetchall()
-    context = {'table_sheets': ans}
 
-    return render(request, 'pages/sheets.html', context)

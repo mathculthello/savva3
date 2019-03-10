@@ -12,26 +12,14 @@
         <td>Ссылка на листок</td>
         <td>Автор</td>
     </tr>
-    {% for row in table_sheets %}
+    {% for row in sheets %}
         <tr align="center">
-            <td>{{ row.0 }}</td>
-            <td>{{ row.1 }}</td>
-            <td>{% if row.2 %}<a href="{{ row.2 }}">Скачать</a>{% endif %}</td>
-            <td>{{ row.3 }}</td>
-        <!--{% for cell in row %}
-            <td>{{ cell }}</td>
-        {% endfor %}-->
+            <td>{{ row.lesson_nums }}</td>
+            <td>{{ row.lesson_name }}</td>
+            <td>{% if row.sheet_url %}<a href="{{ row.sheet_url }}">Скачать</a>{% endif %}</td>
+            <td>{{ row.author }}</td>
         </tr>
     {% endfor %}
-    <!--<tr>
-
-        <td>1</td>
-        <td>cat_name</td>
-        <td>subcat_name</td>
-        <td>lesson_name</td>
-        <td>sheet_url</td>
-        <td>Author</td>
-    </tr>-->
 </table>
 
 <p>
