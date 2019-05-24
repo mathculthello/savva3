@@ -73,6 +73,7 @@ INSTALLED_APPS = [
     'graphene_django',
     'django_filters',
     'markdown_filter',
+    'markdown',
     'embed_video',
     'django_extensions',
     'crispy_forms',
