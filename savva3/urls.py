@@ -69,7 +69,7 @@ urlpatterns = [
     path('participate/', views.participate, name='participate'),
     path('team/', views.page, {'tpl': 'pages/team.html'}, name='team'),
     path('credits/', views.page, {'tpl': 'pages/credits.html'}, name='credits'),
-    path('100lessons_bak/', views.page, {'tpl': 'pages/100lessons.html'}, name='100lessons'),
+    path('100lessons/', views.page, {'tpl': 'pages/100lessons.html'}, name='100lessons'),
     path('', include('wiki.urls')),
 
     #path('', include('django.contrib.flatpages.urls')),

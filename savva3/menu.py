@@ -111,12 +111,11 @@ TOP_MENU = [
 	'priority': 0.8,
 	'lastmod': template_mtime('pages/savva_book.html')
 	},
-
-    {
-            'title': 'Вики',
-            'url': reverse('wiki:root'),
-            'hint': 'Публичная вики',
-    },
+#    {
+#            'title': 'Вики',
+#            'url': reverse('wiki:root'),
+#            'hint': 'Публичная вики',
+#    },
 
 	{
 	'title': 'Пригласить',
