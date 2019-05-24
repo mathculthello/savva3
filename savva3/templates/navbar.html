@@ -2,7 +2,8 @@
 
 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-right">
+<div class="navbar navbar-expand-lg navbar-light bg-light">
+
 
 {% if request.path != '/' %}
   <a href="/" title="Лекторий Савватеева" class="navbar-brand">Лекторий Савватеева</a>
@@ -10,20 +11,27 @@
   <h1 class="navbar-brand mb-0">Лекторий Савватеева</h1>
 {% endif %}
 
+
 <div>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+
 </div>
+
   <div class="top-menu collapse navbar-collapse" id="navbarNavAltMarkup">
 
+
     {% topmenu %}
-        <div class="greeting"> 
-          {% if user.is_authenticated %}
+
+    {% if user.is_authenticated %}
+    <div class="greeting"> 
           Привет, {{ user.first_name }}
-           {% endif %}
     </div>
+    {% endif %}
+
+
   </div>
 
-</nav>
+</div>
