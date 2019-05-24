@@ -53,6 +53,8 @@ urlpatterns = [
     path('jokes/', include('jokes.urls')),
     path('rating/', include('rating.urls')),
     path('admin/', admin.site.urls),
+#    path('notifications/', include('django_nyt.urls')),
+#    path('', include('wiki.urls')),
     path('events/', include('events.urls')),
     path('features/', include('features.urls')),
     path('404/', views.return404, name='404'),
