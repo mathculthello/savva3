@@ -1,11 +1,12 @@
 {% load markdown_filter %}
 {% load i18n %}
-  <section class="col-md pt-3 pb-1 rounded jokes-widget joke">
+
+  <div class="">
     <p class="h3">{{joke.title}}</p>
     <div class="joke-content"> 
     {{ joke.text|markdown_filter|safe }}
     </div>
 
     <p class="sender text-right">{% trans "Who added:" %} {{joke.author|default:"Инкогнито"}}</p>
-  </section>
 <p>(<a href="{% url "jokes:index" %}">$E=mc^3$</a>)</p>
+  </div>

@@ -28,18 +28,19 @@
 {% include 'index/lections.html' %}
 {% endcomment %}
 
-
+{% comment %}
 <p class="text-center mt-2"><a class="btn btn-primary mt-2" href="{% url 'events:invite' %}">Пригласить Алексея Савватеева в свой город!</a></p>
+{% endcomment %}
 
 <div class="intro-wrapper">
 {% include 'index/intro.html' %}
 </div>
 <hr>
-<p>Скажите в комментариях, что вы хотите видеть на сайте?</p>
-<div class="widgets">
+<div class="container">
+	<div class="row">
   {% include 'include/vk.html' %}
-  <div class='side-widgets'>
-  {% include 'include/vk_widget.html' %}
+	</div>
+  <div class="row">
   {% include 'jokes/random_widget.html' %}
   </div>
 </div>
