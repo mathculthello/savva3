@@ -1,12 +1,12 @@
 # Развертывание для разработки
 
 ```
+# Клонируем репозиторий
+git clone https://github.com/aeifn/savva3
+
 # Создаем виртуальное питон-окружение
 virtualenv -ppython3 venv
 . venv/bin/activate
-
-# Клонируем репозиторий
-git clone https://github.com/aeifn/savva3
 
 # Установка зависимостей
 cd savva3/
@@ -17,6 +17,10 @@ pip install -r requirements.txt
 
 # Создание пользователя:
 ./manage.py createsuperuser
+
+npm install
+
+npm run dev
 
 #Теперь сайт можно запустить:
 ./manage.py runserver

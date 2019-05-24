@@ -77,4 +77,5 @@ urlpatterns = [
 
 
 if settings.DEBUG == True:
-    urlpatterns += staticfiles_urlpatterns()
+	pass
+#    urlpatterns += staticfiles_urlpatterns()
