@@ -13,3 +13,4 @@ django-meta
 django-sitetree
 Markdown
 mdx_linkify
+gunicorn

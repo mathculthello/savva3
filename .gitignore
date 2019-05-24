@@ -8,3 +8,4 @@ static-dist
 venv
 *.ipynb
 media
+settings/production.py
