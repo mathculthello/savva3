@@ -10,3 +10,4 @@ venv
 media
 settings/production.py
 static
+wiki

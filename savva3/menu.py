@@ -77,7 +77,7 @@ TOP_MENU = [
 
 	{
 	'title': '100 уроков',
-	'url': reverse('100lessons'),
+        'url': reverse('wiki:get',args=['100urokov/']),
 	'hint': '100 уроков математики',
 	'changefreq': 'monthly',
 	'priority': 0.5,
