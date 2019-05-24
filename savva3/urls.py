@@ -54,7 +54,6 @@ urlpatterns = [
     path('rating/', include('rating.urls')),
     path('admin/', admin.site.urls),
     path('notifications/', include('django_nyt.urls')),
-    path('wiki/', include('wiki.urls')),
     path('events/', include('events.urls')),
     path('features/', include('features.urls')),
     path('404/', views.return404, name='404'),
@@ -70,7 +69,8 @@ urlpatterns = [
     path('participate/', views.participate, name='participate'),
     path('team/', views.page, {'tpl': 'pages/team.html'}, name='team'),
     path('credits/', views.page, {'tpl': 'pages/credits.html'}, name='credits'),
-    path('100lessons/', views.page, {'tpl': 'pages/100lessons.html'}, name='100lessons'),
+    path('100lessons_bak/', views.page, {'tpl': 'pages/100lessons.html'}, name='100lessons'),
+    path('', include('wiki.urls')),
 
     #path('', include('django.contrib.flatpages.urls')),
 ]
