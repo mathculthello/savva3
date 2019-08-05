@@ -14,4 +14,4 @@ django-sitetree
 Markdown
 mdx_linkify
 gunicorn
-wiki
+--pre wiki

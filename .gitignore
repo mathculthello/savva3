@@ -11,3 +11,5 @@ media
 settings/production.py
 static
 wiki
+*~
+.vim*
