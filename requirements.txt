@@ -11,7 +11,7 @@ graphene
 graphene_django
 django-meta
 django-sitetree
-Markdown
-mdx_linkify
+Markdown==2.6
+mdx_linkify==1.1
 gunicorn
 --pre wiki

@@ -6,19 +6,17 @@ git clone https://github.com/aeifn/savva3
 
 # Создаем виртуальное питон-окружение
 virtualenv -ppython3 venv
-. venv/bin/activate
+source ./venv/bin/activate
 
 # Установка зависимостей
-cd savva3/
 pip install -r requirements.txt
+npm install
 
 # Создание базы данных
 ./manage.py migrate
 
 # Создание пользователя:
 ./manage.py createsuperuser
-
-npm install
 
 npm run dev
 
