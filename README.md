@@ -5,7 +5,7 @@
 git clone https://github.com/aeifn/savva3
 
 # Создаем виртуальное питон-окружение
-virtualenv -ppython3 venv
+virtualenv venv
 source ./venv/bin/activate
 
 # Установка зависимостей

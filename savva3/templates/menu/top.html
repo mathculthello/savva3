@@ -1,7 +1,7 @@
 <ul class="nav navbar-nav">
         {% for item in menu %}
             <li class="nav-item {% if item.submenu %} dropdown {% endif %}">
-	
+
 				{% if item.submenu %}
 
 				{% include './a-dropdown.html' %}
@@ -16,3 +16,4 @@
             </li>
         {% endfor %}
 </ul>
+{% include 'include/patreon.html' %}
