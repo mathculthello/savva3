@@ -93,7 +93,7 @@ class Author(Person):
     pass
 
 class Video(Resource):
-    url = EmbedVideoField(max_length=500, null=False, blank=False, unique=True)
+    url = EmbedVideoField(max_length=500, null=False, blank=False)
     def get_absolute_url(self, *args):
         return reverse('base:video', kwargs={'video_id':self.id})
 
