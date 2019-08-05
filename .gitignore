@@ -13,3 +13,7 @@ static
 wiki
 *~
 .vim*
+.gitconfig
+.histfile
+.zshrc
+.cache
