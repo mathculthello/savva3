@@ -6,7 +6,7 @@ services:
     depends_on:
       - app
     ports:
-      - "80:80"
+      - "8181:80"
     volumes:
       - .:/app
       - media:/app/media
@@ -19,6 +19,7 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
     volumes:
+      - pgdata:/var/lib/postgresql/data
       - ./dump:/docker-entrypoint-initdb.d
   app:
     image: aeifn/savva3
@@ -34,3 +35,4 @@ services:
       - db
 volumes:
   media:
+  pgdata:
