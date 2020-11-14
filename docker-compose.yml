@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: aeifn/savva3-nginx
+    depends_on:
+      - app
+    ports:
+      - "80:80"
+    volumes:
+      - .:/app
+      - media:/app/media
+    build:
+      context: nginx
+  db:
+    image: postgres
+    environment: 
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - ./dump:/docker-entrypoint-initdb.d
+  app:
+    image: aeifn/savva3
+    build: .
+    environment:
+      - DJANGO_SETTINGS_MODULE=settings.production
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+volumes:
+  media:
