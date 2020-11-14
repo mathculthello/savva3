@@ -14,3 +14,4 @@ COPY . .
 # COPY FRONTEND
 COPY --from=builder /app/static-dist .
 RUN ./manage.py collectstatic --no-input
+CMD gunicorn --bind=0.0.0.0:8000 --chdir=/app --log-level=info --log-file=/dev/stdout savva3.wsgi
