@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+
+  nginx:
+    networks:
+      - frontend
+    image: aeifn/savva3-nginx
+    volumes:
+      - media:/app/media:ro
+
+  db:
+    networks:
+      - backend
+    image: postgres
+    environment: 
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  app:
+    networks:
+      - frontend
+      - backend
+    image: aeifn/savva3
+    environment:
+      - DJANGO_SETTINGS_MODULE=settings.current
+    configs:
+      - source: django_config
+        target: /app/settings/current.py
+
+networks:
+  frontend:
+  backend:
+
+configs:
+  django_config:
+    file: ${CONFIG}
+    name: savva3_config_${CONFIG_TAG}
+
+volumes:
+  media:
+  pgdata:

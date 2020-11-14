@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  nginx:
+    networks:
+      - traefik-public
+    deploy:
+      labels:
+        - traefik.enable=true
+        - traefik.docker.network=traefik-public
+        - traefik.constraint-label=traefik-public
+        - traefik.http.routers.savva3-http.rule=Host(`${DOMAIN?Variable not set}`)
+        - traefik.http.routers.savva3-http.entrypoints=http
+        - traefik.http.routers.savva3-http.middlewares=https-redirect
+        - traefik.http.routers.savva3-https.rule=Host(`${DOMAIN?Variable not set}`)
+        - traefik.http.routers.savva3-https.entrypoints=https
+        - traefik.http.routers.savva3-https.tls=true
+        - traefik.http.routers.savva3-https.tls.certresolver=le
+        - traefik.http.services.savva3.loadbalancer.server.port=80
+networks:
+  traefik-public:
+    external: true
