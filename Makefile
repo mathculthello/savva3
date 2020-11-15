@@ -13,6 +13,10 @@ push:
 	docker push $(TAG)
 	docker push $(TAG)-nginx
 
+.PHONY: node_modules
+node_modules:
+	docker run --rm -v $(PWD):/code -w /code node:10 npm install
+
 frontend-install:
 	rsync -r static-dist/ $(REMOTE):$(REMOTE_DIR)/static/
 
