@@ -58,18 +58,18 @@ TOP_MENU = [
 	'class': 'ml-1 btn btn-outline-success my-0'
 	},
 
-	{
-	'title': 'Лекции',
+	#{
+	#'title': 'Лекции',
         # Переадресация происходит в events/views.py
 	#'url': reverse('events:events'),
         #'url': 'https://mediawiki.savvateev.xyz/Лекции',
-        'url': reverse('wiki:get',args=['events/']),
-        'target': '_blank',
-	'hint': 'Открытые лекции Алексея Савватеева',
-	'changefreq': "weekly",
-	'priority': 0.8,
-	'lastmod': model_mtime(Event)
-	},
+        #'url': reverse('wiki:get',args=['events/']),
+        #'target': '_blank',
+	#'hint': 'Открытые лекции Алексея Савватеева',
+	#'changefreq': "weekly",
+	#'priority': 0.8,
+	#'lastmod': model_mtime(Event)
+	#},
 
 	{
 	'title': 'Материалы',
