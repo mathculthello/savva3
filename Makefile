@@ -3,6 +3,15 @@
 #
 REMOTE=savvateev.xyz
 REMOTE_DIR=/app/savva3
+TAG=aeifn/savva3
+
+build:
+	docker build -t $(TAG) . 
+	docker build -t $(TAG)-nginx nginx
+
+push:
+	docker push $(TAG)
+	docker push $(TAG)-nginx
 
 frontend-install:
 	rsync -r static-dist/ $(REMOTE):$(REMOTE_DIR)/static/
