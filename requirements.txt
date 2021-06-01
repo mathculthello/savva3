@@ -45,7 +45,7 @@ sorl-thumbnail==12.6.3
 soupsieve==2.0
 sqlparse==0.3.1
 Unidecode==1.1.1
-urllib3==1.25.9
+urllib3==1.26.5
 webencodings==0.5.1
 wiki==0.6b2
 zipp==3.1.0
