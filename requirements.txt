@@ -47,5 +47,5 @@ sqlparse==0.3.1
 Unidecode==1.1.1
 urllib3==1.25.9
 webencodings==0.5.1
-wiki==0.6b2
+wiki==0.7.9
 zipp==3.1.0
