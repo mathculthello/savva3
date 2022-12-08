@@ -2,7 +2,7 @@ aniso8601==8.0.0
 asgiref==3.2.7
 beautifulsoup4==4.9.0
 bleach==3.1.5
-certifi==2020.4.5.1
+certifi==2022.12.7
 chardet==3.0.4
 Django==3.0.6
 django-bootstrap-form==3.4
